@@ -3,7 +3,11 @@ package com.m.roman.oreh.service.serviceImp;
 import com.m.roman.oreh.entity.News;
 import com.m.roman.oreh.repository.NewsRepository;
 import com.m.roman.oreh.service.NewsService;
+import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+@Service
 public class NewsServiceImp implements NewsService {
 
     private final NewsRepository newsRepository;
@@ -13,6 +17,7 @@ public class NewsServiceImp implements NewsService {
     }
     @Override
     public News getNews(int id) {
-        return newsRepository.findById(id).get();
+        Optional<News> news = newsRepository.findById(id);
+        return news.orElse(null);
     }
 }

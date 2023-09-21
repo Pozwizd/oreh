@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,10 @@
 </head>
 <body>
 <header class="header">
+    <!--    th:utext="${model.name}"-->
+    <!--    th:text="${model.name}"-->
+    <!--    th:src="${model.url}"-->
+    <!--    th:alt="${model.name}"-->
     <div class="header__top">
         <div class="header__top-wrapper">
             <div class="social-links">
@@ -284,8 +288,9 @@
     <section class="video-wide video-wide--trees">
         <video class="video-wide__video video-wide__video--trees" src="#"></video>
         <div class="video-wide__text-wrap">
-            <h2 class="video-wide__title">Орех Причерноморья</h2>
-            <p class="video-wide__text">Единственный в Украине сад совместного выращивание фундука и грецкого ореха</p>
+            <h2 class="video-wide__title" th:text="${titleText1.title}">Орех Причерноморья</h2>
+            <p class="video-wide__text" th:text="${titleText1.text}">Единственный в Украине сад совместного выращивание
+                фундука и грецкого ореха</p>
             <div class="play-btn">
                 <div class="play-btn__outer">
                     <div class="play-btn__inner">
@@ -297,8 +302,9 @@
     <section class="product-block">
         <div class="product-block__wrapper">
             <div class="title-middle">
-                <h3 class="title-middle__title">Продукция</h3>
-                <p class="title-middle__subtitle">Экологически чистые, качественные ядра грецкого ореха и фундука,
+                <h3 class="title-middle__title" th:text="${titleText2.title}">Продукция</h3>
+                <p class="title-middle__subtitle" th:text="${titleText2.text}">Экологически чистые, качественные ядра
+                    грецкого ореха и фундука,
                     а также плоды шиповника в удобной, надежной, вакуумной упаковке
                     разного объема</p>
             </div>
@@ -307,7 +313,9 @@
                     <div class="swiper product-card__slider">
                         <div class="swiper-wrapper product-card__slider-wrapper">
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/KOND-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product1.imageUrl != null ? product1.imageUrl : 'img/main/KOND-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -317,7 +325,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/KOND-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product1.imageUrl2 != null ? product1.imageUrl2 : 'img/main/KOND-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -327,7 +337,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/KOND-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product1.imageUrl3 != null ? product1.imageUrl3 : 'img/main/KOND-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -341,26 +353,29 @@
                         <div class="swiper-button-next product-card__slider-next"></div>
                     </div>
                     <div class="product-card__slider-flag">
-                        <p class="product-card__slider-special">АКЦИЯ</p>
+                        <p class="product-card__slider-special" th:text="${product1.specialOffer}">АКЦИЯ</p>
                     </div>
                     <div class="product-card__body">
-                        <h5 class="product-card__title">Грецкий орех</h5>
+                        <h5 class="product-card__title" th:text="${product1.title}">Грецкий орех</h5>
                         <div class="product-card__text">
-                            <p class="product-card__text-art">Арт: 0091</p>
-                            <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
+                            <p class="product-card__text-art" th:text="${product1.articleNumber}">Арт: 0091</p>
+                            <p class="product-card__text-desc" th:text="${product1.description}">Орех сладкий,
+                                классический, очищенный</p>
                             <div class="product-card__info">
                                 <div class="product-card__mass">
                                     <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
                                     <p class="product-card__mass-text">
                                         Масса:
-                                        <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
+                                        <span class="product-card__mass-text product-card__mass-text--green"
+                                              th:text="${product1.weight}">40г.</span>
                                     </p>
                                 </div>
                                 <div class="product-card__package">
                                     <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
                                     <p class="product-card__package-text">
                                         Упаковка
-                                        <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
+                                        <span class="product-card__package-text product-card__package-text--green"
+                                              th:text="${product1.packageType}">вакуумная</span>
                                     </p>
                                 </div>
                             </div>
@@ -370,11 +385,13 @@
                         <div class="product-card__price">
                             <p class="product-card__price-text">Цена:</p>
                             <p class="product-card__price-text product-card__price-text--green">
-                                <span class="product-card__price-text product-card__price-text--green-big">19</span>
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product1.price}">19</span>
                                 грн.
                             </p>
                             <p class="product-card__price-text product-card__price-text--gray">
-                                <span class="product-card__price-text product-card__price-text--gray-big">21</span>
+                                <span class="product-card__price-text product-card__price-text--gray-big"
+                                      th:text="${product1.originalPrice}">21</span>
                                 грн
                             </p>
                         </div>
@@ -385,7 +402,9 @@
                     <div class="swiper product-card__slider">
                         <div class="swiper-wrapper product-card__slider-wrapper">
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/SOLODKY-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product2.imageUrl != null ? product1.imageUrl : 'img/main/SOLODKY-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -395,7 +414,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/SOLODKY-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product2.imageUrl2 != null ? product1.imageUrl2 : 'img/main/SOLODKY-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -405,7 +426,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/SOLODKY-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product2.imageUrl3 != null ? product1.imageUrl3 : 'img/main/SOLODKY-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -419,26 +442,29 @@
                         <div class="swiper-button-next product-card__slider-next"></div>
                     </div>
                     <div class="product-card__slider-flag product-card__slider-flag--new">
-                        <p class="product-card__slider-special">НОВИНКА</p>
+                        <p class="product-card__slider-special" th:text="${product2.name}">НОВИНКА</p>
                     </div>
                     <div class="product-card__body">
-                        <h5 class="product-card__title">Грецкий орех</h5>
+                        <h5 class="product-card__title" th:text="${product2.name}">Грецкий орех</h5>
                         <div class="product-card__text">
-                            <p class="product-card__text-art">Арт: 0091</p>
-                            <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
+                            <p class="product-card__text-art" th:text="${product2.name}">Арт: 0091</p>
+                            <p class="product-card__text-desc" th:text="${product2.name}">Орех сладкий, классический,
+                                очищенный</p>
                             <div class="product-card__info">
                                 <div class="product-card__mass">
                                     <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
                                     <p class="product-card__mass-text">
                                         Масса:
-                                        <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
+                                        <span class="product-card__mass-text product-card__mass-text--green"
+                                              th:text="${product2.name}">40г.</span>
                                     </p>
                                 </div>
                                 <div class="product-card__package">
                                     <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
                                     <p class="product-card__package-text">
                                         Упаковка
-                                        <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
+                                        <span class="product-card__package-text product-card__package-text--green"
+                                              th:text="${product2.name}">вакуумная</span>
                                     </p>
                                 </div>
                             </div>
@@ -449,7 +475,8 @@
                             <p class="product-card__price-text">Цена:</p>
                             <p class="product-card__price-text product-card__price-text--green">
                                 от
-                                <span class="product-card__price-text product-card__price-text--green-big">21</span>
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product2.name}">21</span>
                                 грн.
                             </p>
                         </div>
@@ -460,7 +487,9 @@
                     <div class="swiper product-card__slider">
                         <div class="swiper-wrapper product-card__slider-wrapper">
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/SOLONY-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product3.imageUrl != null ? product3.imageUrl : 'img/main/SOLONY-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -470,7 +499,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/SOLONY-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product3.imageUrl2 != null ? product3.imageUrl2 : 'img/main/SOLONY-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -480,7 +511,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/SOLONY-40g.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product3.imageUrl3 != null ? product3.imageUrl3 : 'img/main/SOLONY-40g.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -494,23 +527,26 @@
                         <div class="swiper-button-next product-card__slider-next"></div>
                     </div>
                     <div class="product-card__body">
-                        <h5 class="product-card__title">Грецкий орех</h5>
+                        <h5 class="product-card__title" th:text="${product3.name}">Грецкий орех</h5>
                         <div class="product-card__text">
-                            <p class="product-card__text-art">Арт: 0091</p>
-                            <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
+                            <p class="product-card__text-art" th:text="${product3.name}">Арт: 0091</p>
+                            <p class="product-card__text-desc" th:text="${product3.name}">Орех сладкий, классический,
+                                очищенный</p>
                             <div class="product-card__info">
                                 <div class="product-card__mass">
                                     <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
                                     <p class="product-card__mass-text">
                                         Масса:
-                                        <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
+                                        <span class="product-card__mass-text product-card__mass-text--green"
+                                              th:text="${product3.name}">40г.</span>
                                     </p>
                                 </div>
                                 <div class="product-card__package">
                                     <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
                                     <p class="product-card__package-text">
                                         Упаковка
-                                        <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
+                                        <span class="product-card__package-text product-card__package-text--green"
+                                              th:text="${product3.name}">вакуумная</span>
                                     </p>
                                 </div>
                             </div>
@@ -521,7 +557,8 @@
                             <p class="product-card__price-text">Цена:</p>
                             <p class="product-card__price-text product-card__price-text--green">
                                 от
-                                <span class="product-card__price-text product-card__price-text--green-big">21</span>
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product3.name}">21</span>
                                 грн.
                             </p>
                         </div>
@@ -532,7 +569,9 @@
                     <div class="swiper product-card__slider">
                         <div class="swiper-wrapper product-card__slider-wrapper">
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih1.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product4.imageUrl != null ? product4.imageUrl : 'img/main/gorih1.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -542,7 +581,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih1.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product4.imageUrl2 != null ? product4.imageUrl2 : 'img/main/gorih1.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -552,7 +593,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih1.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product4.imageUrl3 != null ? product4.imageUrl3 : 'img/main/gorih1.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -566,23 +609,26 @@
                         <div class="swiper-button-next product-card__slider-next"></div>
                     </div>
                     <div class="product-card__body">
-                        <h5 class="product-card__title">Грецкий орех</h5>
+                        <h5 class="product-card__title" th:text="${product4.name}">Грецкий орех</h5>
                         <div class="product-card__text">
-                            <p class="product-card__text-art">Арт: 0091</p>
-                            <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
+                            <p class="product-card__text-art" th:text="${product4.name}">Арт: 0091</p>
+                            <p class="product-card__text-desc" th:text="${product4.name}">Орех сладкий, классический,
+                                очищенный</p>
                             <div class="product-card__info">
                                 <div class="product-card__mass">
                                     <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
                                     <p class="product-card__mass-text">
                                         Масса:
-                                        <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
+                                        <span class="product-card__mass-text product-card__mass-text--green"
+                                              th:text="${product4.name}">40г.</span>
                                     </p>
                                 </div>
                                 <div class="product-card__package">
                                     <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
                                     <p class="product-card__package-text">
                                         Упаковка
-                                        <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
+                                        <span class="product-card__package-text product-card__package-text--green"
+                                              th:text="${product4.name}">вакуумная</span>
                                     </p>
                                 </div>
                             </div>
@@ -592,11 +638,13 @@
                         <div class="product-card__price">
                             <p class="product-card__price-text">Цена:</p>
                             <p class="product-card__price-text product-card__price-text--green">
-                                <span class="product-card__price-text product-card__price-text--green-big">19</span>
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product4.name}">19</span>
                                 грн.
                             </p>
                             <p class="product-card__price-text product-card__price-text--gray">
-                                <span class="product-card__price-text product-card__price-text--gray-big">21</span>
+                                <span class="product-card__price-text product-card__price-text--gray-big"
+                                      th:text="${product4.name}">21</span>
                                 грн
                             </p>
                         </div>
@@ -607,7 +655,9 @@
                     <div class="swiper product-card__slider">
                         <div class="swiper-wrapper product-card__slider-wrapper">
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih2.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product5.imageUrl != null ? product5.imageUrl : 'img/main/gorih2.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -617,7 +667,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih2.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product5.imageUrl2 != null ? product5.imageUrl2 : 'img/main/gorih2.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -627,7 +679,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih2.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product5.imageUrl3 != null ? product5.imageUrl3 : 'img/main/gorih2.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -641,23 +695,26 @@
                         <div class="swiper-button-next product-card__slider-next"></div>
                     </div>
                     <div class="product-card__body">
-                        <h5 class="product-card__title">Грецкий орех</h5>
+                        <h5 class="product-card__title" th:text="${product5.name}">Грецкий орех</h5>
                         <div class="product-card__text">
-                            <p class="product-card__text-art">Арт: 0091</p>
-                            <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
+                            <p class="product-card__text-art" th:text="${product5.name}">Арт: 0091</p>
+                            <p class="product-card__text-desc" th:text="${product5.name}">Орех сладкий, классический,
+                                очищенный</p>
                             <div class="product-card__info">
                                 <div class="product-card__mass">
                                     <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
                                     <p class="product-card__mass-text">
                                         Масса:
-                                        <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
+                                        <span class="product-card__mass-text product-card__mass-text--green"
+                                              th:text="${product5.name}">40г.</span>
                                     </p>
                                 </div>
                                 <div class="product-card__package">
                                     <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
                                     <p class="product-card__package-text">
                                         Упаковка
-                                        <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
+                                        <span class="product-card__package-text product-card__package-text--green"
+                                              th:text="${product5.name}">вакуумная</span>
                                     </p>
                                 </div>
                             </div>
@@ -668,7 +725,8 @@
                             <p class="product-card__price-text">Цена:</p>
                             <p class="product-card__price-text product-card__price-text--green">
                                 от
-                                <span class="product-card__price-text product-card__price-text--green-big">21</span>
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product5.name}">21</span>
                                 грн.
                             </p>
                         </div>
@@ -679,7 +737,9 @@
                     <div class="swiper product-card__slider">
                         <div class="swiper-wrapper product-card__slider-wrapper">
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih3.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product6.imageUrl != null ? product6.imageUrl : 'img/main/gorih3.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -689,7 +749,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih3.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product6.imageUrl2 != null ? product6.imageUrl2 : 'img/main/gorih3.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -699,7 +761,9 @@
                                 </a>
                             </div>
                             <div class="swiper-slide product-card__slider-item">
-                                <img class="product-card__slider-img" src="img/main/gorih3.png" alt="">
+                                <img class="product-card__slider-img"
+                                     th:src="${product6.imageUrl3 != null ? product6.imageUrl3 : 'img/main/gorih3.png'}"
+                                     alt="">
                                 <a class="product-card__slider-lupa" href="#">
                                     <div class="product-card__lupa-outer">
                                         <div class="product-card__lupa-inner">
@@ -713,23 +777,26 @@
                         <div class="swiper-button-next product-card__slider-next"></div>
                     </div>
                     <div class="product-card__body">
-                        <h5 class="product-card__title">Грецкий орех</h5>
+                        <h5 class="product-card__title" th:text="${product6.name}">Грецкий орех</h5>
                         <div class="product-card__text">
-                            <p class="product-card__text-art">Арт: 0091</p>
-                            <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
+                            <p class="product-card__text-art" th:text="${product6.name}">Арт: 0091</p>
+                            <p class="product-card__text-desc" th:text="${product6.name}">Орех сладкий, классический,
+                                очищенный</p>
                             <div class="product-card__info">
                                 <div class="product-card__mass">
                                     <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
                                     <p class="product-card__mass-text">
                                         Масса:
-                                        <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
+                                        <span class="product-card__mass-text product-card__mass-text--green"
+                                              th:text="${product6.name}">40г.</span>
                                     </p>
                                 </div>
                                 <div class="product-card__package">
                                     <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
                                     <p class="product-card__package-text">
                                         Упаковка
-                                        <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
+                                        <span class="product-card__package-text product-card__package-text--green"
+                                              th:text="${product6.name}">вакуумная</span>
                                     </p>
                                 </div>
                             </div>
@@ -740,7 +807,8 @@
                             <p class="product-card__price-text">Цена:</p>
                             <p class="product-card__price-text product-card__price-text--green">
                                 от
-                                <span class="product-card__price-text product-card__price-text--green-big">21</span>
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product6.name}">21</span>
                                 грн.
                             </p>
                         </div>
@@ -755,13 +823,14 @@
         <div class="manufacturer__wrapper">
             <div class="manufacturer__info">
                 <h2 class="title-left">О производителе</h2>
-                <p class="manufacturer__text">
-                        <span class="manufacturer__text manufacturer__text--green">Сельскохозяйственный обслуживающий кооператив “Орех Причерноморья”
+                <p class="manufacturer__text" th:text="${model.name}">
+                        <span class="manufacturer__text manufacturer__text--green" th:text="${model.name}">Сельскохозяйственный обслуживающий кооператив “Орех Причерноморья”
                         </span>
                     выращивает смешанные сады ореха грецкого с фундуком, а также ореха грецкого с шиповником, на площади
                     более 150 гектаров.
                 </p>
-                <p class="manufacturer__text">Помимо этого кооператив занимается выращиванием посадочного материала,
+                <p class="manufacturer__text" th:text="${model.name}">Помимо этого кооператив занимается выращиванием
+                    посадочного материала,
                     саженцов привитого и непривитого грецкого ореха, фундука и шиповника.</p>
                 <a href="#" class="manufacturer__btn">Подробнее</a>
             </div>
@@ -848,7 +917,8 @@
     <section class="video-wide video-wide--goal">
         <video class="video-wide__video video-wide__video--goal" src="#"></video>
         <div class="video-wide__text-wrap video-wide__text-wrap--goal">
-            <h2 class="video-wide__title video-wide__title--smaller">Наша главная цель - получить максимальную прибыль с
+            <h2 class="video-wide__title video-wide__title--smaller" th:text="${model.name}">Наша главная цель -
+                получить максимальную прибыль с
                 одного гектара</h2>
             <div class="play-btn play-btn--goal">
                 <div class="play-btn__outer">
@@ -856,14 +926,15 @@
                     </div>
                 </div>
             </div>
-            <p class="video-wide__sub-text">Cмотреть видео о производстве</p>
+            <p class="video-wide__sub-text" th:text="${model.name}">Cмотреть видео о производстве</p>
         </div>
     </section>
     <section class="benefits">
         <div class="benefits__wrapper">
             <div class="title-middle">
-                <h3 class="title-middle__title">О пользе продукта</h3>
-                <p class="title-middle__subtitle">Каждый вид ореха содержит свой неповторимый уникальный
+                <h3 class="title-middle__title" th:text="${model.name}">О пользе продукта</h3>
+                <p class="title-middle__subtitle" th:text="${model.name}">Каждый вид ореха содержит свой неповторимый
+                    уникальный
                     баланс витаминов, и микроэлементов </p>
             </div>
             <div class="benefits__products">
@@ -871,12 +942,14 @@
                     <div class="benefits__content">
                         <div class="benefits__content-upper">
                             <img src="img/icons/walnut.svg" alt="">
-                            <p class="benefits__name">Грецкий орех</p>
+                            <p class="benefits__name" th:text="${model.name}">Грецкий орех</p>
                         </div>
                         <div class="benefits__content-bottom">
-                            <p class="benefits__text">Дерево жизни - так часто величают грецкий орех, поскольку с давних
+                            <p class="benefits__text" th:text="${model.name}">Дерево жизни - так часто величают грецкий
+                                орех, поскольку с давних
                                 пор он кормил, восстанавливал силы и лечил человека.</p>
-                            <p class="benefits__text">Даже небольшая горсть грецких орехов - это кладезь витаминов
+                            <p class="benefits__text" th:text="${model.name}">Даже небольшая горсть грецких орехов - это
+                                кладезь витаминов
                                 и хорошая профилактика многих заболеваний</p>
                         </div>
                     </div>
@@ -885,12 +958,14 @@
                     <div class="benefits__content">
                         <div class="benefits__content-upper">
                             <img src="img/icons/funduk.svg" alt="">
-                            <p class="benefits__name">Фундук</p>
+                            <p class="benefits__name" th:text="${model.name}">Фундук</p>
                         </div>
                         <div class="benefits__content-bottom">
-                            <p class="benefits__text">Дерево жизни - так часто величают фундук, поскольку с давних пор
+                            <p class="benefits__text" th:text="${model.name}">Дерево жизни - так часто величают фундук,
+                                поскольку с давних пор
                                 он кормил, восстанавливал силы и лечил человека.</p>
-                            <p class="benefits__text">Даже небольшая горсть фундука - это кладезь витаминов
+                            <p class="benefits__text" th:text="${model.name}">Даже небольшая горсть фундука - это
+                                кладезь витаминов
                                 и хорошая профилактика многих заболеваний</p>
                         </div>
                     </div>
@@ -899,12 +974,14 @@
                     <div class="benefits__content">
                         <div class="benefits__content-upper">
                             <img src="img/icons/shipovnik.svg" alt="">
-                            <p class="benefits__name">Шиповник</p>
+                            <p class="benefits__name" th:text="${model.name}">Шиповник</p>
                         </div>
                         <div class="benefits__content-bottom">
-                            <p class="benefits__text">Дерево жизни - так часто величают шиповник, поскольку с давних пор
+                            <p class="benefits__text" th:text="${model.name}">Дерево жизни - так часто величают
+                                шиповник, поскольку с давних пор
                                 он кормил, восстанавливал силы и лечил человека.</p>
-                            <p class="benefits__text">Даже небольшая горсть шиповника - это кладезь витаминов
+                            <p class="benefits__text" th:text="${model.name}">Даже небольшая горсть шиповника - это
+                                кладезь витаминов
                                 и хорошая профилактика многих заболеваний</p>
                         </div>
                     </div>
@@ -915,26 +992,31 @@
     <div class="eco">
         <div class="eco__wrapper">
             <img class="eco__icon" src="img/icons/eco.svg" alt="">
-            <h2 class="eco__title">Эко продукция</h2>
-            <p class="eco__text">Выращиваем каждое деревцо с любовью, на экологически чистой земле, без использования
+            <h2 class="eco__title" th:text="${model.name}">Эко продукция</h2>
+            <p class="eco__text" th:text="${model.name}">Выращиваем каждое деревцо с любовью, на экологически чистой
+                земле, без использования
                 пестицидов и химии</p>
         </div>
     </div>
     <section class="news-block">
         <div class="news-block__wrapper">
             <div class="swiper news-block__slider">
-                <h3 class="title-left">Новости</h3>
-                <p class="title-left title-left--subtitle">Свежие новости и полезная информация</p>
+                <h3 class="title-left" th:text="${model.name}">Новости</h3>
+                <p class="title-left title-left--subtitle" th:text="${model.name}">Свежие новости и полезная
+                    информация</p>
                 <div class="swiper-wrapper news-block__slider-wrapper">
                     <div class="swiper-slide news-block__slider-item">
                         <div class="news-block__item-wrapper">
                             <div class="news-block__item-upper">
-                                <img class="news-block__item-visual" src="img/main/pavel-news-block.png" alt="">
+                                <img class="news-block__item-visual" th:src="${model.url}"
+                                     src="img/main/pavel-news-block.png" alt="">
                             </div>
                             <div class="news-block__item-bottom">
-                                <p class="news-block__item-date">12.04.2019</p>
-                                <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел Тулба</h4>
-                                <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
+                                <p class="news-block__item-date" th:text="${model.name}">12.04.2019</p>
+                                <h4 class="news-block__item-title" th:text="${titleText}">Центр поддержки экспорта, в
+                                    студии Павел Тулба</h4>
+                                <p class="news-block__item-text" th:text="${model.name}">Как уже упоминал Павел Тулба,
+                                    шиповник цветёт. Эта
                                     культура
                                     очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
                                     отличную...
@@ -965,9 +1047,11 @@
                                 </div>
                             </div>
                             <div class="news-block__item-bottom">
-                                <p class="news-block__item-date">12.04.2019</p>
-                                <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел Тулба</h4>
-                                <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
+                                <p class="news-block__item-date" th:text="${model.name}">12.04.2019</p>
+                                <h4 class="news-block__item-title" th:text="${model.name}">Центр поддержки экспорта, в
+                                    студии Павел Тулба</h4>
+                                <p class="news-block__item-text" th:text="${model.name}">Как уже упоминал Павел Тулба,
+                                    шиповник цветёт. Эта
                                     культура
                                     очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
                                     отличную...
@@ -989,9 +1073,11 @@
                                 <img class="news-block__item-visual" src="img/main/nut-crate-news-block.png" alt="">
                             </div>
                             <div class="news-block__item-bottom">
-                                <p class="news-block__item-date">12.04.2019</p>
-                                <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел Тулба</h4>
-                                <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
+                                <p class="news-block__item-date" th:text="${model.name}">12.04.2019</p>
+                                <h4 class="news-block__item-title" th:text="${model.name}">Центр поддержки экспорта, в
+                                    студии Павел Тулба</h4>
+                                <p class="news-block__item-text" th:text="${model.name}">Как уже упоминал Павел Тулба,
+                                    шиповник цветёт. Эта
                                     культура
                                     очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
                                     отличную...
@@ -1013,9 +1099,11 @@
                                 <img class="news-block__item-visual" src="img/main/pavel-news-block.png" alt="">
                             </div>
                             <div class="news-block__item-bottom">
-                                <p class="news-block__item-date">12.04.2019</p>
-                                <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел Тулба</h4>
-                                <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
+                                <p class="news-block__item-date" th:text="${model.name}">12.04.2019</p>
+                                <h4 class="news-block__item-title" th:text="${model.name}">Центр поддержки экспорта, в
+                                    студии Павел Тулба</h4>
+                                <p class="news-block__item-text" th:text="${model.name}">Как уже упоминал Павел Тулба,
+                                    шиповник цветёт. Эта
                                     культура
                                     очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
                                     отличную...
@@ -1050,8 +1138,10 @@
                 <div class="footer__phone-contacts">
                     <img class="footer__phone-icon" src="img/icons/phone.svg" alt="">
                     <div class="footer__phone-numbers">
-                        <a class="footer__number" href="#">+38 (095) 711 11 11</a>
-                        <a class="footer__number" href="#">+38 (095) 711 11 11</a>
+                        <a class="footer__number" th:href="${model.name}" th:text="${model.name}">+38 (095) 711 11
+                            11</a>
+                        <a class="footer__number" th:href="${model.name}" th:text="${model.name}">+38 (095) 711 11
+                            11</a>
                     </div>
                     <div class="messengers">
                         <a class="messengers__link" href="#">
