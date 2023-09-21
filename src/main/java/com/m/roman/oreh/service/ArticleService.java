@@ -1,6 +1,7 @@
 package com.m.roman.oreh.service;
 
-import com.roman.portier.entity.Article;
+
+import com.m.roman.oreh.entity.Article;
 
 public interface ArticleService {
 

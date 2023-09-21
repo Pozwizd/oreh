@@ -1,8 +1,9 @@
 package com.m.roman.oreh.service.serviceImp;
 
-import com.roman.portier.entity.Article;
-import com.roman.portier.repository.ArticleRepository;
-import com.roman.portier.service.ArticleService;
+
+import com.m.roman.oreh.entity.Article;
+import com.m.roman.oreh.repository.ArticleRepository;
+import com.m.roman.oreh.service.ArticleService;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,10 +1,6 @@
 package com.m.roman.oreh.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
-
-import java.util.Objects;
 
 
 @Entity
@@ -22,6 +18,7 @@ public class News {
 
     private String text;
 
+    @Column(name = "text_line_2")
     private String textLine2;
 
     public News() {

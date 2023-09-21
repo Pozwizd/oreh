@@ -3,6 +3,9 @@ package com.m.roman.oreh.entity;
 
 import jakarta.persistence.*;
 
+/**
+ *
+ */
 @Entity
 @Table(name = "title_text")
 public class TitleText {

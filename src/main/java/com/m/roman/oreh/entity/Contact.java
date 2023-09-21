@@ -3,8 +3,6 @@ package com.m.roman.oreh.entity;
 
 import jakarta.persistence.*;
 
-import javax.persistence.GenerationType;
-
 @Entity
 @Table(name = "contact")
 public class Contact {
