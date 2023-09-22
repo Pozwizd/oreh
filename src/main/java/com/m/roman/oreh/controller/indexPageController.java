@@ -1,7 +1,6 @@
 package com.m.roman.oreh.controller;
 
 
-import com.m.roman.oreh.entity.*;
 import com.m.roman.oreh.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,28 +29,21 @@ public class indexPageController {
     public String index(Model model) {
 
         for (int i = 1; i <= 5; i++) {
-            TitleText titleText = titleTextService.getTitleText(i);
-            model.addAttribute("titleText" + i, titleText);
+            model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
         }
 
         for (int i = 1; i <= 6; i++) {
-            Product product = productService.getProduct(i);
-            model.addAttribute("product" + i, product);
+            model.addAttribute("product" + i, productService.getProduct(i));
+        }
+
+        model.addAttribute("contact", contactService.getContact(1));
+
+        for (int i = 1; i <= 5; i++) {
+            model.addAttribute("article" + i, articleService.getArticle(i));
         }
 
         for (int i = 1; i <= 4; i++) {
-            Contact contact = contactService.getContact(i);
-            model.addAttribute("contact" + i, contact);
-        }
-
-        for (int i = 1; i <= 4; i++) {
-            Article article = articleService.getArticle(i);
-            model.addAttribute("article" + i, article);
-        }
-
-        for (int i = 1; i <= 4; i++) {
-            News news = newsService.getNews(i);
-            model.addAttribute("news" + i, news);
+            model.addAttribute("news" + i, newsService.getNews(i));
         }
 
         return "index";

@@ -3,9 +3,11 @@ package com.m.roman.oreh.service.serviceImp;
 import com.m.roman.oreh.entity.Product;
 import com.m.roman.oreh.repository.ProductRepository;
 import com.m.roman.oreh.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class ProductServiceImp implements ProductService {
 
     private final ProductRepository productRepository;

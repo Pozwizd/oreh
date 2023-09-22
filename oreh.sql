@@ -17,6 +17,50 @@ CREATE TABLE if not exists contact
     pointer_map      varchar(100)
 );
 
+CREATE TABLE if not exists title_text
+(
+    id    INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100),
+    text  VARCHAR(255),
+    url   VARCHAR(255)
+);
+
+CREATE TABLE if not exists article
+(
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    title       VARCHAR(100),
+    subtitle    VARCHAR(100),
+    text        text,
+    text_line_2 text,
+    text_line_3 text
+);
+
+CREATE TABLE if not exists news
+(
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    url         VARCHAR(255),
+    date        DATE,
+    title       VARCHAR(100),
+    text        VARCHAR(255),
+    text_line_2 VARCHAR(255)
+);
+
+CREATE TABLE product
+(
+    id             INT PRIMARY KEY,
+    image_url      VARCHAR(255),
+    image_url_2    VARCHAR(255),
+    image_url_3    VARCHAR(255),
+    special_offer  VARCHAR(255),
+    title          VARCHAR(255),
+    article_number VARCHAR(255),
+    description    VARCHAR(255),
+    weight         VARCHAR(255),
+    package_type   VARCHAR(255),
+    price          DECIMAL(10, 2),
+    original_price DECIMAL(10, 2)
+);
+
 INSERT INTO contact (phone_number1,
                      phone_number2,
                      email,
@@ -28,6 +72,7 @@ INSERT INTO contact (phone_number1,
                      production_line2,
                      map_image,
                      pointer_map)
+
 VALUES ('+38 (095) 711 11 11',
         '+38 (095) 722 22 22',
         'nuts@nbsc.com.ua',
@@ -39,15 +84,7 @@ VALUES ('+38 (095) 711 11 11',
         'с. Яськи, ул. Центральная, 232',
         'img/main/map.png',
         'img/icons/pointer.svg');
-# ---------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE TABLE if not exists title_text
-(
-    id    INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100),
-    text  VARCHAR(255),
-    url   VARCHAR(255)
-);
 
 INSERT title_text (title, text)
 VALUES ('Орех Причерноморья',
@@ -62,16 +99,6 @@ VALUES ('Орех Причерноморья',
        ('Новости',
         'Свежие новости и полезная информация');
 
-# ---------------------------------------------------------------------------------------------------------------------------------------
-
-CREATE TABLE if not exists article
-(
-    id          INT AUTO_INCREMENT PRIMARY KEY,
-    title       VARCHAR(100),
-    text        text,
-    text_line_2 text,
-    text_line_3 text
-);
 
 INSERT into article (title, text, text_line_2, text_line_3)
 VALUES ('О производителе',
@@ -91,18 +118,7 @@ VALUES ('О производителе',
         'Дерево жизни - так часто величают фундук, поскольку с давних пор он кормил, восстанавливал силы и лечил человека.',
         'Даже небольшая горсть фундука - это кладезь витаминов и хорошая профилактика многих заболеваний',
         '');
-# ---------------------------------------------------------------------------------------------------------------------------------------
 
-
-CREATE TABLE if not exists news
-(
-    id          INT AUTO_INCREMENT PRIMARY KEY,
-    url         VARCHAR(255),
-    date        DATE,
-    title       VARCHAR(100),
-    text        VARCHAR(255),
-    text_line_2 VARCHAR(255)
-);
 
 insert into news (url, date, title, text, text_line_2)
 VALUES ('img/main/pavel-news-block.png',
@@ -130,24 +146,6 @@ VALUES ('img/main/pavel-news-block.png',
         культура очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и отличную...',
         '');
 
-# ---------------------------------------------------------------------------------------------------------------------------------------
-
--- Создание таблицы product
-CREATE TABLE product
-(
-    id             INT PRIMARY KEY,
-    image_url      VARCHAR(255),
-    image_url_2    VARCHAR(255),
-    image_url_3    VARCHAR(255),
-    special_offer  VARCHAR(255),
-    title          VARCHAR(255),
-    article_number VARCHAR(255),
-    description    VARCHAR(255),
-    weight         VARCHAR(255),
-    package_type   VARCHAR(255),
-    price          DECIMAL(10, 2),
-    original_price DECIMAL(10, 2)
-);
 
 
 INSERT INTO product (id,
@@ -234,3 +232,12 @@ INSERT INTO product (id,
      'вакуумная',
      21.00,
      NULL);
+
+# --------------------------------
+
+insert into article (title, subtitle, text, text_line_2, text_line_3)
+VALUES ('Экологически чистый грецкий орех',
+        'Оптом, и в розницу',
+        'Сельскохозяйственный обслуживающий кооператив “Орех Причерноморья” выращивает смешанные сады ореха грецкого с фундуком, а также ореха грецкого с шиповником, на площади более 150 гектаров.',
+        'Помимо этого кооператив занимается выращиванием посадочного материала, саженцов привитого и непривитого грецкого ореха, фундука и шиповника.',
+        'Орех Причерноморья – это первый и единственный в Украине сад по совместному выращиванию фундука и грецкого ореха');

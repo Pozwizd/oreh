@@ -1,6 +1,8 @@
 package com.m.roman.oreh.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -15,13 +17,14 @@ public class MyLoggingAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(MyLoggingAspect.class);
 
-    @Around("execution(* com.roman.portier.service.serviceImp.*.*(..))")
-    public Object aroundAllRepositoryMethodsAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        MethodSignature methodSignature = (MethodSignature) proceedingJoinPoint.getSignature();
+    @AfterReturning("execution(* com.m.roman.oreh.service.serviceImp.*.*(..))")
+    public void afterRepositoryMethodsAdvice(JoinPoint joinPoint) {
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
         String methodName = methodSignature.getName();
-        logger.info("Begin of " + methodName);
-        Object targetMethodResult = proceedingJoinPoint.proceed();
-        logger.info("End of " + methodName);
-        return targetMethodResult;
+
+        Class<?> targetClass = joinPoint.getTarget().getClass();
+        String serviceName = targetClass.getSimpleName();
+
+        logger.info(serviceName + "." + methodName + " was used");
     }
 }
