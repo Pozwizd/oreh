@@ -13,11 +13,11 @@
     <title>Орехи Причероморья</title>
 </head>
 <body>
+<!--    th:utext="${model.name}"-->
+<!--    th:text="${model.name}"-->
+<!--    th:src="${model.url}"-->
+<!--    th:alt="${model.name}"-->
 <header class="header">
-    <!--    th:utext="${model.name}"-->
-    <!--    th:text="${model.name}"-->
-    <!--    th:src="${model.url}"-->
-    <!--    th:alt="${model.name}"-->
     <div class="header__top">
         <div class="header__top-wrapper">
             <div class="social-links">
@@ -98,21 +98,21 @@
             </div>
             <div class="header__contacts">
                 <div class="messengers">
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkViber}" target="_blank">
                         <img class="messengers__icon" src="img/icons/viber.svg" alt="">
                     </a>
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkTelegram}" target="_blank">
                         <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
                     </a>
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkWhatsapp}" target="_blank">
                         <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
                     </a>
                 </div>
                 <div class="header__phone-numbers">
-                    <a class="header__number" href="#">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber1}" th:text="${contact.phoneNumber1}">
                         <span class="header__number-green">+38 (044)</span> 750-50-11
                     </a>
-                    <a class="header__number" href="#">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber2}" th:text="${contact.phoneNumber2}">
                         <span class="header__number-green">+38 (097)</span> 775-50-51
                     </a>
                 </div>
@@ -1149,13 +1149,13 @@
                         <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber2}" th:text="${contact.phoneNumber2}">+38 (095) 711 11 11</a>
                     </div>
                     <div class="messengers">
-                        <a class="messengers__link" href="#">
+                        <a class="messengers__link" th:href="${contact.linkViber}" target="_blank">
                             <img class="messengers__icon" src="img/icons/viber.svg" alt="">
                         </a>
-                        <a class="messengers__link" href="#">
+                        <a class="messengers__link" th:href="${contact.linkTelegram}" target="_blank">
                             <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
                         </a>
-                        <a class="messengers__link" href="#">
+                        <a class="messengers__link" th:href="${contact.linkWhatsapp}" target="_blank">
                             <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
                         </a>
                     </div>
@@ -1168,16 +1168,14 @@
                     <img class="footer__address-icon" src="img/icons/house.svg" alt="">
                     <div class="footer__address-info">
                         <h3 class="footer__title" th:text="${contact.addressTitle}">Офис и отдел продаж</h3>
-                        <p class="footer__address-text" th:text="${contact.addressLine1}">Украина, г. Одесса, </p>
-                        <p class="footer__address-text" th:text="${contact.addressLine2}">ул. Космонавтов, 32</p>
+                        <p class="footer__address-text" th:utext="${contact.addressLine}">Украина, г. Одесса, </p>
                     </div>
                 </div>
                 <div class="footer__production">
                     <img class="footer__production-icon" src="img/icons/tree.svg" alt="">
                     <div class="footer__production-info">
                         <h3 class="footer__title" th:text="${contact.productionTitle}">Производство</h3>
-                        <p class="footer__production-text" th:text="${contact.productionLine1}">Украина, Одесская обл,</p>
-                        <p class="footer__production-text" th:text="${contact.productionLine2}"> с. Яськи, ул. Центральная, 232</p>
+                        <p class="footer__production-text" th:utext="${contact.productionLine}">Украина, Одесская обл,</p>
                     </div>
                 </div>
             </div>

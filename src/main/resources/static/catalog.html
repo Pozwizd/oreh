@@ -15,6 +15,10 @@
 </head>
 
 <body>
+<!--    th:utext="${model.name}"-->
+<!--    th:text="${model.name}"-->
+<!--    th:src="${model.url}"-->
+<!--    th:alt="${model.name}"-->
     <header class="header">
     <div class="header__top">
         <div class="header__top-wrapper">
@@ -349,450 +353,517 @@
                     </div>
                 </div>
                 <div class="product-block__card-grid">
-    <div class="product-card">
-        <div class="swiper product-card__slider">
-            <div class="swiper-wrapper product-card__slider-wrapper">
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/KOND-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                    <div class="product-card">
+                        <div class="swiper product-card__slider">
+                            <div class="swiper-wrapper product-card__slider-wrapper">
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product1.imageUrl != null ? product1.imageUrl : 'img/main/KOND-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product1.imageUrl2 != null ? product1.imageUrl2 : 'img/main/KOND-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product1.imageUrl3 != null ? product1.imageUrl3 : 'img/main/KOND-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev product-card__slider-prev"></div>
+                            <div class="swiper-button-next product-card__slider-next"></div>
+                        </div>
+                        <div class="product-card__slider-flag">
+                            <p class="product-card__slider-special" th:text="${product1.specialOffer}">АКЦИЯ</p>
+                        </div>
+                        <div class="product-card__body">
+                            <h5 class="product-card__title" th:text="${product1.title}">Грецкий орех</h5>
+                            <div class="product-card__text">
+                                <p class="product-card__text-art" th:text="${product1.articleNumber}">Арт: 0091</p>
+                                <p class="product-card__text-desc" th:text="${product1.description}">Орех сладкий,
+                                    классический, очищенный</p>
+                                <div class="product-card__info">
+                                    <div class="product-card__mass">
+                                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
+                                        <p class="product-card__mass-text">
+                                            Масса:
+                                            <span class="product-card__mass-text product-card__mass-text--green"
+                                                  th:text="${product1.weight}">40г.</span>
+                                        </p>
+                                    </div>
+                                    <div class="product-card__package">
+                                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
+                                        <p class="product-card__package-text">
+                                            Упаковка
+                                            <span class="product-card__package-text product-card__package-text--green"
+                                                  th:text="${product1.packageType}">вакуумная</span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/KOND-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                        <div class="product-card__bottom">
+                            <div class="product-card__price">
+                                <p class="product-card__price-text">Цена:</p>
+                                <p class="product-card__price-text product-card__price-text--green">
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product1.price}">19</span>
+                                    грн.
+                                </p>
+                                <p class="product-card__price-text product-card__price-text--gray">
+                                <span class="product-card__price-text product-card__price-text--gray-big"
+                                      th:text="${product1.originalPrice}">21</span>
+                                    грн
+                                </p>
                             </div>
+                            <a class="product-card__btn" href="product-page.html">Купить</a>
                         </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/KOND-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-button-prev product-card__slider-prev"></div>
-            <div class="swiper-button-next product-card__slider-next"></div>
-        </div>
-        <div class="product-card__slider-flag">
-            <p class="product-card__slider-special">АКЦИЯ</p>
-        </div>
-        <div class="product-card__body">
-            <h5 class="product-card__title">Грецкий орех</h5>
-            <div class="product-card__text">
-                <p class="product-card__text-art">Арт: 0091</p>
-                <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
-                <div class="product-card__info">
-                    <div class="product-card__mass">
-                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
-                        <p class="product-card__mass-text">
-                            Масса:
-                            <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
-                        </p>
                     </div>
-                    <div class="product-card__package">
-                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
-                        <p class="product-card__package-text">
-                            Упаковка
-                            <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
-                        </p>
+                    <div class="product-card">
+                        <div class="swiper product-card__slider">
+                            <div class="swiper-wrapper product-card__slider-wrapper">
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product2.imageUrl != null ? product2.imageUrl : 'img/main/SOLODKY-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product2.imageUrl2 != null ? product2.imageUrl2 : 'img/main/SOLODKY-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product2.imageUrl3 != null ? product1.imageUrl3 : 'img/main/SOLODKY-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev product-card__slider-prev"></div>
+                            <div class="swiper-button-next product-card__slider-next"></div>
+                        </div>
+                        <div class="product-card__slider-flag product-card__slider-flag--new">
+                            <p class="product-card__slider-special" th:text="${product2.specialOffer}">НОВИНКА</p>
+                        </div>
+                        <div class="product-card__body">
+                            <h5 class="product-card__title" th:text="${product2.title}">Грецкий орех</h5>
+                            <div class="product-card__text">
+                                <p class="product-card__text-art" th:text="${product2.articleNumber}">Арт: 0091</p>
+                                <p class="product-card__text-desc" th:text="${product2.description}">Орех сладкий,
+                                    классический,
+                                    очищенный</p>
+                                <div class="product-card__info">
+                                    <div class="product-card__mass">
+                                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
+                                        <p class="product-card__mass-text">
+                                            Масса:
+                                            <span class="product-card__mass-text product-card__mass-text--green"
+                                                  th:text="${product2.weight}">40г.</span>
+                                        </p>
+                                    </div>
+                                    <div class="product-card__package">
+                                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
+                                        <p class="product-card__package-text">
+                                            Упаковка
+                                            <span class="product-card__package-text product-card__package-text--green"
+                                                  th:text="${product2.packageType}">вакуумная</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__bottom">
+                            <div class="product-card__price">
+                                <p class="product-card__price-text">Цена:</p>
+                                <p class="product-card__price-text product-card__price-text--green">
+                                    от
+                                    <span class="product-card__price-text product-card__price-text--green-big"
+                                          th:text="${product2.price}">21</span>
+                                    грн.
+                                </p>
+                            </div>
+                            <a class="product-card__btn" href="product-page.html">Купить</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card__bottom">
-            <div class="product-card__price">
-                <p class="product-card__price-text">Цена:</p>
-                <p class="product-card__price-text product-card__price-text--green">
-                    <span class="product-card__price-text product-card__price-text--green-big">19</span>
-                    грн.
-                </p>
-                <p class="product-card__price-text product-card__price-text--gray">
-                    <span class="product-card__price-text product-card__price-text--gray-big">21</span>
-                    грн
-                </p>
-            </div>
-            <a class="product-card__btn" href="product-page.html">Купить</a>
-        </div>
-    </div>
-    <div class="product-card">
-        <div class="swiper product-card__slider">
-            <div class="swiper-wrapper product-card__slider-wrapper">
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/SOLODKY-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                    <div class="product-card">
+                        <div class="swiper product-card__slider">
+                            <div class="swiper-wrapper product-card__slider-wrapper">
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product3.imageUrl != null ? product3.imageUrl : 'img/main/SOLONY-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product3.imageUrl2 != null ? product3.imageUrl2 : 'img/main/SOLONY-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product3.imageUrl3 != null ? product3.imageUrl3 : 'img/main/SOLONY-40g.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev product-card__slider-prev"></div>
+                            <div class="swiper-button-next product-card__slider-next"></div>
+                        </div>
+                        <div class="product-card__body">
+                            <h5 class="product-card__title" th:text="${product3.title}">Грецкий орех</h5>
+                            <div class="product-card__text">
+                                <p class="product-card__text-art" th:text="${product3.articleNumber}">Арт: 0091</p>
+                                <p class="product-card__text-desc" th:text="${product3.description}">Орех сладкий,
+                                    классический,
+                                    очищенный</p>
+                                <div class="product-card__info">
+                                    <div class="product-card__mass">
+                                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
+                                        <p class="product-card__mass-text">
+                                            Масса:
+                                            <span class="product-card__mass-text product-card__mass-text--green"
+                                                  th:text="${product3.weight}">40г.</span>
+                                        </p>
+                                    </div>
+                                    <div class="product-card__package">
+                                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
+                                        <p class="product-card__package-text">
+                                            Упаковка
+                                            <span class="product-card__package-text product-card__package-text--green"
+                                                  th:text="${product3.packageType}">вакуумная</span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/SOLODKY-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                        <div class="product-card__bottom">
+                            <div class="product-card__price">
+                                <p class="product-card__price-text">Цена:</p>
+                                <p class="product-card__price-text product-card__price-text--green">
+                                    от
+                                    <span class="product-card__price-text product-card__price-text--green-big"
+                                          th:text="${product3.price}">21</span>
+                                    грн.
+                                </p>
                             </div>
+                            <a class="product-card__btn" href="product-page.html">Купить</a>
                         </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/SOLODKY-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-button-prev product-card__slider-prev"></div>
-            <div class="swiper-button-next product-card__slider-next"></div>
-        </div>
-        <div class="product-card__slider-flag product-card__slider-flag--new">
-            <p class="product-card__slider-special">НОВИНКА</p>
-        </div>
-        <div class="product-card__body">
-            <h5 class="product-card__title">Грецкий орех</h5>
-            <div class="product-card__text">
-                <p class="product-card__text-art">Арт: 0091</p>
-                <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
-                <div class="product-card__info">
-                    <div class="product-card__mass">
-                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
-                        <p class="product-card__mass-text">
-                            Масса:
-                            <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
-                        </p>
                     </div>
-                    <div class="product-card__package">
-                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
-                        <p class="product-card__package-text">
-                            Упаковка
-                            <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
-                        </p>
+                    <div class="product-card">
+                        <div class="swiper product-card__slider">
+                            <div class="swiper-wrapper product-card__slider-wrapper">
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product4.imageUrl != null ? product4.imageUrl : 'img/main/gorih1.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product4.imageUrl2 != null ? product4.imageUrl2 : 'img/main/gorih1.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product4.imageUrl3 != null ? product4.imageUrl3 : 'img/main/gorih1.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev product-card__slider-prev"></div>
+                            <div class="swiper-button-next product-card__slider-next"></div>
+                        </div>
+                        <div class="product-card__body">
+                            <h5 class="product-card__title" th:text="${product4.title}">Грецкий орех</h5>
+                            <div class="product-card__text">
+                                <p class="product-card__text-art" th:text="${product4.articleNumber}">Арт: 0091</p>
+                                <p class="product-card__text-desc" th:text="${product4.description}">Орех сладкий,
+                                    классический,
+                                    очищенный</p>
+                                <div class="product-card__info">
+                                    <div class="product-card__mass">
+                                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
+                                        <p class="product-card__mass-text">
+                                            Масса:
+                                            <span class="product-card__mass-text product-card__mass-text--green"
+                                                  th:text="${product4.weight}">40г.</span>
+                                        </p>
+                                    </div>
+                                    <div class="product-card__package">
+                                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
+                                        <p class="product-card__package-text">
+                                            Упаковка
+                                            <span class="product-card__package-text product-card__package-text--green"
+                                                  th:text="${product4.packageType}">вакуумная</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__bottom">
+                            <div class="product-card__price">
+                                <p class="product-card__price-text">Цена:</p>
+                                <p class="product-card__price-text product-card__price-text--green">
+                                <span class="product-card__price-text product-card__price-text--green-big"
+                                      th:text="${product4.price}">19</span>
+                                    грн.
+                                </p>
+                                <p class="product-card__price-text product-card__price-text--gray">
+                                <span class="product-card__price-text product-card__price-text--gray-big"
+                                      th:text="${product4.originalPrice}">21</span>
+                                    грн
+                                </p>
+                            </div>
+                            <a class="product-card__btn" href="product-page.html">Купить</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card__bottom">
-            <div class="product-card__price">
-                <p class="product-card__price-text">Цена:</p>
-                <p class="product-card__price-text product-card__price-text--green">
-                    от
-                    <span class="product-card__price-text product-card__price-text--green-big">21</span>
-                    грн.
-                </p>
-            </div>
-            <a class="product-card__btn" href="product-page.html">Купить</a>
-        </div>
-    </div>
-    <div class="product-card">
-        <div class="swiper product-card__slider">
-            <div class="swiper-wrapper product-card__slider-wrapper">
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/SOLONY-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                    <div class="product-card">
+                        <div class="swiper product-card__slider">
+                            <div class="swiper-wrapper product-card__slider-wrapper">
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product5.imageUrl != null ? product5.imageUrl : 'img/main/gorih2.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product5.imageUrl2 != null ? product5.imageUrl2 : 'img/main/gorih2.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product5.imageUrl3 != null ? product5.imageUrl3 : 'img/main/gorih2.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev product-card__slider-prev"></div>
+                            <div class="swiper-button-next product-card__slider-next"></div>
+                        </div>
+                        <div class="product-card__body">
+                            <h5 class="product-card__title" th:text="${product5.title}">Грецкий орех</h5>
+                            <div class="product-card__text">
+                                <p class="product-card__text-art" th:text="${product5.articleNumber}">Арт: 0091</p>
+                                <p class="product-card__text-desc" th:text="${product5.description}">Орех сладкий,
+                                    классический,
+                                    очищенный</p>
+                                <div class="product-card__info">
+                                    <div class="product-card__mass">
+                                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
+                                        <p class="product-card__mass-text">
+                                            Масса:
+                                            <span class="product-card__mass-text product-card__mass-text--green"
+                                                  th:text="${product5.weight}">40г.</span>
+                                        </p>
+                                    </div>
+                                    <div class="product-card__package">
+                                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
+                                        <p class="product-card__package-text">
+                                            Упаковка
+                                            <span class="product-card__package-text product-card__package-text--green"
+                                                  th:text="${product5.packageType}">вакуумная</span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/SOLONY-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                        <div class="product-card__bottom">
+                            <div class="product-card__price">
+                                <p class="product-card__price-text">Цена:</p>
+                                <p class="product-card__price-text product-card__price-text--green">
+                                    от
+                                    <span class="product-card__price-text product-card__price-text--green-big"
+                                          th:text="${product5.price}">21</span>
+                                    грн.
+                                </p>
                             </div>
+                            <a class="product-card__btn" href="product-page.html">Купить</a>
                         </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/SOLONY-40g.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-button-prev product-card__slider-prev"></div>
-            <div class="swiper-button-next product-card__slider-next"></div>
-        </div>
-        <div class="product-card__body">
-            <h5 class="product-card__title">Грецкий орех</h5>
-            <div class="product-card__text">
-                <p class="product-card__text-art">Арт: 0091</p>
-                <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
-                <div class="product-card__info">
-                    <div class="product-card__mass">
-                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
-                        <p class="product-card__mass-text">
-                            Масса:
-                            <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
-                        </p>
                     </div>
-                    <div class="product-card__package">
-                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
-                        <p class="product-card__package-text">
-                            Упаковка
-                            <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
-                        </p>
+                    <div class="product-card">
+                        <div class="swiper product-card__slider">
+                            <div class="swiper-wrapper product-card__slider-wrapper">
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product6.imageUrl != null ? product6.imageUrl : 'img/main/gorih3.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product6.imageUrl2 != null ? product6.imageUrl2 : 'img/main/gorih3.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-card__slider-item">
+                                    <img class="product-card__slider-img"
+                                         th:src="${product6.imageUrl3 != null ? product6.imageUrl3 : 'img/main/gorih3.png'}"
+                                         alt="">
+                                    <a class="product-card__slider-lupa" href="#">
+                                        <div class="product-card__lupa-outer">
+                                            <div class="product-card__lupa-inner">
+                                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev product-card__slider-prev"></div>
+                            <div class="swiper-button-next product-card__slider-next"></div>
+                        </div>
+                        <div class="product-card__body">
+                            <h5 class="product-card__title" th:text="${product6.title}">Грецкий орех</h5>
+                            <div class="product-card__text">
+                                <p class="product-card__text-art" th:text="${product6.articleNumber}">Арт: 0091</p>
+                                <p class="product-card__text-desc" th:text="${product6.description}">Орех сладкий,
+                                    классический,
+                                    очищенный</p>
+                                <div class="product-card__info">
+                                    <div class="product-card__mass">
+                                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
+                                        <p class="product-card__mass-text">
+                                            Масса:
+                                            <span class="product-card__mass-text product-card__mass-text--green"
+                                                  th:text="${product6.weight}">40г.</span>
+                                        </p>
+                                    </div>
+                                    <div class="product-card__package">
+                                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
+                                        <p class="product-card__package-text">
+                                            Упаковка
+                                            <span class="product-card__package-text product-card__package-text--green"
+                                                  th:text="${product6.packageType}">вакуумная</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card__bottom">
+                            <div class="product-card__price">
+                                <p class="product-card__price-text">Цена:</p>
+                                <p class="product-card__price-text product-card__price-text--green">
+                                    от
+                                    <span class="product-card__price-text product-card__price-text--green-big"
+                                          th:text="${product6.price}">21</span>
+                                    грн.
+                                </p>
+                            </div>
+                            <a class="product-card__btn" href="product-page.html">Купить</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card__bottom">
-            <div class="product-card__price">
-                <p class="product-card__price-text">Цена:</p>
-                <p class="product-card__price-text product-card__price-text--green">
-                    от
-                    <span class="product-card__price-text product-card__price-text--green-big">21</span>
-                    грн.
-                </p>
-            </div>
-            <a class="product-card__btn" href="product-page.html">Купить</a>
-        </div>
-    </div>
-    <div class="product-card">
-        <div class="swiper product-card__slider">
-            <div class="swiper-wrapper product-card__slider-wrapper">
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih1.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih1.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih1.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-button-prev product-card__slider-prev"></div>
-            <div class="swiper-button-next product-card__slider-next"></div>
-        </div>
-        <div class="product-card__body">
-            <h5 class="product-card__title">Грецкий орех</h5>
-            <div class="product-card__text">
-                <p class="product-card__text-art">Арт: 0091</p>
-                <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
-                <div class="product-card__info">
-                    <div class="product-card__mass">
-                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
-                        <p class="product-card__mass-text">
-                            Масса:
-                            <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
-                        </p>
-                    </div>
-                    <div class="product-card__package">
-                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
-                        <p class="product-card__package-text">
-                            Упаковка
-                            <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card__bottom">
-            <div class="product-card__price">
-                <p class="product-card__price-text">Цена:</p>
-                <p class="product-card__price-text product-card__price-text--green">
-                    <span class="product-card__price-text product-card__price-text--green-big">19</span>
-                    грн.
-                </p>
-                <p class="product-card__price-text product-card__price-text--gray">
-                    <span class="product-card__price-text product-card__price-text--gray-big">21</span>
-                    грн
-                </p>
-            </div>
-            <a class="product-card__btn" href="product-page.html">Купить</a>
-        </div>
-    </div>
-    <div class="product-card">
-        <div class="swiper product-card__slider">
-            <div class="swiper-wrapper product-card__slider-wrapper">
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih2.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih2.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih2.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-button-prev product-card__slider-prev"></div>
-            <div class="swiper-button-next product-card__slider-next"></div>
-        </div>
-        <div class="product-card__body">
-            <h5 class="product-card__title">Грецкий орех</h5>
-            <div class="product-card__text">
-                <p class="product-card__text-art">Арт: 0091</p>
-                <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
-                <div class="product-card__info">
-                    <div class="product-card__mass">
-                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
-                        <p class="product-card__mass-text">
-                            Масса:
-                            <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
-                        </p>
-                    </div>
-                    <div class="product-card__package">
-                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
-                        <p class="product-card__package-text">
-                            Упаковка
-                            <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card__bottom">
-            <div class="product-card__price">
-                <p class="product-card__price-text">Цена:</p>
-                <p class="product-card__price-text product-card__price-text--green">
-                    от
-                    <span class="product-card__price-text product-card__price-text--green-big">21</span>
-                    грн.
-                </p>
-            </div>
-            <a class="product-card__btn" href="product-page.html">Купить</a>
-        </div>
-    </div>
-    <div class="product-card">
-        <div class="swiper product-card__slider">
-            <div class="swiper-wrapper product-card__slider-wrapper">
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih3.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih3.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="swiper-slide product-card__slider-item">
-                    <img class="product-card__slider-img" src="img/main/gorih3.png" alt="">
-                    <a class="product-card__slider-lupa" href="#">
-                        <div class="product-card__lupa-outer">
-                            <div class="product-card__lupa-inner">
-                                <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="swiper-button-prev product-card__slider-prev"></div>
-            <div class="swiper-button-next product-card__slider-next"></div>
-        </div>
-        <div class="product-card__body">
-            <h5 class="product-card__title">Грецкий орех</h5>
-            <div class="product-card__text">
-                <p class="product-card__text-art">Арт: 0091</p>
-                <p class="product-card__text-desc">Орех сладкий, классический, очищенный</p>
-                <div class="product-card__info">
-                    <div class="product-card__mass">
-                        <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
-                        <p class="product-card__mass-text">
-                            Масса:
-                            <span class="product-card__mass-text product-card__mass-text--green">40г.</span>
-                        </p>
-                    </div>
-                    <div class="product-card__package">
-                        <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
-                        <p class="product-card__package-text">
-                            Упаковка
-                            <span class="product-card__package-text product-card__package-text--green">вакуумная</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-card__bottom">
-            <div class="product-card__price">
-                <p class="product-card__price-text">Цена:</p>
-                <p class="product-card__price-text product-card__price-text--green">
-                    от
-                    <span class="product-card__price-text product-card__price-text--green-big">21</span>
-                    грн.
-                </p>
-            </div>
-            <a class="product-card__btn" href="product-page.html">Купить</a>
-        </div>
-    </div>
 </div>
                 <a class="product-block__btn" href="catalog.html">Загрузить еще</a>
             </div>
@@ -840,55 +911,63 @@
     </main>
     <footer class="footer">
         <div class="footer__top">
-    <div class="footer__top-wrapper">
-        <div class="footer__contacts" id="contacts">
-            <h2 class="title-left">Контакты</h2>
-            <div class="footer__phone-contacts">
-                <img class="footer__phone-icon" src="img/icons/phone.svg" alt="">
-                <div class="footer__phone-numbers">
-                    <a class="footer__number" href="#">+38 (095) 711 11 11</a>
-                    <a class="footer__number" href="#">+38 (095) 711 11 11</a>
+            <div class="footer__top-wrapper">
+                <div class="footer__contacts" id="contacts">
+                    <h2 class="title-left">Контакты</h2>
+                    <div class="footer__phone-contacts">
+                        <img class="footer__phone-icon" src="img/icons/phone.svg" alt="">
+                        <div class="footer__phone-numbers">
+                            <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber1}"
+                               th:text="${contact.phoneNumber1}">+38 (095) 711 11 11</a>
+                            <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber2}"
+                               th:text="${contact.phoneNumber2}">+38 (095) 711 11 11</a>
+                        </div>
+                        <div class="messengers">
+                            <a class="messengers__link" href="#">
+                                <img class="messengers__icon" src="img/icons/viber.svg" alt="">
+                            </a>
+                            <a class="messengers__link" href="#">
+                                <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
+                            </a>
+                            <a class="messengers__link" href="#">
+                                <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__email">
+                        <img class="footer__email-icon" src="img/icons/envelope.svg" alt="">
+                        <a class="footer__email-text" th:href="'mailto:' + ${contact.email}" th:text="${contact.email}">nuts@nbsc.com.ua</a>
+                    </div>
+                    <div class="footer__address">
+                        <img class="footer__address-icon" src="img/icons/house.svg" alt="">
+                        <div class="footer__address-info">
+                            <h3 class="footer__title" th:text="${contact.addressTitle}">Офис и отдел продаж</h3>
+                            <p class="footer__address-text" th:text="${contact.addressLine1}">Украина, г. Одесса, </p>
+                            <p class="footer__address-text" th:text="${contact.addressLine2}">ул. Космонавтов, 32</p>
+                        </div>
+                    </div>
+                    <div class="footer__production">
+                        <img class="footer__production-icon" src="img/icons/tree.svg" alt="">
+                        <div class="footer__production-info">
+                            <h3 class="footer__title" th:text="${contact.productionTitle}">Производство</h3>
+                            <p class="footer__production-text" th:text="${contact.productionLine1}">Украина, Одесская
+                                обл,</p>
+                            <p class="footer__production-text" th:text="${contact.productionLine2}"> с. Яськи, ул.
+                                Центральная, 232</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="messengers">
-                    <a class="messengers__link" href="#">
-                        <img class="messengers__icon" src="img/icons/viber.svg" alt="">
-                    </a>
-                    <a class="messengers__link" href="#">
-                        <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
-                    </a>
-                    <a class="messengers__link" href="#">
-                        <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
-                    </a>
+                <div class="footer__map">
+                    <img class="footer__map-image"
+                         th:src="${contact.mapImage != null ? contact.mapImage : 'img/main/map.png'}"
+                         alt="">
+                    <div class="footer__pointer-wrapper">
+                        <img class="footer__map-pointer"
+                             th:src="${contact.pointerMap != null ? contact.pointerMap : 'img/icons/pointer.svg'}"
+                             alt="">
+                    </div>
                 </div>
             </div>
-            <div class="footer__email">
-                <img class="footer__email-icon" src="img/icons/envelope.svg" alt="">
-                <a class="footer__email-text" href="#">nuts@nbsc.com.ua</a>
-            </div>
-            <div class="footer__address">
-                <img class="footer__address-icon" src="img/icons/house.svg" alt="">
-                <div class="footer__address-info">
-                    <h3 class="footer__title">Офис и отдел продаж</h3>
-                    <p class="footer__address-text">Украина, г. Одесса, </p>
-                    <p class="footer__address-text">ул. Космонавтов, 32</p>
-                </div>
-            </div>
-            <div class="footer__production">
-                <img class="footer__production-icon" src="img/icons/tree.svg" alt="">
-                <div class="footer__production-info">
-                    <h3 class="footer__title">Производство</h3>
-                    <p class="footer__production-text">Украина, Одесская обл,</p>
-                    <p class="footer__production-text"> с. Яськи, ул. Центральная, 232</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer__map">
-            <img class="footer__map-image" src="img/main/map.png" alt="">
-            <div class="footer__pointer-wrapper">
-                <img class="footer__map-pointer" src="img/icons/pointer.svg" alt="">
-            </div>
-        </div>
-    </div>
 </div>
 <div class="footer__mid">
     <div class="footer__mid-wrapper">

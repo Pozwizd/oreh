@@ -1,103 +1,34 @@
 package com.m.roman.oreh.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDate;
 
+@Getter
+@Setter
 @Entity
-@Table(name = "news")
+@Table(name = "news", schema = "oreh")
 public class News {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Column(name = "url")
     private String url;
 
-    private String date;
+    @Column(name = "date")
+    private LocalDate date;
 
+    @Column(name = "title", length = 100)
     private String title;
 
+    @Column(name = "text")
     private String text;
 
     @Column(name = "text_line_2")
     private String textLine2;
 
-    public News() {
-    }
-
-    public News(int id, String url, String date, String title, String text, String textLine2) {
-        this.id = id;
-        this.url = url;
-        this.date = date;
-        this.title = title;
-        this.text = text;
-        this.textLine2 = textLine2;
-    }
-
-    public News(String url, String date, String title, String text, String textLine2) {
-        this.url = url;
-        this.date = date;
-        this.title = title;
-        this.text = text;
-        this.textLine2 = textLine2;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getTextLine2() {
-        return textLine2;
-    }
-
-    public void setTextLine2(String textLine2) {
-        this.textLine2 = textLine2;
-    }
-
-    @Override
-    public String toString() {
-        return "News{" +
-                "id=" + id +
-                ", url='" + url + '\'' +
-                ", date='" + date + '\'' +
-                ", title='" + title + '\'' +
-                ", text='" + text + '\'' +
-                ", textLine2='" + textLine2 + '\'' +
-                '}';
-    }
 }

@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class indexPageController {
+public class catalogPageController {
 
     private final TitleTextService titleTextService;
     private final ArticleService articleService;
@@ -16,7 +16,7 @@ public class indexPageController {
 
     private final ProductService productService;
 
-    public indexPageController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService) {
+    public catalogPageController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService) {
         this.titleTextService = titleTextService;
         this.articleService = articleService;
         this.newsService = newsService;
@@ -25,8 +25,8 @@ public class indexPageController {
     }
 
 
-    @RequestMapping("/index")
-    public String index(Model model) {
+    @RequestMapping("/catalog.html")
+    public String portfolio(Model model) {
 
         for (int i = 1; i <= 5; i++) {
             model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
@@ -36,6 +36,8 @@ public class indexPageController {
             model.addAttribute("product" + i, productService.getProduct(i));
         }
 
+        model.addAttribute("contact", contactService.getContact(1));
+
         for (int i = 1; i <= 5; i++) {
             model.addAttribute("article" + i, articleService.getArticle(i));
         }
@@ -43,14 +45,7 @@ public class indexPageController {
         for (int i = 1; i <= 4; i++) {
             model.addAttribute("news" + i, newsService.getNews(i));
         }
-
-        model.addAttribute("contact", contactService.getContact(1));
-
-        return "index";
+        return "catalog";
     }
 
-    @RequestMapping("/")
-    public String mainPage(Model model) {
-        return "redirect:/index";
-    }
 }
