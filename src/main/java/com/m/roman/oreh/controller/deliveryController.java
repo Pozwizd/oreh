@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class deliveryPageController {
+public class deliveryController {
 
     private final TitleTextService titleTextService;
     private final ArticleService articleService;
@@ -14,7 +14,7 @@ public class deliveryPageController {
     private final ContactService contactService;
     private final ProductService productService;
 
-    public deliveryPageController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService) {
+    public deliveryController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService) {
         this.titleTextService = titleTextService;
         this.articleService = articleService;
         this.newsService = newsService;

@@ -1,31 +1,31 @@
 package com.m.roman.oreh.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
+
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "product", schema = "oreh")
 public class Product {
     @Id
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private int id;
 
-    @Column(name = "image_url")
-    private String imageUrl;
-
-    @Column(name = "image_url_2")
-    private String imageUrl2;
-
-    @Column(name = "image_url_3")
-    private String imageUrl3;
+    @OneToMany(cascade = {CascadeType.PERSIST,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.DETACH}, mappedBy = "product", fetch = FetchType.EAGER)
+    private List<Media> mediaList;
 
     @Column(name = "special_offer")
     private String specialOffer;
@@ -36,12 +36,15 @@ public class Product {
     @Column(name = "article_number")
     private String articleNumber;
 
-    @Column(name = "description")
-    private String description;
+    @Lob
+    @Column(name = "product_type")
+    private String productType;
 
+    @Lob
     @Column(name = "weight")
     private String weight;
 
+    @Lob
     @Column(name = "package_type")
     private String packageType;
 
@@ -50,5 +53,11 @@ public class Product {
 
     @Column(name = "original_price", precision = 10)
     private BigDecimal originalPrice;
+
+    public void addMedia(Media media) {
+        media.setProduct(this);
+        mediaList.add(media);
+    }
+
 
 }

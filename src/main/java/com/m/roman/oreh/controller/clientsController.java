@@ -1,10 +1,11 @@
 package com.m.roman.oreh.controller;
 
 import com.m.roman.oreh.service.*;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-public class aboutPageController {
+@Controller
+public class clientsController {
 
     private final TitleTextService titleTextService;
     private final ArticleService articleService;
@@ -12,7 +13,7 @@ public class aboutPageController {
     private final ContactService contactService;
     private final ProductService productService;
 
-    public aboutPageController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService) {
+    public clientsController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService) {
         this.titleTextService = titleTextService;
         this.articleService = articleService;
         this.newsService = newsService;
@@ -20,11 +21,11 @@ public class aboutPageController {
         this.productService = productService;
     }
 
-    @RequestMapping("/about.html")
-    public String aboutMe(Model model) {
+    public String clients(Model model) {
 
         model.addAttribute("contact", contactService.getContact(1));
-        return "about";
+        return "clients";
     }
+
 
 }

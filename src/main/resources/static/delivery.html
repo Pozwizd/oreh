@@ -579,56 +579,60 @@
     </main>
     <footer class="footer">
         <div class="footer__top">
-    <div class="footer__top-wrapper">
-        <div class="footer__contacts" id="contacts">
-            <h2 class="title-left">Контакты</h2>
-            <div class="footer__phone-contacts">
-                <img class="footer__phone-icon" src="img/icons/phone.svg" alt="">
-                <div class="footer__phone-numbers">
-                    <a class="footer__number" href="#">+38 (095) 711 11 11</a>
-                    <a class="footer__number" href="#">+38 (095) 711 11 11</a>
+            <div class="footer__top-wrapper">
+                <div class="footer__contacts" id="contacts">
+                    <h2 class="title-left">Контакты</h2>
+                    <div class="footer__phone-contacts">
+                        <img class="footer__phone-icon" src="img/icons/phone.svg" alt="">
+                        <div class="footer__phone-numbers">
+                            <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber1}"
+                               th:text="${contact.phoneNumber1}">+38 (095) 711 11 11</a>
+                            <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber2}"
+                               th:text="${contact.phoneNumber2}">+38 (095) 711 11 11</a>
+                        </div>
+                        <div class="messengers">
+                            <a class="messengers__link" th:href="${contact.linkViber}" target="_blank">
+                                <img class="messengers__icon" src="img/icons/viber.svg" alt="">
+                            </a>
+                            <a class="messengers__link" th:href="${contact.linkTelegram}" target="_blank">
+                                <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
+                            </a>
+                            <a class="messengers__link" th:href="${contact.linkWhatsapp}" target="_blank">
+                                <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__email">
+                        <img class="footer__email-icon" src="img/icons/envelope.svg" alt="">
+                        <a class="footer__email-text" th:href="'mailto:' + ${contact.email}" th:text="${contact.email}">nuts@nbsc.com.ua</a>
+                    </div>
+                    <div class="footer__address"><img class="footer__address-icon" src="img/icons/house.svg" alt="">
+                        <div class="footer__address-info">
+                            <h3 class="footer__title" th:text="${contact.addressTitle}">Офис и отдел продаж</h3>
+                            <p class="footer__address-text" th:utext="${contact.addressLine}">Украина, г. Одесса, </p>
+                        </div>
+                    </div>
+                    <div class="footer__production">
+                        <img class="footer__production-icon" src="img/icons/tree.svg" alt="">
+                        <div class="footer__production-info">
+                            <h3 class="footer__title" th:text="${contact.productionTitle}">Производство</h3>
+                            <p class="footer__production-text" th:utext="${contact.productionLine}">Украина, Одесская
+                                обл,</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="messengers">
-                    <a class="messengers__link" href="#">
-                        <img class="messengers__icon" src="img/icons/viber.svg" alt="">
-                    </a>
-                    <a class="messengers__link" href="#">
-                        <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
-                    </a>
-                    <a class="messengers__link" href="#">
-                        <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="footer__email">
-                <img class="footer__email-icon" src="img/icons/envelope.svg" alt="">
-                <a class="footer__email-text" href="#">nuts@nbsc.com.ua</a>
-            </div>
-            <div class="footer__address">
-                <img class="footer__address-icon" src="img/icons/house.svg" alt="">
-                <div class="footer__address-info">
-                    <h3 class="footer__title">Офис и отдел продаж</h3>
-                    <p class="footer__address-text">Украина, г. Одесса, </p>
-                    <p class="footer__address-text">ул. Космонавтов, 32</p>
-                </div>
-            </div>
-            <div class="footer__production">
-                <img class="footer__production-icon" src="img/icons/tree.svg" alt="">
-                <div class="footer__production-info">
-                    <h3 class="footer__title">Производство</h3>
-                    <p class="footer__production-text">Украина, Одесская обл,</p>
-                    <p class="footer__production-text"> с. Яськи, ул. Центральная, 232</p>
+                <div class="footer__map">
+                    <img class="footer__map-image"
+                         th:src="${contact.mapImage != null ? contact.mapImage : 'img/main/map.png'}"
+                         alt="">
+                    <div class="footer__pointer-wrapper">
+                        <img class="footer__map-pointer"
+                             th:src="${contact.pointerMap != null ? contact.pointerMap : 'img/icons/pointer.svg'}"
+                             alt="">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer__map">
-            <img class="footer__map-image" src="img/main/map.png" alt="">
-            <div class="footer__pointer-wrapper">
-                <img class="footer__map-pointer" src="img/icons/pointer.svg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
 <div class="footer__mid">
     <div class="footer__mid-wrapper">
         <div class="logo">

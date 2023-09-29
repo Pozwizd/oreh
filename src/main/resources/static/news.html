@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -107,10 +107,10 @@
                     </a>
                 </div>
                 <div class="header__phone-numbers">
-                    <a class="header__number" href="#">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber1}" th:text="${contact.phoneNumber1}">
                         <span class="header__number-green">+38 (044)</span> 750-50-11
                     </a>
-                    <a class="header__number" href="#">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber2}" th:text="${contact.phoneNumber2}">
                         <span class="header__number-green">+38 (097)</span> 775-50-51
                     </a>
                 </div>
@@ -440,8 +440,8 @@
             <div class="footer__phone-contacts">
                 <img class="footer__phone-icon" src="img/icons/phone.svg" alt="">
                 <div class="footer__phone-numbers">
-                    <a class="footer__number" href="#">+38 (095) 711 11 11</a>
-                    <a class="footer__number" href="#">+38 (095) 711 11 11</a>
+                    <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber1}" th:text="${contact.phoneNumber1}">+38 (095) 711 11 11</a>
+                    <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber2}" th:text="${contact.phoneNumber2}">+38 (095) 711 11 11</a>
                 </div>
                 <div class="messengers">
                     <a class="messengers__link" href="#">

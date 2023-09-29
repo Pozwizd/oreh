@@ -4,17 +4,21 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "menu_delivery", schema = "oreh")
 public class MenuDelivery {
     @Id
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private int id;
 
     @Column(name = "category")
     private String category;

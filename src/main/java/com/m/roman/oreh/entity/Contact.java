@@ -1,53 +1,58 @@
 package com.m.roman.oreh.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "contact", schema = "oreh")
 public class Contact {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "phone_number1", length = 20)
+    @Column(name = "phone_number1")
     private String phoneNumber1;
 
-    @Column(name = "phone_number2", length = 20)
+    @Column(name = "phone_number2")
     private String phoneNumber2;
 
-    @Column(name = "link_viber", length = 100)
+    @Column(name = "link_viber")
     private String linkViber;
 
-    @Column(name = "link_telegram", length = 100)
+    @Column(name = "link_telegram")
     private String linkTelegram;
 
-    @Column(name = "link_whatsapp", length = 100)
+    @Column(name = "link_whatsapp")
     private String linkWhatsapp;
 
-    @Column(name = "email", length = 100)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "address_title", length = 100)
+    @Column(name = "address_title")
     private String addressTitle;
 
-    @Column(name = "address_line", length = 100)
+    @Column(name = "address_line")
     private String addressLine;
 
-    @Column(name = "production_title", length = 100)
+    @Column(name = "production_title")
     private String productionTitle;
 
-    @Column(name = "production_line", length = 100)
+    @Column(name = "production_line")
     private String productionLine;
 
-    @Column(name = "map_image", length = 100)
+    @Column(name = "map_image")
     private String mapImage;
 
-    @Column(name = "pointer_map", length = 100)
+    @Column(name = "pointer_map")
     private String pointerMap;
-
 }
