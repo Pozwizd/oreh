@@ -11,21 +11,12 @@ import java.util.List;
 @Controller
 public class deliveryController {
 
-    private final TitleTextService titleTextService;
-    private final ArticleService articleService;
-    private final NewsService newsService;
     private final ContactService contactService;
-    private final ProductService productService;
     private final SpecificationService specificationService;
-
     private final MenuDeliveryService menuDeliveryService;
 
-    public deliveryController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService, SpecificationService specificationService, MenuDeliveryService menuDeliveryService) {
-        this.titleTextService = titleTextService;
-        this.articleService = articleService;
-        this.newsService = newsService;
+    public deliveryController(ContactService contactService, SpecificationService specificationService, MenuDeliveryService menuDeliveryService) {
         this.contactService = contactService;
-        this.productService = productService;
         this.specificationService = specificationService;
         this.menuDeliveryService = menuDeliveryService;
     }

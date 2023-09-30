@@ -42,9 +42,7 @@ public class indexController {
         }
         //        -------------------------------------------------
 
-
         model.addAttribute("products", productService.getAllProducts());
-
 
         //        -------------------------------------------------
         for (int i = 1; i <= 5; i++) {

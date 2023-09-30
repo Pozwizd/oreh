@@ -8,20 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class aboutController {
 
-    private final TitleTextService titleTextService;
-    private final ArticleService articleService;
-    private final NewsService newsService;
+
     private final ContactService contactService;
-    private final ProductService productService;
     private final SpecificationService specificationService;
 
 
-    public aboutController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService, SpecificationService specificationService) {
-        this.titleTextService = titleTextService;
-        this.articleService = articleService;
-        this.newsService = newsService;
+    public aboutController(ContactService contactService, SpecificationService specificationService) {
         this.contactService = contactService;
-        this.productService = productService;
         this.specificationService = specificationService;
     }
 

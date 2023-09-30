@@ -37,7 +37,6 @@ public class catalogController {
         for (int i = 1; i <= 5; i++) {
             model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
         }
-
         model.addAttribute("products", productService.getAllProducts());
 
         model.addAttribute("contact", contactService.getContact(1));
