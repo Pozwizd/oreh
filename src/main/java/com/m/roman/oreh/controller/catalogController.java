@@ -38,14 +38,7 @@ public class catalogController {
             model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
         }
 
-        List<Product> products = productService.getAllProducts();
-        for (int i = 0; i < products.size(); i++) {
-            for (int j = 0; j < 3; j++) {
-                products.get(i).addMedia(mediaService.getMedia(i+1));
-            }
-        }
-
-        model.addAttribute("products", products);
+        model.addAttribute("products", productService.getAllProducts());
 
         model.addAttribute("contact", contactService.getContact(1));
 

@@ -34,7 +34,4 @@ public class News {
     @Column(name = "text")
     private String text;
 
-    @Column(name = "text_line_2")
-    private String textLine2;
-
 }

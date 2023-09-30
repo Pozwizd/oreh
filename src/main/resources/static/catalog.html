@@ -15,10 +15,6 @@
 </head>
 
 <body>
-<!--    th:utext="${model.name}"-->
-<!--    th:text="${model.name}"-->
-<!--    th:src="${model.url}"-->
-<!--    th:alt="${model.name}"-->
     <header class="header">
     <div class="header__top">
         <div class="header__top-wrapper">
@@ -100,21 +96,23 @@
             </div>
             <div class="header__contacts">
                 <div class="messengers">
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkViber}" target="_blank">
                         <img class="messengers__icon" src="img/icons/viber.svg" alt="">
                     </a>
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkTelegram}" target="_blank">
                         <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
                     </a>
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkWhatsapp}" target="_blank">
                         <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
                     </a>
                 </div>
                 <div class="header__phone-numbers">
-                    <a class="header__number" href="#">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber1}"
+                       th:text="${contact.phoneNumber1}">
                         <span class="header__number-green">+38 (044)</span> 750-50-11
                     </a>
-                    <a class="header__number" href="#">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber2}"
+                       th:text="${contact.phoneNumber2}">
                         <span class="header__number-green">+38 (097)</span> 775-50-51
                     </a>
                 </div>
@@ -385,7 +383,7 @@
                         <div class="product-card__body">
                             <h5 class="product-card__title" th:text="${product.title}">Грецкий орех</h5>
                             <div class="product-card__text">
-                                <p class="product-card__text-art" th:text="'Арт:' + ${product.articleNumber}">0091</p>
+                                <p class="product-card__text-art" th:text="${product.articleNumber}">0091</p>
                                 <p class="product-card__text-desc" th:text="${product.productType}">Орех сладкий,
                                     классический, очищенный</p>
                                 <div class="product-card__info">

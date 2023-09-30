@@ -13,16 +13,19 @@ public class clientsController {
     private final ContactService contactService;
     private final ProductService productService;
 
-    public clientsController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService) {
+    private final SpecificationService specificationService;
+
+    public clientsController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService, SpecificationService specificationService) {
         this.titleTextService = titleTextService;
         this.articleService = articleService;
         this.newsService = newsService;
         this.contactService = contactService;
         this.productService = productService;
+        this.specificationService = specificationService;
     }
 
     public String clients(Model model) {
-
+        model.addAttribute("specification", specificationService.getSpecification(1));
         model.addAttribute("contact", contactService.getContact(1));
         return "clients";
     }

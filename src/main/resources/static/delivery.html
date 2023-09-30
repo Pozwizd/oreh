@@ -96,21 +96,23 @@
             </div>
             <div class="header__contacts">
                 <div class="messengers">
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkViber}" target="_blank">
                         <img class="messengers__icon" src="img/icons/viber.svg" alt="">
                     </a>
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkTelegram}" target="_blank">
                         <img class="messengers__icon" src="img/icons/telegram.svg" alt="">
                     </a>
-                    <a class="messengers__link" href="#">
+                    <a class="messengers__link" th:href="${contact.linkWhatsapp}" target="_blank">
                         <img class="messengers__icon" src="img/icons/whatsapp.svg" alt="">
                     </a>
                 </div>
                 <div class="header__phone-numbers">
-                    <a class="header__number" href="#">
+                    <a class="header__number" href="#" th:href="'tel:' + ${contact.phoneNumber1}"
+                       th:text="${contact.phoneNumber1}">
                         <span class="header__number-green">+38 (044)</span> 750-50-11
                     </a>
-                    <a class="header__number" href="#">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber2}"
+                       th:text="${contact.phoneNumber2}">
                         <span class="header__number-green">+38 (097)</span> 775-50-51
                     </a>
                 </div>
@@ -310,7 +312,10 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <h3 class="clients-menu__item-title">Оплата заказа</h3>
+                            <h3 class="clients-menu__item-title"
+                                th:text="${menuDeliveries.get(0).category}">
+                                Оплата заказа
+                            </h3>
                         </li>
                         <li class="clients-menu__list-item clients-menu__list-item--delivery" data-value="delivery">
                             <svg class="clients-menu__icon" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -332,8 +337,11 @@
                                 </clipPath>
                                 </defs>
                                 </svg>
-                                
-                            <h3 class="clients-menu__item-title">Доставка партии</h3>
+
+                            <h3 class="clients-menu__item-title"
+                                th:text="${menuDeliveries.get(1).category}">
+                                Оплата заказа
+                            </h3>
                         </li>
                         <li class="clients-menu__list-item clients-menu__list-item--delivery" data-value="return">
                             <svg class="clients-menu__icon"  width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -345,24 +353,28 @@
                                 <path d="M23.9866 23.6357L20.6037 24.9233C20.4807 24.9699 20.3779 25.0583 20.3132 25.1729C20.2486 25.2876 20.2262 25.4212 20.25 25.5507C20.2737 25.6801 20.3421 25.7972 20.4432 25.8814C20.5443 25.9656 20.6718 26.0117 20.8034 26.0117C20.8719 26.0118 20.9398 25.9992 21.0037 25.9746L24.3865 24.687C24.4569 24.6617 24.5214 24.6226 24.5765 24.5721C24.6315 24.5216 24.676 24.4606 24.7072 24.3927C24.7384 24.3248 24.7558 24.2514 24.7583 24.1767C24.7608 24.102 24.7484 24.0276 24.7219 23.9577C24.6953 23.8879 24.6551 23.824 24.6035 23.7699C24.552 23.7158 24.4902 23.6724 24.4218 23.6425C24.3533 23.6125 24.2796 23.5964 24.2049 23.5953C24.1302 23.5941 24.056 23.6079 23.9866 23.6357Z" />
                                 <path d="M27.3586 22.3521L26.2263 22.783C26.1032 22.8296 26.0004 22.918 25.9358 23.0326C25.8712 23.1473 25.8488 23.281 25.8725 23.4104C25.8963 23.5399 25.9647 23.6569 26.0658 23.7411C26.1669 23.8253 26.2944 23.8714 26.426 23.8714C26.4944 23.8715 26.5623 23.8589 26.6262 23.8343L27.7585 23.4034C27.8289 23.3781 27.8934 23.339 27.9485 23.2885C28.0035 23.238 28.048 23.177 28.0792 23.1091C28.1104 23.0412 28.1278 22.9678 28.1303 22.8931C28.1328 22.8184 28.1204 22.744 28.0939 22.6741C28.0673 22.6043 28.0271 22.5404 27.9755 22.4863C27.924 22.4322 27.8622 22.3888 27.7938 22.3589C27.7253 22.3289 27.6516 22.3128 27.5769 22.3117C27.5022 22.3105 27.428 22.3243 27.3586 22.3521Z" />
                                 </svg>
-                                
-                            <h3 class="clients-menu__item-title">Возврат товара</h3>
+
+                            <h3 class="clients-menu__item-title"
+                                th:text="${menuDeliveries.get(2).category}">
+                                Оплата заказа
+                            </h3>
                         </li>
                     </ul>
                 </div>
                 <div class="clients-menu__info">
                     <div class="clients-menu__info-item clients-menu__info-item--basis">
                         <div class="clients-menu__info-desc">
-                            <h3 class="clients-menu__info-title">Способы оплаты</h3>
+                            <h3 class="clients-menu__info-title"
+                                th:text="${menuDeliveries.get(0).title}">Способы оплаты</h3>
                             <div class="clients-menu__info-name">
                                 <div class="clients-menu__info-iconOuter">
                                     <div class="clients-menu__info-iconInner">
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--museum" src="img/icons/museum.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Безналичный расчет</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle}">Безналичный расчет</h4>
                             </div>
-                            <p class="clients-menu__info-text">
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text}">
                                 Вы можете выбрать “получить реквизиты” 
                                 для дальнейшей оплаты на карту, или в терминалах.
                             </p>
@@ -372,9 +384,9 @@
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--card" src="img/icons/bank-card.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Оплата с помощью банковской карты</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle2}">Оплата с помощью банковской карты</h4>
                             </div>
-                            <p class="clients-menu__info-text">
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text2}">
                                 Оплатите Ваш заказ картой любого банка онлайн
                                 (LiqPay/Приват24)
                             </p>
@@ -384,30 +396,31 @@
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--wallet" src="img/icons/wallet.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Наличный расчет</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle3}">Наличный расчет</h4>
                             </div>
-                            <p class="clients-menu__info-text">
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text}">
                                 Оплата заказов наложенным платежом в отделении
                                 Новой Почты, или наличными курьерами
                             </p>
                         </div>
                         <div class="clients-menu__visual">
-                            <img class="clients-menu__visual-img" src="img/main/delivery-info.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${menuDeliveries.get(0).imageUrl}" alt="">
                         </div>
                     </div>
                     <div class="clients-menu__info-item active" data-value="payment">
                         <div class="clients-menu__info-desc">
-                            <h3 class="clients-menu__info-title">Способы оплаты</h3>
+                            <h3 class="clients-menu__info-title"
+                                th:text="${menuDeliveries.get(0).title}">Способы оплаты</h3>
                             <div class="clients-menu__info-name">
                                 <div class="clients-menu__info-iconOuter">
                                     <div class="clients-menu__info-iconInner">
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--museum" src="img/icons/museum.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Безналичный расчет</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle}">Безналичный расчет</h4>
                             </div>
-                            <p class="clients-menu__info-text">
-                                Вы можете выбрать “получить реквизиты” 
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text}">
+                                Вы можете выбрать “получить реквизиты”
                                 для дальнейшей оплаты на карту, или в терминалах.
                             </p>
                             <div class="clients-menu__info-name">
@@ -416,9 +429,9 @@
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--card" src="img/icons/bank-card.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Оплата с помощью банковской карты</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle2}">Оплата с помощью банковской карты</h4>
                             </div>
-                            <p class="clients-menu__info-text">
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text2}">
                                 Оплатите Ваш заказ картой любого банка онлайн
                                 (LiqPay/Приват24)
                             </p>
@@ -428,30 +441,31 @@
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--wallet" src="img/icons/wallet.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Наличный расчет</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle3}">Наличный расчет</h4>
                             </div>
-                            <p class="clients-menu__info-text">
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text}">
                                 Оплата заказов наложенным платежом в отделении
                                 Новой Почты, или наличными курьерами
                             </p>
                         </div>
                         <div class="clients-menu__visual">
-                            <img class="clients-menu__visual-img" src="img/main/delivery-info.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${menuDeliveries.get(0).imageUrl}" alt="">
                         </div>
                     </div>
                     <div class="clients-menu__info-item" data-value="delivery">
                         <div class="clients-menu__info-desc">
-                            <h3 class="clients-menu__info-title">Способы оплаты</h3>
+                            <h3 class="clients-menu__info-title"
+                                th:text="${menuDeliveries.get(0).title}">Способы оплаты</h3>
                             <div class="clients-menu__info-name">
                                 <div class="clients-menu__info-iconOuter">
                                     <div class="clients-menu__info-iconInner">
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--museum" src="img/icons/museum.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Безналичный расчет</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle}">Безналичный расчет</h4>
                             </div>
-                            <p class="clients-menu__info-text">
-                                Вы можете выбрать “получить реквизиты” 
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text}">
+                                Вы можете выбрать “получить реквизиты”
                                 для дальнейшей оплаты на карту, или в терминалах.
                             </p>
                             <div class="clients-menu__info-name">
@@ -460,9 +474,9 @@
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--card" src="img/icons/bank-card.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Оплата с помощью банковской карты</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle2}">Оплата с помощью банковской карты</h4>
                             </div>
-                            <p class="clients-menu__info-text">
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text2}">
                                 Оплатите Ваш заказ картой любого банка онлайн
                                 (LiqPay/Приват24)
                             </p>
@@ -472,15 +486,15 @@
                                         <img class="clients-menu__info-iconImg clients-menu__info-iconImg--wallet" src="img/icons/wallet.svg" alt="">
                                     </div>
                                 </div>
-                                <h4 class="clients-menu__info-nameText">Наличный расчет</h4>
+                                <h4 class="clients-menu__info-nameText" th:text="${menuDeliveries.get(0).subtitle3}">Наличный расчет</h4>
                             </div>
-                            <p class="clients-menu__info-text">
+                            <p class="clients-menu__info-text" th:text="${menuDeliveries.get(0).text}">
                                 Оплата заказов наложенным платежом в отделении
                                 Новой Почты, или наличными курьерами
                             </p>
                         </div>
                         <div class="clients-menu__visual">
-                            <img class="clients-menu__visual-img" src="img/main/delivery-info.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${menuDeliveries.get(0).imageUrl}" alt="">
                         </div>
                     </div>
                     <div class="clients-menu__info-item" data-value="return">
@@ -534,28 +548,28 @@
     <div class="stats__wrapper">
         <div class="stats__item">
             <div class="stats__upper">
-                <p class="stats__upper-big">240</p>
+                <p class="stats__upper-big" th:text="${specification.gardens}">240</p>
                 <p class="stats__mini">Га</p>
             </div>
             <p class="stats__bottom">Cмешанных садов</p>
         </div>
         <div class="stats__item">
             <div class="stats__upper">
-                <p class="stats__upper-big">1</p>
+                <p class="stats__upper-big" th:text="${specification.greenhouses}">1</p>
                 <p class="stats__mini">Га</p>
             </div>
             <p class="stats__bottom">Тепличного комплекса</p>
         </div>
         <div class="stats__item">
             <div class="stats__upper">
-                <p class="stats__upper-big">10</p>
+                <p class="stats__upper-big" th:text="${specification.rosehipPlantation}">10</p>
                 <p class="stats__mini">Га</p>
             </div>
             <p class="stats__bottom stats__bottom--wide">Первая промышленная плантация шиповника в Украине</p>
         </div>
         <div class="stats__item stats__item--last">
             <div class="stats__upper">
-                <p class="stats__upper-big">80</p>
+                <p class="stats__upper-big" th:text="${specification.plantSurvivalRate}">80</p>
                 <p class="stats__mini">%</p>
             </div>
             <p class="stats__bottom">Приживаемости саженцев</p>

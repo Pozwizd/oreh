@@ -27,12 +27,4 @@ public class Article {
     @Column(name = "text")
     private String text;
 
-    @Lob
-    @Column(name = "text_line_2")
-    private String textLine2;
-
-    @Lob
-    @Column(name = "text_line_3")
-    private String textLine3;
-
 }
