@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<header th:replace="~{fragments :: header}"></header>
+    <main class="registration">
+        <div class="registration__intro-links">
+            <div class="intro-links intro-links--gray">
+                <a class="intro-links__link intro-links__link--gray" href="index.html">Главная</a>
+                <img class="intro-links__arrow" src="img/icons/arrow-right-gray.svg" alt="">
+                <a class="intro-links__link intro-links__link--gray" href="registration.html">Регистрация</a>
+            </div>
+        </div>
+        <form class="registration__menu">
+            <h2 class="title-left title-left--smaller">Регистрация</h2>
+            <h3 class="registration__title">1. Контактные данные</h3>
+            <div class="registration__segments-wrapper">
+                <div class="registration__form-segments">
+                    <div class="registration__leftside">
+                        <div class="registration__change">
+                            <p class="registration__change-item registration__change-item--phys change-active">Физическое лицо</p>
+                            <p class="registration__change-item registration__change-item--yur">Юридическое лицо</p>
+                        </div>
+                        <fieldset class="registration__field">
+                            <input class="oreh-inputText registration__input" type="text" name="FIO" placeholder="ФИО*">
+                            <input class="oreh-inputText registration__input" type="text" name="Email*" placeholder="Email*">
+                            <input class="oreh-inputText registration__input" type="text" name="Phone" placeholder="Телефон*">
+                        </fieldset>
+                        <fieldset class="registration__field">
+                            <h3 class="registration__title">2. Адрес</h3>
+                            <div class="dropdown oreh-dropdown oreh-dropdown--registration">
+                                <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button" id="country"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Страна
+                                </button>
+                                <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="country">
+                                    <li class="dropdown-item oreh-dropdown__item">Страна</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown oreh-dropdown oreh-dropdown--registration">
+                                <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button" id="region"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Область
+                                </button>
+                                <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="region">
+                                    <li class="dropdown-item oreh-dropdown__item">Область</li>
+                                </ul>
+                            </div>
+                            <input class="oreh-inputText registration__input" type="text" name="city" placeholder="Город*">
+                            <input class="oreh-inputText registration__input" type="text" name="address" placeholder="Адрес">
+                        </fieldset>
+                        <fieldset class="registration__field">
+                            <h3 class="registration__title">3. Пароль</h3>
+                            <input class="oreh-inputText registration__input" type="text" name="password" placeholder="Пароль*">
+                            <input class="oreh-inputText registration__input" type="text" name="confirm-password"
+                                placeholder="Подтвердите пароль*">
+                        </fieldset>
+                    </div>
+                    <div class="registration__rightside">
+                        <div class="registration__photo">
+                            <p class="registration__photo-text">Загрузить фото</p>
+                        </div>
+                        <div class="registration__rightside-checkbox">
+                            <label class="registration__label"><input class="form-check-input oreh-checkbox registration__checkbox"
+                                    type="checkbox" name="i-fop" id="i-fop"> Являюсь ФОП</label>
+                        </div>
+                        <div class="registration__rightside-radio">
+                            <label class="registration__label registration__label--yur"><input class="form-check-input oreh-radio registration__radio" type="radio"
+                                    name="rightside" id="yur" checked> Юр. лицо</label>
+                            <label class="registration__label registration__label--fop"><input class="form-check-input oreh-radio registration__radio" type="radio"
+                                    name="rightside" id="fop"> ФОП</label>
+                        </div>
+                        <div class="registration__rightside-form">
+                            <fieldset class="registration__field">
+                                <h3 class="registration__title">1. Реквизиты</h3>
+                                <input class="oreh-inputText registration__input" type="text" name="okpo" placeholder="ОКПО">
+                                <h3 class="registration__title">2. Юридический адрес</h3>
+                                <div class="dropdown oreh-dropdown oreh-dropdown--registration">
+                                    <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button"
+                                        id="country-right" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Страна
+                                    </button>
+                                    <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="country-right">
+                                        <li class="dropdown-item oreh-dropdown__item">Страна</li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown oreh-dropdown oreh-dropdown--registration">
+                                    <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button"
+                                        id="region-right" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Область
+                                    </button>
+                                    <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="region-right">
+                                        <li class="dropdown-item oreh-dropdown__item">Область</li>
+                                    </ul>
+                                </div>
+                                <input class="oreh-inputText registration__input" type="text" name="city-right"
+                                    placeholder="Город*">
+                                <input class="oreh-inputText registration__input" type="text" name="address-right"
+                                    placeholder="Адрес">
+                                <input class="oreh-inputText registration__input" type="text" name="index" placeholder="Индекс">
+                            </fieldset>
+                        </div>
+                        <div class="registration__rightside-formFOP">
+                            <fieldset class="registration__field">
+                                <h3 class="registration__title">1. Реквизиты</h3>
+                                <input class="oreh-inputText registration__input" type="text" name="edrpo" placeholder="ЕДРПО">
+                                <h3 class="registration__title">2. Адрес ФОП</h3>
+                                <div class="dropdown oreh-dropdown oreh-dropdown--registration">
+                                    <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button"
+                                        id="country-fop" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Страна
+                                    </button>
+                                    <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="country-fop">
+                                        <li class="dropdown-item oreh-dropdown__item">Страна</li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown oreh-dropdown oreh-dropdown--registration">
+                                    <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button"
+                                        id="region-fop" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Область
+                                    </button>
+                                    <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="region-fop">
+                                        <li class="dropdown-item oreh-dropdown__item">Область</li>
+                                    </ul>
+                                </div>
+                                <input class="oreh-inputText registration__input" type="text" name="city-fop"
+                                    placeholder="Город*">
+                                <input class="oreh-inputText registration__input" type="text" name="address-fop"
+                                    placeholder="Адрес">
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="registration__bottom">
+                <label class="registration__label">
+                    <input class="registration__checkbox" type="checkbox" name="agree" id="agree">
+                    Я согласен с <a class="registration__checkbox-link" href="#"> Условиями регистрации</a>
+                </label>
+                <a class="registration__btn" href="personal-page.html">Продолжить</a>
+            </div>
+        </form>
+    </main>
+    <footer class="footer footer--dark">
+        <div th:replace="~{fragments.html :: footer-top}"></div>
+        <div th:replace="~{fragments.html :: footer-mid}"></div>
+        <div th:replace="~{fragments.html :: footer-bot}"></div>
+    </footer>
+</body>
+
+</html>

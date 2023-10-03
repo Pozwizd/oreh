@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<header th:replace="~{fragments :: header}"></header>
+    <main class="checkout">
+        <div class="checkout__intro-links">
+            <div class="intro-links intro-links--gray">
+                <a class="intro-links__link intro-links__link--gray" href="index.html">Главная</a>
+                <img class="intro-links__arrow" src="img/icons/arrow-right-gray.svg" alt="">
+                <a class="intro-links__link intro-links__link--gray" href="cart.html">Корзина</a>
+                <img class="intro-links__arrow" src="img/icons/arrow-right-gray.svg" alt="">
+                <a class="intro-links__link intro-links__link--gray" href="checkout.html">Оформление заказа</a>
+            </div>
+        </div>
+        <div class="checkout__body">
+            <div class="checkout__upper">
+                <h2 class="title-left title-left--smaller">Оформление заказа</h2>
+                <div class="personal-manager">
+                    <p class="personal-manager__text">Ваш личный менеджер Олег</p>
+                    <a class="personal-manager__number" href="#">+38 067 777 14 12</a>
+                </div>
+            </div>
+            <div class="checkout__orders">
+                <table class="checkout__orders-table">
+                    <thead class="checkout__orders-head">
+                        <tr class="checkout__orders-row">
+                            <th class="checkout__orders-header">
+                                Товар
+                                <svg class="checkout__orders-arrow" width="10" height="7" viewBox="0 0 10 7"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.99357 4.43185L1.22265 0.6L0 1.94522L4.99357 7L10 1.94522L8.77735 0.6L4.99357 4.43185Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+
+                            </th>
+                            <th class="checkout__orders-header">
+                                Кол - во
+                                <svg class="checkout__orders-arrow" width="10" height="7" viewBox="0 0 10 7"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.99357 4.43185L1.22265 0.6L0 1.94522L4.99357 7L10 1.94522L8.77735 0.6L4.99357 4.43185Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+                            </th>
+                            <th class="checkout__orders-header">
+                                Цена за товар
+                                <svg class="checkout__orders-arrow" width="10" height="7" viewBox="0 0 10 7"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.99357 4.43185L1.22265 0.6L0 1.94522L4.99357 7L10 1.94522L8.77735 0.6L4.99357 4.43185Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+                            </th>
+                            <th class="checkout__orders-header">
+                                Итоговая стоимость
+                                <svg class="checkout__orders-arrow" width="10" height="7" viewBox="0 0 10 7"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.99357 4.43185L1.22265 0.6L0 1.94522L4.99357 7L10 1.94522L8.77735 0.6L4.99357 4.43185Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="checkout__orders-body">
+                        <tr class="checkout__orders-row">
+                            <td class="checkout__orders-cell">
+                                Орех соленый 80г.
+                            </td>
+                            <td class="checkout__orders-cell">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.56815 4.99357L6.4 1.22265L5.05478 0L0 4.99357L5.05478 10L6.4 8.77735L2.56815 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+                                <input class="oreh-inputText checkout__input" type="text" name="number1" value="4">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.43185 4.99357L0.6 1.22265L1.94522 0L7 4.99357L1.94522 10L0.6 8.77735L4.43185 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+
+                            </td>
+                            <td class="checkout__orders-cell">
+                                25 грн.
+                            </td>
+                            <td class="checkout__orders-cell">
+                                100 грн.
+                            </td>
+                        </tr>
+                        <tr class="checkout__orders-row">
+                            <td class="checkout__orders-cell">
+                                Орех соленый 80г.
+                            </td>
+                            <td class="checkout__orders-cell">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.56815 4.99357L6.4 1.22265L5.05478 0L0 4.99357L5.05478 10L6.4 8.77735L2.56815 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+                                <input class="oreh-inputText checkout__input" type="text" name="number1" value="1">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.43185 4.99357L0.6 1.22265L1.94522 0L7 4.99357L1.94522 10L0.6 8.77735L4.43185 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+
+                            </td>
+                            <td class="order__orders-cell">
+                                25 грн.
+                            </td>
+                            <td class="order__orders-cell">
+                                25 грн.
+                            </td>
+                        </tr>
+                        <tr class="checkout__orders-row">
+                            <td class="checkout__orders-cell">
+                                Орех соленый 80г.
+                            </td>
+                            <td class="checkout__orders-cell">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.56815 4.99357L6.4 1.22265L5.05478 0L0 4.99357L5.05478 10L6.4 8.77735L2.56815 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+                                <input class="oreh-inputText checkout__input" type="text" name="number1" value="1">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.43185 4.99357L0.6 1.22265L1.94522 0L7 4.99357L1.94522 10L0.6 8.77735L4.43185 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+
+                            </td>
+                            <td class="checkout__orders-cell">
+                                25 грн.
+                            </td>
+                            <td class="checkout__orders-cell">
+                                25 грн.
+                            </td>
+                        </tr>
+                        <tr class="checkout__orders-row">
+                            <td class="checkout__orders-cell">
+                                Орех соленый 80г.
+                            </td>
+                            <td class="checkout__orders-cell">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.56815 4.99357L6.4 1.22265L5.05478 0L0 4.99357L5.05478 10L6.4 8.77735L2.56815 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+                                <input class="oreh-inputText checkout__input" type="text" name="number1" value="1">
+                                <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.43185 4.99357L0.6 1.22265L1.94522 0L7 4.99357L1.94522 10L0.6 8.77735L4.43185 4.99357Z"
+                                        fill="#8A8A8A" />
+                                </svg>
+
+                            </td>
+                            <td class="checkout__orders-cell">
+                                25 грн.
+                            </td>
+                            <td class="checkout__orders-cell">
+                                25 грн.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="checkout__bottom">
+                <div class="checkout__bottom-right">
+                    <p class="checkout__bottom-price">Всего <span class="checkout__bottom-span checkout__bottom-span--big">175</span> <span class="checkout__bottom-span">грн.</span> </p>
+                </div>
+            </div>
+        </div>
+        <form class="checkout__form">
+            <fieldset class="checkout__form-field checkout__form-field--default">
+                <h3 class="checkout__form-title">1. Контактные данные</h3>
+                <input class="oreh-inputText checkout__form-input" type="text" name="fio" placeholder="ФИО*">
+                <input class="oreh-inputText checkout__form-input" type="text" name="Email" placeholder="Email*">
+                <input class="oreh-inputText checkout__form-input" type="text" name="number" placeholder="Телефон*">
+            </fieldset>
+            <fieldset class="checkout__form-field checkout__form-field--samo checkout-hide">
+                <h3 class="checkout__form-title">1. Контактные данные</h3>
+                <input class="oreh-inputText checkout__form-input" type="text" name="company" placeholder="Компания">
+                <input class="oreh-inputText checkout__form-input" type="text" name="contact" placeholder="Контактное лицо">
+                <input class="oreh-inputText checkout__form-input" type="text" name="Email2" placeholder="Email*">
+                <input class="oreh-inputText checkout__form-input" type="text" name="number2" placeholder="Телефон*">
+            </fieldset>
+            <fieldset class="checkout__form-field">
+                <h3 class="checkout__form-title">2. Способ доставки</h3>
+                <label class="checkout__label checkout__label--nova"><input class="form-check-input oreh-radio checkout__radio" type="radio"
+                    name="delivery" id="nova">Новая почта (по Украине оплата за счет Клиента)</label>
+                <div class="checkout__nova-dropdowns  checkout-hide">
+                    <div class="dropdown oreh-dropdown oreh-dropdown--checkout">
+                        <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button"
+                            id="country" data-bs-toggle="dropdown" aria-expanded="false">
+                            Страна
+                        </button>
+                        <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="country">
+                            <li class="dropdown-item oreh-dropdown__item">Страна</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown oreh-dropdown oreh-dropdown--checkout">
+                        <button class="btn btn-secondary dropdown-toggle oreh-dropdown__btn" type="button"
+                            id="region" data-bs-toggle="dropdown" aria-expanded="false">
+                            Область
+                        </button>
+                        <ul class="dropdown-menu oreh-dropdown__menu" aria-labelledby="region">
+                            <li class="dropdown-item oreh-dropdown__item">Область</li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="checkout__label checkout__label--cour"><input class="form-check-input oreh-radio checkout__radio" type="radio"
+                    name="delivery" id="cour">Курьер по Одессе <img src="img/icons/sticker.svg" alt="" class="checkout__label-sticker"></label>
+                <div class="checkout__cour">
+                    <input class="oreh-inputText checkout__form-input checkout__form-input--address  checkout-hide" type="text" name="address" placeholder="Адрес*">
+                </div>
+                <label class="checkout__label checkout__label--samo"><input class="form-check-input oreh-radio checkout__radio" type="radio"
+                    name="delivery" id="samo">Самовывоз со склада</label>
+            </fieldset>
+            <fieldset class="checkout__form-field">
+                <h3 class="checkout__form-title">3. Способ оплаты</h3>
+                <label class="checkout__label checkout__label--beznal"><input class="form-check-input oreh-radio checkout__radio" type="radio"
+                    name="payment" id="beznal">Безналичный расчет</label>
+                <label class="checkout__label checkout__label--privat"><input class="form-check-input oreh-radio checkout__radio" type="radio"
+                    name="payment" id="privat">LiqPay / Приват24</label>
+                <label class="checkout__label checkout__label--nal"><input class="form-check-input oreh-radio checkout__radio" type="radio"
+                    name="payment" id="nal">Наличными при получении (Наложенным платежом)</label>
+            </fieldset>
+            <a href="thanks.html" class="checkout__form-btn">Продолжить</a>
+        </form>
+    </main>
+    <footer class="footer footer--dark">
+        <div th:replace="~{fragments.html :: footer-top}"></div>
+        <div th:replace="~{fragments.html :: footer-mid}"></div>
+        <div th:replace="~{fragments.html :: footer-bot}"></div>
+    </footer>
+</body>
+
+</html>

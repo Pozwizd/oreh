@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<header th:replace="~{fragments :: header}"></header>
+
+    <main class="login">
+        <div class="login__intro-links">
+            <div class="intro-links intro-links--gray">
+                <a class="intro-links__link intro-links__link--gray" href="index.html">Главная</a>
+                <img class="intro-links__arrow" src="img/icons/arrow-right-gray.svg" alt="">
+                <a class="intro-links__link intro-links__link--gray" href="login.html">Вход</a>
+            </div>
+        </div>
+        <div class="login__menu">
+            <div class="title-middle">
+                <h2 class="title-middle__title title-middle__title--smaller">Войти в личный кабинет</h2>
+            </div>
+            <form class="login__form">
+                <input class="oreh-inputText login__input" type="text" name="email" placeholder="Email">
+                <input class="oreh-inputText login__input" type="text" name="password" placeholder="Пароль">
+            </form>
+            <a class="login__forgot" href="password-recovery.html">Забыли пароль?</a>
+            <a class="login__btn" href="personal-page.html">Войти</a>
+            <a class="login__register" href="registration.html">Регистрация</a>
+        </div>
+    </main>
+    <footer class="footer footer--dark">
+        <div th:replace="~{fragments.html :: footer-top}"></div>
+        <div th:replace="~{fragments.html :: footer-mid}"></div>
+        <div th:replace="~{fragments.html :: footer-bot}"></div>
+    </footer>
+</body>
+
+</html>

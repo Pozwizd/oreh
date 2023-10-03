@@ -1,10 +1,12 @@
 package com.m.roman.oreh.controller;
 
 import com.m.roman.oreh.entity.MenuDelivery;
-import com.m.roman.oreh.service.*;
+import com.m.roman.oreh.service.ContactService;
+import com.m.roman.oreh.service.MenuDeliveryService;
+import com.m.roman.oreh.service.SpecificationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -22,8 +24,9 @@ public class deliveryController {
     }
 
 
-    @RequestMapping("/delivery.html")
+    @GetMapping("/delivery.html")
     public String delivery(Model model) {
+        model.addAttribute("TitlePage", "Оплата и доставка");
         List<MenuDelivery> menuDeliveries = menuDeliveryService.getAllMenuDeliveries();
         model.addAttribute("menuDeliveries", menuDeliveries);
 

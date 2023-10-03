@@ -14,8 +14,9 @@ public class checkoutController {
         this.contactService = contactService;
     }
 
-    @RequestMapping("/checkout")
+    @RequestMapping("/checkout.html")
     public String checkoutPage(Model model) {
+        model.addAttribute("TitlePage", "Оформление заказа");
         model.addAttribute("contact", contactService.getContact(1));
 
         return "checkout";

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +10,10 @@
     <script src="js/bootstrap.bundle.min.js" defer></script>
     <script src="js/swiper-bundle.min.js" defer></script>
     <script src="js/main.min.js" defer></script>
-    <title>Орехи Причероморья</title>
+    <title th:text="${TitlePage}">NamePage</title>
 </head>
-<body>
-<!--    th:utext="${model.name}"-->
-<!--    th:text="${model.name}"-->
-<!--    th:src="${model.url}"-->
-<!--    th:alt="${model.name}"-->
-<header class="header">
+
+<header class="header" th:fragment="header">
     <div class="header__top">
         <div class="header__top-wrapper">
             <div class="social-links">
@@ -85,13 +81,13 @@
                 <img class="header__btn-img" src="img/icons/menu.svg" alt="">
             </div>
             <div class="logo">
-                <a class="logo__link" href="index.html">
+                <a class="logo__link" href="/">
                     <img class="logo__img" src="img/icons/logo.png" alt="">
                     <p class="logo__text">ОРЕХ ПРИЧЕРНОМОРЬЯ</p>
                 </a>
             </div>
             <div class="header__logo-mob">
-                <a class="header__logo-mobLink" href="index.html">
+                <a class="header__logo-mobLink" href="/">
                     <img class="header__logo-mobImg" src="img/icons/logo.png" alt="">
                     <p class="header__logo-mobText">ОРЕХ ПРИЧЕРНОМОРЬЯ</p>
                 </a>
@@ -109,10 +105,12 @@
                     </a>
                 </div>
                 <div class="header__phone-numbers">
-                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber1}" th:text="${contact.phoneNumber1}">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber1}"
+                       th:text="${contact.phoneNumber1}">
                         <span class="header__number-green">+38 (044)</span> 750-50-11
                     </a>
-                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber2}" th:text="${contact.phoneNumber2}">
+                    <a class="header__number" th:href="'tel:' + ${contact.phoneNumber2}"
+                       th:text="${contact.phoneNumber2}">
                         <span class="header__number-green">+38 (097)</span> 775-50-51
                     </a>
                 </div>
@@ -284,173 +282,10 @@
         </div>
     </div>
 </header>
+
+<body>
 <main class="main">
-    <section class="video-wide video-wide--trees">
-        <video class="video-wide__video video-wide__video--trees" src="#"></video>
-        <div class="video-wide__text-wrap">
-            <h2 class="video-wide__title" th:text="${titleText1.title}">Орех Причерноморья</h2>
-            <p class="video-wide__text" th:text="${titleText1.text}">Единственный в Украине сад совместного выращивание
-                фундука и грецкого ореха</p>
-            <div class="play-btn">
-                <div class="play-btn__outer">
-                    <div class="play-btn__inner">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="product-block">
-        <div class="product-block__wrapper">
-            <div class="title-middle">
-                <h3 class="title-middle__title" th:text="${titleText2.title}">Продукция</h3>
-                <p class="title-middle__subtitle" th:text="${titleText2.text}">Экологически чистые, качественные ядра
-                    грецкого ореха и фундука,
-                    а также плоды шиповника в удобной, надежной, вакуумной упаковке
-                    разного объема</p>
-            </div>
-            <div class="product-block__card-grid" th:each="product : ${products}">
-                <div class="product-card">
-                    <div class="swiper product-card__slider">
-                        <div class="swiper-wrapper product-card__slider-wrapper"
-                             th:each="media : ${product.mediaList}">
-                            <div class="swiper-slide product-card__slider-item">
-                                <img th:src="${media.url}" class="product-card__slider-img" th:alt="${media.name}">
-                                <a class="product-card__slider-lupa" href="#">
-                                    <div class="product-card__lupa-outer">
-                                        <div class="product-card__lupa-inner">
-                                            <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-button-prev product-card__slider-prev"></div>
-                        <div class="swiper-button-next product-card__slider-next"></div>
-                    </div>
-                    <div class="product-card__slider-flag"
-                         th:if="${product.specialOffer == 'sale'}">
-                        <p class="product-card__slider-special">АКЦИЯ</p>
-                    </div>
-
-                    <div class="product-card__slider-flag product-card__slider-flag--new"
-                         th:if="${product.specialOffer == 'new'}">
-                        <p class="product-card__slider-special" th:text="${product.specialOffer}">НОВИНКА</p>
-                    </div>
-
-                    <div class="product-card__body">
-                        <h5 class="product-card__title" th:text="${product.title}">Грецкий орех</h5>
-                        <div class="product-card__text">
-                            <p class="product-card__text-art" th:text="'Арт:' + ${product.articleNumber}">0091</p>
-                            <p class="product-card__text-desc" th:text="${product.productType}">Орех сладкий,
-                                классический, очищенный</p>
-                            <div class="product-card__info">
-                                <div class="product-card__mass">
-                                    <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
-                                    <p class="product-card__mass-text">
-                                        Масса:
-                                        <span class="product-card__mass-text product-card__mass-text--green"
-                                              th:text="${product.weight}">40г.</span>
-                                    </p>
-                                </div>
-                                <div class="product-card__package">
-                                    <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
-                                    <p class="product-card__package-text">
-                                        Упаковка
-                                        <span class="product-card__package-text product-card__package-text--green"
-                                              th:text="${product.packageType}">вакуумная</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card__bottom">
-                        <div class="product-card__price">
-                            <p class="product-card__price-text">Цена:</p>
-                            <p class="product-card__price-text product-card__price-text--green">
-                                        <span class="product-card__price-text product-card__price-text--green-big"
-                                              th:text="${product.price}">19</span>
-                                грн.
-                            </p>
-
-                            <p class="product-card__price-text product-card__price-text--gray"
-                               th:if="${product.originalPrice != null}">
-                                        <span class="product-card__price-text product-card__price-text--gray-big"
-                                              th:text="${product.originalPrice}">21</span>
-                                грн
-                            </p>
-                        </div>
-                        <a class="product-card__btn" href="product-page.html">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <a class="product-block__btn" href="catalog.html">Перейти в магазин</a>
-        </div>
-    </section>
-    <section class="manufacturer">
-        <div class="manufacturer__wrapper">
-            <div class="manufacturer__info">
-                <h2 class="title-left" th:text="${article1.title}">О производителе</h2>
-                <p class="manufacturer__text" th:utext="${article1.text}">
-                        <span class="manufacturer__text manufacturer__text--green" >Сельскохозяйственный обслуживающий кооператив “Орех Причерноморья”
-                        </span>
-                    выращивает смешанные сады ореха грецкого с фундуком, а также ореха грецкого с шиповником, на площади
-                    более 150 гектаров.
-                </p>
-                <p class="manufacturer__text" th:text="${article1.textLine2}">Помимо этого кооператив занимается выращиванием
-                    посадочного материала,
-                    саженцов привитого и непривитого грецкого ореха, фундука и шиповника.</p>
-                <a href="#" class="manufacturer__btn">Подробнее</a>
-            </div>
-            <div class="swiper manufacturer__slider">
-                <div class="swiper-wrapper manufacturer__slider-wrapper">
-                    <div class="manufacturer__slider-item-1 swiper-slide">
-                        <div class="manufacturer__video-wrap">
-                            <video class="manufacturer__video" src="#"></video>
-                            <div class="manufacturer__video-overlay">
-                                <div class="play-btn manufacturer__play-btn">
-                                    <div class="play-btn__outer manufacturer__play-outer">
-                                        <div class="play-btn__inner manufacturer__play-inner">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="manufacturer__slider-item-2 swiper-slide">
-                        <div class="manufacturer__video-wrap">
-                            <video class="manufacturer__video" src="#"></video>
-                            <div class="manufacturer__video-overlay">
-                                <div class="play-btn manufacturer__play-btn">
-                                    <div class="play-btn__outer manufacturer__play-outer">
-                                        <div class="play-btn__inner manufacturer__play-inner">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="manufacturer__slider-item-3 swiper-slide">
-                        <div class="manufacturer__video-wrap">
-                            <video class="manufacturer__video" src="#"></video>
-                            <div class="manufacturer__video-overlay">
-                                <div class="play-btn manufacturer__play-btn">
-                                    <div class="play-btn__outer manufacturer__play-outer">
-                                        <div class="play-btn__inner manufacturer__play-inner">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="manufacturer__green-bar"></div>
-                <div class="swiper-button-prev manufacturer__prev"></div>
-                <div class="swiper-button-next manufacturer__next"></div>
-            </div>
-        </div>
-    </section>
-    <section class="stats">
+    <section class="stats" th:fragment="stats">
         <div class="stats__wrapper">
             <div class="stats__item">
                 <div class="stats__upper">
@@ -482,147 +317,98 @@
             </div>
         </div>
     </section>
-    <section class="video-wide video-wide--goal">
-        <video class="video-wide__video video-wide__video--goal" src="#"></video>
-        <div class="video-wide__text-wrap video-wide__text-wrap--goal">
-            <h2 class="video-wide__title video-wide__title--smaller" th:text="${titleText3.title}">Наша главная цель -
-                получить максимальную прибыль с
-                одного гектара</h2>
-            <div class="play-btn play-btn--goal">
-                <div class="play-btn__outer">
-                    <div class="play-btn__inner">
-                    </div>
-                </div>
-            </div>
-            <p class="video-wide__sub-text" th:text="${titleText3.text}">Cмотреть видео о производстве</p>
-        </div>
-    </section>
-    <section class="benefits">
-        <div class="benefits__wrapper">
-            <div class="title-middle">
-                <h3 class="title-middle__title" th:text="${titleText4.title}">О пользе продукта</h3>
-                <p class="title-middle__subtitle" th:text="${titleText4.text}">Каждый вид ореха содержит свой неповторимый
-                    уникальный
-                    баланс витаминов, и микроэлементов </p>
-            </div>
-            <div class="benefits__products">
-                <div class="benefits__item benefits__item--walnut">
-                    <div class="benefits__content">
-                        <div class="benefits__content-upper">
-                            <img src="img/icons/walnut.svg" alt="">
-                            <p class="benefits__name" th:text="${article2.title}">Грецкий орех</p>
-                        </div>
-                        <div class="benefits__content-bottom">
-                            <p class="benefits__text" th:text="${article2.text}">Дерево жизни - так часто величают грецкий
-                                орех, поскольку с давних
-                                пор он кормил, восстанавливал силы и лечил человека.</p>
-                            <p class="benefits__text" th:text="${article2.textLine2}">Даже небольшая горсть грецких орехов - это
-                                кладезь витаминов
-                                и хорошая профилактика многих заболеваний</p>
+
+    <section class="product-block">
+        <div class="product-block__card-grid" th:fragment="product-card">
+            <div class="product-card" th:each="product : ${products}">
+                <div class="swiper product-card__slider">
+                    <div class="swiper-wrapper product-card__slider-wrapper">
+                        <div class="swiper-slide product-card__slider-item" th:each="media : ${product.mediaList}">
+                            <img th:src="${media.url}" class="product-card__slider-img" th:alt="${media.name}">
+                            <a class="product-card__slider-lupa" href="#">
+                                <div class="product-card__lupa-outer">
+                                    <div class="product-card__lupa-inner">
+                                        <img class="product-card__lupa-image" src="img/icons/lupa.svg" alt="">
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
+                    <div class="swiper-button-prev product-card__slider-prev"></div>
+                    <div class="swiper-button-next product-card__slider-next"></div>
                 </div>
-                <div class="benefits__item benefits__item--funduk">
-                    <div class="benefits__content">
-                        <div class="benefits__content-upper">
-                            <img src="img/icons/funduk.svg" alt="">
-                            <p class="benefits__name" th:text="${article3.title}">Фундук</p>
-                        </div>
-                        <div class="benefits__content-bottom">
-                            <p class="benefits__text" th:text="${article3.text}">Дерево жизни - так часто величают фундук,
-                                поскольку с давних пор
-                                он кормил, восстанавливал силы и лечил человека.</p>
-                            <p class="benefits__text" th:text="${article3.textLine2}">Даже небольшая горсть фундука - это
-                                кладезь витаминов
-                                и хорошая профилактика многих заболеваний</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="benefits__item benefits__item--shipovnik">
-                    <div class="benefits__content">
-                        <div class="benefits__content-upper">
-                            <img src="img/icons/shipovnik.svg" alt="">
-                            <p class="benefits__name" th:text="${article4.title}">Шиповник</p>
-                        </div>
-                        <div class="benefits__content-bottom">
-                            <p class="benefits__text" th:text="${article4.text}">Дерево жизни - так часто величают
-                                шиповник, поскольку с давних пор
-                                он кормил, восстанавливал силы и лечил человека.</p>
-                            <p class="benefits__text" th:text="${article4.textLine2}">Даже небольшая горсть шиповника - это
-                                кладезь витаминов
-                                и хорошая профилактика многих заболеваний</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="eco">
-        <div class="eco__wrapper">
-            <img class="eco__icon" src="img/icons/eco.svg" alt="">
-            <h2 class="eco__title" th:text="${article5.title}">Эко продукция</h2>
-            <p class="eco__text" th:text="${article5.text}">Выращиваем каждое деревцо с любовью, на экологически чистой
-                земле, без использования
-                пестицидов и химии</p>
-        </div>
-    </div>
-    <section class="news-block">
-        <div class="news-block__wrapper">
-            <div class="swiper news-block__slider">
-                <h3 class="title-left" th:text="${titleText5.title}">Новости</h3>
-                <p class="title-left title-left--subtitle" th:text="${titleText5.text}">Свежие новости и полезная
-                    информация</p>
-                <div class="swiper-wrapper news-block__slider-wrapper" th:each="novelty : ${news}">
-                    <div class="swiper-slide news-block__slider-item">
-                        <div class="news-block__item-wrapper">
-                            <div class="news-block__item-upper">
-                                <img class="news-block__item-visual"
-                                     th:src="${novelty.url != null ? novelty.url : 'img/main/pavel-news-block.png'}"
-                                     alt="">
-                            </div>
-                            <div class="news-block__item-bottom">
-                                <p class="news-block__item-date" th:text="${novelty.date}">12.04.2019</p>
-                                <h4 class="news-block__item-title" th:text="${novelty.title}">Центр поддержки экспорта, в
-                                    студии Павел Тулба</h4>
-                                <p class="news-block__item-text" th:text="${novelty.text}">Как уже упоминал Павел Тулба,
-                                    шиповник цветёт. Эта
-                                    культура
-                                    очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
-                                    отличную...
-                                </p>
-                                <a href="news-page.html" class="news-block__item-link">Читать
-                                    <svg class="news-block__item-arrow" width="18" height="10" viewBox="0 0 18 10"
-                                         fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                                d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-block__green-bar">
-                    <div class="swiper-button-prev news-block__prev"></div>
-                    <div class="swiper-button-next news-block__next"></div>
+                <div class="product-card__slider-flag"
+                     th:if="${product.specialOffer == 'sale'}">
+                    <p class="product-card__slider-special">АКЦИЯ</p>
                 </div>
 
+                <div class="product-card__slider-flag product-card__slider-flag--new"
+                     th:if="${product.specialOffer == 'new'}">
+                    <p class="product-card__slider-special">НОВИНКА</p>
+                </div>
+
+                <div class="product-card__body">
+                    <h5 class="product-card__title" th:text="${product.title}">Грецкий орех</h5>
+                    <div class="product-card__text">
+                        <p class="product-card__text-art" th:text="'Арт:' + ${product.articleNumber}">0091</p>
+                        <p class="product-card__text-desc" th:text="${product.productType}">Орех сладкий,
+                            классический, очищенный</p>
+                        <div class="product-card__info">
+                            <div class="product-card__mass">
+                                <img class="product-card__mass-image" src="img/icons/scales.svg" alt="">
+                                <p class="product-card__mass-text">
+                                    Масса:
+                                    <span class="product-card__mass-text product-card__mass-text--green"
+                                          th:text="${product.weight}">40г.</span>
+                                </p>
+                            </div>
+                            <div class="product-card__package">
+                                <img class="product-card__package-image" src="img/icons/bag-long.svg" alt="">
+                                <p class="product-card__package-text">
+                                    Упаковка
+                                    <span class="product-card__package-text product-card__package-text--green"
+                                          th:text="${product.packageType}">вакуумная</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card__bottom">
+                    <div class="product-card__price">
+                        <p class="product-card__price-text">Цена:</p>
+                        <p class="product-card__price-text product-card__price-text--green">
+                                                <span class="product-card__price-text product-card__price-text--green-big"
+                                                      th:text="${product.price}">19</span>
+                            грн.
+                        </p>
+
+                        <p class="product-card__price-text product-card__price-text--gray"
+                           th:if="${product.originalPrice != null}">
+                                                <span class="product-card__price-text product-card__price-text--gray-big"
+                                                      th:text="${product.originalPrice}">21</span>
+                            грн
+                        </p>
+                    </div>
+                    <a class="product-card__btn" href="product-page.html">Купить</a>
+                </div>
             </div>
-            <a class="news-block__link" href="news.html">Смотреть все новости</a>
         </div>
     </section>
 </main>
-<footer class="footer">
-
-    <div class="footer__top">
+<footer>
+    <!--Footer Top-->
+    <div class="footer__top" th:fragment="footer-top">
         <div class="footer__top-wrapper">
             <div class="footer__contacts" id="contacts">
                 <h2 class="title-left">Контакты</h2>
                 <div class="footer__phone-contacts">
                     <img class="footer__phone-icon" src="img/icons/phone.svg" alt="">
                     <div class="footer__phone-numbers">
-                        <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber1}" th:text="${contact.phoneNumber1}">+38 (095) 711 11 11</a>
-                        <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber2}" th:text="${contact.phoneNumber2}">+38 (095) 711 11 11</a>
+                        <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber1}"
+                           th:text="${contact.phoneNumber1}">+38 (095) 711 11 11</a>
+                        <a class="footer__number" th:href="'tel:' + ${contact.phoneNumber2}"
+                           th:text="${contact.phoneNumber2}">+38 (095) 711 11 11</a>
                     </div>
                     <div class="messengers">
                         <a class="messengers__link" th:href="${contact.linkViber}" target="_blank">
@@ -651,7 +437,8 @@
                     <img class="footer__production-icon" src="img/icons/tree.svg" alt="">
                     <div class="footer__production-info">
                         <h3 class="footer__title" th:text="${contact.productionTitle}">Производство</h3>
-                        <p class="footer__production-text" th:utext="${contact.productionLine}">Украина, Одесская обл,</p>
+                        <p class="footer__production-text" th:utext="${contact.productionLine}">Украина, Одесская
+                            обл,</p>
                     </div>
                 </div>
             </div>
@@ -668,7 +455,8 @@
         </div>
     </div>
 
-    <div class="footer__mid">
+    <!--Footer Mid-->
+    <div class="footer__mid" th:fragment="footer-mid">
         <div class="footer__mid-wrapper">
             <div class="logo">
                 <a class="logo__link" href="index.html">
@@ -702,7 +490,9 @@
             </nav>
         </div>
     </div>
-    <div class="footer__bot">
+
+    <!--Footer Bot-->
+    <div class="footer__bot" th:fragment="footer-bot">
         <div class="footer__bot-wrapper">
             <p class="footer__avada">Разработано <span
                     class="footer__avada footer__avada--green-bold">AVADA </span><span
@@ -737,6 +527,7 @@
             </div>
         </div>
     </div>
+
 </footer>
 </body>
 </html>

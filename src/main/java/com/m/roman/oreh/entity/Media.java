@@ -23,10 +23,7 @@ public class Media {
     @Column(name = "url")
     private String url;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST,
-            CascadeType.MERGE,
-            CascadeType.REFRESH,
-            CascadeType.DETACH}, fetch = FetchType.EAGER)
+    @ManyToOne()
     @JoinColumn(name = "product_id")
     private Product product;
 

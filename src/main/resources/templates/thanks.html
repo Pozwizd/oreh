@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<header th:replace="~{fragments :: header}"></header>
+    <main class="thanks">
+        <section class="intro-card intro-card--clients">
+            <div class="intro-card__wrap">
+                <h2 class="intro-card__title">Благодарим Вас за заказ!</h2>
+                <p class="intro-card__subtitle">
+                    Наши менеджеры свяжутся с Вами 
+                    в ближайшее время
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer footer--dark">
+        <div th:replace="~{fragments.html :: footer-top}"></div>
+        <div th:replace="~{fragments.html :: footer-mid}"></div>
+        <div th:replace="~{fragments.html :: footer-bot}"></div>
+    </footer>
+</body>
+
+</html>

@@ -21,10 +21,7 @@ public class Product {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @OneToMany(cascade = {CascadeType.PERSIST,
-            CascadeType.MERGE,
-            CascadeType.REFRESH,
-            CascadeType.DETACH}, mappedBy = "product", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.EAGER)
     private List<Media> mediaList;
 
     @Column(name = "special_offer")

@@ -14,8 +14,9 @@ public class galleryPageController {
         this.contactService = contactService;
     }
 
-    @RequestMapping("/gallery")
+    @RequestMapping("/gallery.html")
     public String galleryPage(Model model) {
+        model.addAttribute("TitlePage", "Галлерея");
         model.addAttribute("contact", contactService.getContact(1));
         return "gallery";
     }

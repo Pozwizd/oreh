@@ -14,8 +14,9 @@ public class loginController {
         this.contactService = contactService;
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("/login.html")
     public String loginPage(Model model) {
+        model.addAttribute("TitlePage", "Вход");
 
         model.addAttribute("contact", contactService.getContact(1));
 

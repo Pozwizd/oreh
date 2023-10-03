@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<header th:replace="~{fragments :: header}"></header>
+    <main class="product-page">
+        <div class="product-page__intro-links">
+            <div class="intro-links intro-links--gray">
+                <a class="intro-links__link intro-links__link--gray" href="index.html">Главная</a>
+                <img class="intro-links__arrow" src="img/icons/arrow-right-gray.svg" alt="">
+                <a class="intro-links__link intro-links__link--gray" href="product-page.html">Карточка товара</a>
+            </div>
+        </div>
+        <div class="product-page__product">
+            <div class="product-page__product-wrapper">
+                <div class="product-page__product-leftside">
+                    <div class="product-page__visual">
+                        <div class="swiper product-page__slider">
+                            <div class="swiper-wrapper product-page__slider-wrapper">
+                                <div class="swiper-slide product-page__slider-item">
+                                    <img class="product-page__slider-img" src="img/main/gorih-page.png" alt="">
+                                    <a class="product-page__slider-lupa" href="#">
+                                        <div class="product-page__lupa-outer">
+                                            <div class="product-page__lupa-inner">
+                                                <img class="product-page__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-page__slider-item">
+                                    <img class="product-page__slider-img" src="img/main/gorih-page.png" alt="">
+                                    <a class="product-page__slider-lupa" href="#">
+                                        <div class="product-page__lupa-outer">
+                                            <div class="product-page__lupa-inner">
+                                                <img class="product-page__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide product-page__slider-item">
+                                    <img class="product-page__slider-img" src="img/main/gorih-page.png" alt="">
+                                    <a class="product-page__slider-lupa" href="#">
+                                        <div class="product-page__lupa-outer">
+                                            <div class="product-page__lupa-inner">
+                                                <img class="product-page__lupa-image" src="img/icons/lupa.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev product-page__slider-prev"></div>
+                            <div class="swiper-button-next product-page__slider-next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-page__product-rightside">
+                    <div class="product-page__name">
+                        <p class="product-page__name-text">Грецкий орех</p>
+                        <p class="product-page__name-art">Арт: 0091</p>
+                    </div>
+                    <h2 class="product-page__type">Орех соленый кондитерский <br> очищенный</h2>
+                    <div class="product-page__stats">
+                        <p class="product-page__stats-itemLeft">Состав:</p>
+                        <p class="product-page__stats-itemRight">Ядро грецкого ореха, вымытого очищенного от кожуры,
+                            соль экстра (раствор 7%)</p>
+
+                        <p class="product-page__stats-itemLeft">Масса нетто:</p>
+                        <p class="product-page__stats-itemRight">40г.</p>
+
+                        <p class="product-page__stats-itemLeft">Энергетическая ценность:</p>
+                        <p class="product-page__stats-itemRight">654 Ккал.</p>
+
+                        <p class="product-page__stats-itemLeft">Срок годности:</p>
+                        <p class="product-page__stats-itemRight">12 месяцев, с даты расфасовки (указана на упаковке)
+                        </p>
+                    </div>
+                    <div class="product-page__warning">
+                        <img class="product-page__warning-img" src="img/icons/warning-sigh.svg" alt="">
+                        <p class="product-page__warning-text">Хранить в помещениях, защищенных от попадания прямых,
+                            солнечных лучей, при температуре от +3 °C до +20 °C, и относительной
+                            влажности воздуха не более 75 %</p>
+                    </div>
+                    <div class="product-page__product-bottom">
+                        <div class="product-page__price">
+                            <p class="product-page__price-text">Ваша цена:</p>
+                            <p class="product-page__price-text product-page__price-text--green">
+                                <span class="product-page__price-text product-page__price-text--green-big">19</span>
+                                грн.
+                            </p>
+                            <p class="product-page__price-text product-page__price-text--gray">
+                                <span class="product-page__price-text product-page__price-text--gray-big">21</span>
+                                грн
+                            </p>
+                        </div>
+                        <a class="product-page__btn" href="product-page.html">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clients-menu clients-menu--product">
+            <div class="clients-menu__wrapper clients-menu__wrapper--product">
+                <div class="clients-menu__list-wrapper clients-menu__list-wrapper--product">
+                    <ul class="clients-menu__list clients-menu__list--product">
+                        <li class="clients-menu__list-item clients-menu__list-item--product clients-menu-active" data-value="desc">
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Описание</h3>
+                        </li>
+                        <li class="clients-menu__list-item clients-menu__list-item--product" data-value="packing">  
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Упаковка</h3>
+                        </li>
+                        <li class="clients-menu__list-item clients-menu__list-item--product" data-value="payment">
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Оплата</h3>
+                        </li>
+                        <li class="clients-menu__list-item clients-menu__list-item--product" data-value="delivery">
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Доставка</h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clients-menu__info">
+                    <div class="clients-menu__info-item clients-menu__info-item--product clients-menu__info-item--basis">
+                        <div class="clients-menu__visual clients-menu__visual--product">
+                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                        </div>
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
+                                детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
+                                грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
+                                употреблять перед едой.                                
+                            </p>
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                в организме
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                а всему организму –
+                                победить воспаления.                                                             
+                            </p>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">Антиоксиданты защищают печень от повреждений</li>
+                                <li class="clients-menu__info-listItem">Полифенолы не дают образоваться сосудистым тромбам</li>
+                                <li class="clients-menu__info-listItem">Нейропротекторы улучшают работу мозга, отодвигают старость</li>
+                            </ul>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Нужно систематически есть грецкие орехи, чтобы:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">На 30–40 % снизить риск заболевания раком простаты</li>
+                                <li class="clients-menu__info-listItem">На 50 % – раком молочной железы</li>
+                                <li class="clients-menu__info-listItem">Предотвратить дегенерацию глазной макулы, а значит, улучшить зрение</li>
+                                <li class="clients-menu__info-listItem">Отрегулировать обмен веществ, выработку инсулина; понизить количество сахара в крови</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clients-menu__info-item clients-menu__info-item--product active" data-value="desc">
+                        <div class="clients-menu__visual clients-menu__visual--product">
+                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                        </div>
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
+                                детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
+                                грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
+                                употреблять перед едой.                                
+                            </p>
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                в организме
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                а всему организму –
+                                победить воспаления.                                                             
+                            </p>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">Антиоксиданты защищают печень от повреждений</li>
+                                <li class="clients-menu__info-listItem">Полифенолы не дают образоваться сосудистым тромбам</li>
+                                <li class="clients-menu__info-listItem">Нейропротекторы улучшают работу мозга, отодвигают старость</li>
+                            </ul>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Нужно систематически есть грецкие орехи, чтобы:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">На 30–40 % снизить риск заболевания раком простаты</li>
+                                <li class="clients-menu__info-listItem">На 50 % – раком молочной железы</li>
+                                <li class="clients-menu__info-listItem">Предотвратить дегенерацию глазной макулы, а значит, улучшить зрение</li>
+                                <li class="clients-menu__info-listItem">Отрегулировать обмен веществ, выработку инсулина; понизить количество сахара в крови</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clients-menu__info-item clients-menu__info-item--product" data-value="packing">
+                        <div class="clients-menu__visual clients-menu__visual--product">
+                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                        </div>
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
+                                детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
+                                грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
+                                употреблять перед едой.                                
+                            </p>
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                в организме
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                а всему организму –
+                                победить воспаления.                                                             
+                            </p>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">Антиоксиданты защищают печень от повреждений</li>
+                                <li class="clients-menu__info-listItem">Полифенолы не дают образоваться сосудистым тромбам</li>
+                                <li class="clients-menu__info-listItem">Нейропротекторы улучшают работу мозга, отодвигают старость</li>
+                            </ul>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Нужно систематически есть грецкие орехи, чтобы:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">На 30–40 % снизить риск заболевания раком простаты</li>
+                                <li class="clients-menu__info-listItem">На 50 % – раком молочной железы</li>
+                                <li class="clients-menu__info-listItem">Предотвратить дегенерацию глазной макулы, а значит, улучшить зрение</li>
+                                <li class="clients-menu__info-listItem">Отрегулировать обмен веществ, выработку инсулина; понизить количество сахара в крови</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clients-menu__info-item clients-menu__info-item--product" data-value="payment">
+                        <div class="clients-menu__visual clients-menu__visual--product">
+                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                        </div>
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
+                                детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
+                                грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
+                                употреблять перед едой.                                
+                            </p>
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                в организме
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                а всему организму –
+                                победить воспаления.                                                             
+                            </p>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">Антиоксиданты защищают печень от повреждений</li>
+                                <li class="clients-menu__info-listItem">Полифенолы не дают образоваться сосудистым тромбам</li>
+                                <li class="clients-menu__info-listItem">Нейропротекторы улучшают работу мозга, отодвигают старость</li>
+                            </ul>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Нужно систематически есть грецкие орехи, чтобы:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">На 30–40 % снизить риск заболевания раком простаты</li>
+                                <li class="clients-menu__info-listItem">На 50 % – раком молочной железы</li>
+                                <li class="clients-menu__info-listItem">Предотвратить дегенерацию глазной макулы, а значит, улучшить зрение</li>
+                                <li class="clients-menu__info-listItem">Отрегулировать обмен веществ, выработку инсулина; понизить количество сахара в крови</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clients-menu__info-item clients-menu__info-item--product" data-value="delivery">
+                        <div class="clients-menu__visual clients-menu__visual--product">
+                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                        </div>
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
+                                детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
+                                грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
+                                употреблять перед едой.                                
+                            </p>
+                            <p class="clients-menu__info-text clients-menu__info-text--product">
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                в организме
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                а всему организму –
+                                победить воспаления.                                                             
+                            </p>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">Антиоксиданты защищают печень от повреждений</li>
+                                <li class="clients-menu__info-listItem">Полифенолы не дают образоваться сосудистым тромбам</li>
+                                <li class="clients-menu__info-listItem">Нейропротекторы улучшают работу мозга, отодвигают старость</li>
+                            </ul>
+                            <h3 class="clients-menu__info-title clients-menu__info-title--product">Нужно систематически есть грецкие орехи, чтобы:</h3>
+                            <ul class="clients-menu__info-list">
+                                <li class="clients-menu__info-listItem">На 30–40 % снизить риск заболевания раком простаты</li>
+                                <li class="clients-menu__info-listItem">На 50 % – раком молочной железы</li>
+                                <li class="clients-menu__info-listItem">Предотвратить дегенерацию глазной макулы, а значит, улучшить зрение</li>
+                                <li class="clients-menu__info-listItem">Отрегулировать обмен веществ, выработку инсулина; понизить количество сахара в крови</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer footer--dark">
+        <div th:replace="~{fragments.html :: footer-top}"></div>
+        <div th:replace="~{fragments.html :: footer-mid}"></div>
+        <div th:replace="~{fragments.html :: footer-bot}"></div>
+    </footer>
+</body>
+</html>

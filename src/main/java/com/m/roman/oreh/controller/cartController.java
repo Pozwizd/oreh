@@ -13,8 +13,9 @@ public class cartController {
         this.contactService = contactService;
     }
 
-    @RequestMapping("/cart")
+    @RequestMapping("/cart.html")
     public String cartPage(Model model) {
+        model.addAttribute("TitlePage", "Корзина");
         model.addAttribute("contact", contactService.getContact(1));
         return "cart";
     }
