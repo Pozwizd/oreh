@@ -9,12 +9,12 @@ public interface ArticleService {
 
     public List<Article> getAllArticles();
 
-    public Article getArticle(int id);
+    public Article getArticle(long id);
 
     public void addArticle(Article article);
 
     public void updateArticle(Article article);
 
 
-    public void deleteArticle(int id);
+    public void deleteArticle(long id);
 }

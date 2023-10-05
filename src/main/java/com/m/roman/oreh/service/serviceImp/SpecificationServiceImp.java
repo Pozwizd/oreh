@@ -23,7 +23,7 @@ public class SpecificationServiceImp implements SpecificationService {
     }
 
     @Override
-    public void deleteSpecification(int id) {
+    public void deleteSpecification(long id) {
         specificationRepository.deleteById(id);
     }
 
@@ -33,7 +33,7 @@ public class SpecificationServiceImp implements SpecificationService {
     }
 
     @Override
-    public Specification getSpecification(int id) {
+    public Specification getSpecification(long id) {
         return specificationRepository.findById(id).orElse(null);
     }
 

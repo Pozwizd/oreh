@@ -24,7 +24,7 @@ public class TitleTextServiceImp implements TitleTextService {
     }
 
     @Override
-    public void deleteTitleText(int id) {
+    public void deleteTitleText(long id) {
         titleTextRepository.deleteById(id);
     }
 
@@ -39,7 +39,7 @@ public class TitleTextServiceImp implements TitleTextService {
     }
 
     @Override
-    public TitleText getTitleText(int id) {
+    public TitleText getTitleText(long id) {
         Optional<TitleText> titleText = titleTextRepository.findById(id);
         return titleText.orElse(null);
     }

@@ -33,7 +33,7 @@ public class ProductServiceImp implements ProductService {
     }
 
     @Override
-    public void deleteProduct(int id) {
+    public void deleteProduct(long id) {
         productRepository.deleteById(id);
     }
 
@@ -43,7 +43,7 @@ public class ProductServiceImp implements ProductService {
     }
 
     @Override
-    public Product getProduct(int id) {
+    public Product getProduct(long id) {
         Optional<Product> product = productRepository.findById(id);
         return product.orElse(null);
     }

@@ -23,7 +23,7 @@ public class MediaServiceImp implements MediaService {
     }
 
     @Override
-    public Media getMedia(int id) {
+    public Media getMedia(long id) {
         return mediaRepository.findById(id).orElse(null);
     }
 
@@ -33,7 +33,7 @@ public class MediaServiceImp implements MediaService {
     }
 
     @Override
-    public void deleteMedia(int id) {
+    public void deleteMedia(long id) {
         mediaRepository.deleteById(id);
     }
 

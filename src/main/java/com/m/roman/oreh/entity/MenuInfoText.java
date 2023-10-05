@@ -12,7 +12,7 @@ public class MenuInfoText {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private long id;
 
     @Column(name = "text")
     private String text;

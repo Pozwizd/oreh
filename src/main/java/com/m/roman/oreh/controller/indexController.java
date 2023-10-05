@@ -39,7 +39,7 @@ public class indexController {
     public ModelAndView index(Model model) {
         model.addAttribute("TitlePage", "Орех Причерноморья");
 
-        for (int i = 1; i <= 5; i++) {
+        for (long i = 1; i <= 5; i++) {
             model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
             model.addAttribute("article" + i, articleService.getArticle(i));
         }
@@ -56,8 +56,8 @@ public class indexController {
         }
         model.addAttribute("news", news);
 
-        model.addAttribute("specification", specificationService.getSpecification(1));
-        model.addAttribute("contact", contactService.getContact(1));
+        model.addAttribute("specification", specificationService.getSpecification(1L));
+        model.addAttribute("contact", contactService.getContact(1L));
 
         return new ModelAndView("index");
     }

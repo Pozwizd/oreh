@@ -18,7 +18,7 @@ import lombok.Setter;
 public class MenuDelivery {
     @Id
     @Column(name = "id", nullable = false)
-    private int id;
+    private long id;
 
     @Column(name = "category")
     private String category;

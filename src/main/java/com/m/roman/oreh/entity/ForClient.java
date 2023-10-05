@@ -16,7 +16,7 @@ public class ForClient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private long id;
 
     @Column(name = "category")
     private String category;

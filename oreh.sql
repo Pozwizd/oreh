@@ -3,24 +3,24 @@ use oreh;
 
 CREATE TABLE IF NOT EXISTS contact
 (
-    id               INT AUTO_INCREMENT PRIMARY KEY,
-    phone_number1    VARCHAR(20),
-    phone_number2    VARCHAR(20),
-    link_viber      VARCHAR(100),
-    link_telegram   VARCHAR(100),
-    link_whatsapp   VARCHAR(100),
+    id               BIGINT AUTO_INCREMENT PRIMARY KEY,
+    phone_number_1   VARCHAR(20),
+    phone_number_2   VARCHAR(20),
+    link_viber       VARCHAR(100),
+    link_telegram    VARCHAR(100),
+    link_whatsapp    VARCHAR(100),
     email            VARCHAR(100),
     address_title    VARCHAR(100),
-    address_line    VARCHAR(100),
+    address_line     VARCHAR(100),
     production_title VARCHAR(100),
-    production_line VARCHAR(100),
+    production_line  VARCHAR(100),
     map_image        varchar(100),
     pointer_map      varchar(100)
 );
 
 INSERT INTO contact (id,
-                     phone_number1,
-                     phone_number2,
+                     phone_number_1,
+                     phone_number_2,
                      link_viber,
                      link_telegram,
                      link_whatsapp,
@@ -50,7 +50,7 @@ VALUES (1,
 
 CREATE TABLE IF NOT EXISTS title_text
 (
-    id    INT AUTO_INCREMENT PRIMARY KEY,
+    id    BIGINT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100),
     text  VARCHAR(255),
     url   VARCHAR(255)
@@ -91,11 +91,11 @@ VALUES ('Орех Причерноморья',
 
 CREATE TABLE IF NOT EXISTS news
 (
-    id          INT AUTO_INCREMENT PRIMARY KEY,
-    url         VARCHAR(255),
-    date        DATE,
-    title       VARCHAR(100),
-    text        text
+    id    BIGINT AUTO_INCREMENT PRIMARY KEY,
+    url   VARCHAR(255),
+    date  DATE,
+    title VARCHAR(100),
+    text  text
 );
 
 insert into news (url, date, title, text)
@@ -132,7 +132,7 @@ VALUES ('img/main/pavel-news-block.png',
 
 CREATE TABLE IF NOT EXISTS article
 (
-    id       INT AUTO_INCREMENT PRIMARY KEY,
+    id       BIGINT AUTO_INCREMENT PRIMARY KEY,
     title    VARCHAR(100),
     subtitle VARCHAR(100),
     text     text,
@@ -184,7 +184,7 @@ VALUES ('Экологически чистый грецкий орех',
 
 CREATE TABLE IF NOT EXISTS menu_delivery
 (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
     category   VARCHAR(255),
     image_url  VARCHAR(255),
     title      VARCHAR(255),
@@ -235,13 +235,16 @@ VALUES (1,
 
 CREATE TABLE IF NOT EXISTS product
 (
-    id           INT AUTO_INCREMENT PRIMARY KEY,
+    id             BIGINT AUTO_INCREMENT PRIMARY KEY,
     special_offer  VARCHAR(255),
     title          VARCHAR(255),
     article_number VARCHAR(255),
-    product_type ENUM ('Орех классический', 'Орех сладкий','Орех солёный'),
-    weight       enum ('40г', '30г'),
-    package_type ENUM ('вакуумная', 'пакетная'),
+
+    product_type   ENUM ('CLASSIC', 'SWEET','SALTY'),
+
+    weight         ENUM ('VALUE1', 'VALUE2'),
+    package_type   ENUM ('бумажная', 'пластиковая'),
+
     price          DECIMAL(10, 0),
     original_price DECIMAL(10, 0)
 );
@@ -260,54 +263,54 @@ INSERT INTO product (id,
      'АКЦИЯ',
      'Грецкий орех',
      'Арт: 0091',
-     'Орех классический',
-     '40г',
-     'вакуумная',
+     'classic',
+     'VALUE1',
+     'бумажная',
      '19',
      '21'),
     (2,
      'НОВИНКА',
      'Грецкий орех',
      'Арт: 0091',
-     'Орех сладкий',
-     '40г',
-     'вакуумная',
+     'sweet',
+     'VALUE1',
+     'бумажная',
      21.00,
      NULL),
     (3,
      NULL,
      'Грецкий орех',
      'Арт: 0091',
-     'Орех солёный',
-     '40г',
-     'вакуумная',
+     'salty',
+     'VALUE1',
+     'бумажная',
      21.00,
      NULL),
     (4,
      NULL,
      'Грецкий орех',
      'Арт: 0091',
-     'Орех классический',
-     '40г',
-     'вакуумная',
+     'classic',
+     'VALUE2',
+     'пластиковая',
      21.00,
      NULL),
     (5,
      NULL,
      'Грецкий орех',
      'Арт: 0091',
-     'Орех сладкий',
-     '40г',
-     'вакуумная',
+     'sweet',
+     'VALUE2',
+     'пластиковая',
      21.00,
      NULL),
     (6,
      NULL,
      'Грецкий орех',
      'Арт: 0091',
-     'Орех солёный',
-     '40г',
-     'вакуумная',
+     'salty',
+     'VALUE2',
+     'пластиковая',
      21.00,
      NULL);
 
@@ -315,7 +318,7 @@ INSERT INTO product (id,
 
 CREATE TABLE IF NOT EXISTS specification
 (
-    id                  INT AUTO_INCREMENT PRIMARY KEY,
+    id                  BIGINT AUTO_INCREMENT PRIMARY KEY,
     gardens             decimal,
     greenhouses         decimal,
     rosehip_plantation  decimal,
@@ -337,10 +340,10 @@ VALUES (1,
 
 CREATE TABLE IF NOT EXISTS media
 (
-    id         INT AUTO_INCREMENT PRIMARY KEY,
+    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
     name       VARCHAR(255),
     url        VARCHAR(255),
-    product_id INT,
+    product_id BIGINT,
     FOREIGN KEY (product_id) REFERENCES product (id)
 
 );
@@ -404,8 +407,8 @@ VALUES ('img/main/KOND-40g.png',
 
 CREATE TABLE IF NOT EXISTS for_client
 (
-    id         INT AUTO_INCREMENT PRIMARY KEY,
-    category   VARCHAR(255)
+    id       BIGINT AUTO_INCREMENT PRIMARY KEY,
+    category VARCHAR(255)
 );
 
 insert into for_client (id, category)
@@ -419,9 +422,9 @@ VALUES (1, 'Крупные супермаркеты'),
 
 CREATE TABLE IF NOT EXISTS menu_info_text
 (
-    id         INT AUTO_INCREMENT PRIMARY KEY,
+    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
     text       VARCHAR(255),
-    for_client INT,
+    for_client BIGINT,
     FOREIGN KEY (for_client) REFERENCES for_client (id)
 );
 

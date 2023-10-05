@@ -1,9 +1,6 @@
 package com.m.roman.oreh.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,16 +11,17 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "contact", schema = "oreh")
+@Table(name = "contact")
 public class Contact {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private int id;
 
-    @Column(name = "phone_number1")
+    @Column(name = "phone_number_1")
     private String phoneNumber1;
 
-    @Column(name = "phone_number2")
+    @Column(name = "phone_number_2")
     private String phoneNumber2;
 
     @Column(name = "link_viber")

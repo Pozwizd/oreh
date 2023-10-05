@@ -24,7 +24,7 @@ public class ArticleServiceImp implements ArticleService {
     }
 
     @Override
-    public Article getArticle(int id) {
+    public Article getArticle(long id) {
         Optional<Article> article = articleRepository.findById(id);
         return article.orElse(null);
     }
@@ -40,7 +40,7 @@ public class ArticleServiceImp implements ArticleService {
     }
 
     @Override
-    public void deleteArticle(int id) {
+    public void deleteArticle(long id) {
         articleRepository.deleteById(id);
     }
 }

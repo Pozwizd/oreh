@@ -23,7 +23,7 @@ public class ContactServiceImp implements ContactService {
     }
 
     @Override
-    public Contact getContact(int id) {
+    public Contact getContact(long id) {
         Optional<Contact> contact = contactRepository.findById(id);
         return contact.orElse(null);
     }
@@ -34,7 +34,7 @@ public class ContactServiceImp implements ContactService {
     }
 
     @Override
-    public void deleteContact(int id) {
+    public void deleteContact(long id) {
         contactRepository.deleteById(id);
     }
 

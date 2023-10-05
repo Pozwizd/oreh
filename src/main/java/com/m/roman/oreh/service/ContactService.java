@@ -8,11 +8,11 @@ public interface ContactService {
 
     public List<Contact> getAllContacts();
 
-    public Contact getContact(int id);
+    public Contact getContact(long id);
 
     public void saveContact(Contact contact);
 
-    public void deleteContact(int id);
+    public void deleteContact(long id);
 
     public void updateContact(Contact contact);
 }

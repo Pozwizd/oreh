@@ -8,11 +8,11 @@ public interface SpecificationService {
 
     public void saveSpecification(Specification specification);
 
-    public void deleteSpecification(int id);
+    public void deleteSpecification(long id);
 
     public void updateSpecification(Specification specification);
 
-    public Specification getSpecification(int id);
+    public Specification getSpecification(long id);
 
     public List<Specification> getAllSpecifications();
 

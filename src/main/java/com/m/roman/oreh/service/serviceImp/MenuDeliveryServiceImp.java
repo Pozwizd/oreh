@@ -17,7 +17,7 @@ public class MenuDeliveryServiceImp implements MenuDeliveryService {
     }
 
     @Override
-    public void deleteMenuDelivery(int id) {
+    public void deleteMenuDelivery(long id) {
         menuDeliveryRepository.deleteById(id);
     }
 
@@ -27,7 +27,7 @@ public class MenuDeliveryServiceImp implements MenuDeliveryService {
     }
 
     @Override
-    public MenuDelivery getMenuDelivery(int id) {
+    public MenuDelivery getMenuDelivery(long id) {
         return menuDeliveryRepository.findById(id).get();
     }
 

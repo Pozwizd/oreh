@@ -13,9 +13,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "media", schema = "oreh")
 public class Media {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private int id;
+    private long id;
 
     @Column(name = "name")
     private String name;

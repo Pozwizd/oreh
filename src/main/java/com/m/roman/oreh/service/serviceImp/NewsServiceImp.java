@@ -23,7 +23,7 @@ public class NewsServiceImp implements NewsService {
     }
 
     @Override
-    public News getNews(int id) {
+    public News getNews(long id) {
         Optional<News> news = newsRepository.findById(id);
         return news.orElse(null);
     }
@@ -34,7 +34,7 @@ public class NewsServiceImp implements NewsService {
     }
 
     @Override
-    public void deleteNews(int id) {
+    public void deleteNews(long id) {
         newsRepository.deleteById(id);
     }
 
