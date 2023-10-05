@@ -1,10 +1,14 @@
 package com.m.roman.oreh.service;
 
 import com.m.roman.oreh.entity.Product;
+import org.springframework.data.domain.Slice;
 
 import java.util.List;
 
 public interface ProductService {
+    // Пагинация на уровне интерфейса сервиса помощью Slice
+
+    public Slice<Product> getAllProducts(int page, int size);
 
     public List<Product> getAllProducts();
 

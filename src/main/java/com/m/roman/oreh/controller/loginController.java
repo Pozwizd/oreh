@@ -3,6 +3,7 @@ package com.m.roman.oreh.controller;
 import com.m.roman.oreh.service.ContactService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,7 +15,7 @@ public class loginController {
         this.contactService = contactService;
     }
 
-    @RequestMapping("/login.html")
+    @GetMapping("/login.html")
     public String loginPage(Model model) {
         model.addAttribute("TitlePage", "Вход");
 

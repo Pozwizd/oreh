@@ -76,7 +76,7 @@
 
                 <div class="product-block__card-grid" th:replace="~{fragments :: product-card}"></div>
 
-                <a class="product-block__btn" href="catalog.html">Загрузить еще</a>
+                <a class="product-block__btn" th:href="@{/catalog.html(page=${currentPage}+1)}">Загрузить еще</a>
             </div>
         </section>
         <section class="nuts-info">

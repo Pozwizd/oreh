@@ -2,11 +2,8 @@ package com.m.roman.oreh.controller;
 
 
 import com.m.roman.oreh.entity.Product;
-import com.m.roman.oreh.repository.ProductRepository;
 import com.m.roman.oreh.service.*;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,36 +16,44 @@ public class catalogController {
     private final ArticleService articleService;
     private final NewsService newsService;
     private final ContactService contactService;
-
     private final ProductService productService;
     private final MediaService mediaService;
-    private ProductRepository productRepository;
 
-    public catalogController(TitleTextService titleTextService, ArticleService articleService, NewsService newsService, ContactService contactService, ProductService productService, MediaService mediaService, ProductRepository productRepository) {
+    public catalogController(TitleTextService titleTextService,
+                             ArticleService articleService,
+                             NewsService newsService,
+                             ContactService contactService,
+                             ProductService productService,
+                             MediaService mediaService) {
         this.titleTextService = titleTextService;
         this.articleService = articleService;
         this.newsService = newsService;
         this.contactService = contactService;
         this.productService = productService;
         this.mediaService = mediaService;
-        this.productRepository = productRepository;
     }
 
 
-    @GetMapping("/catalog")
-    public String portfolio(Model model, @RequestParam(defaultValue = "0") int page) {
+    @GetMapping("/catalog.html")
+    public String portfolio(Model model,
+                            @RequestParam(required = false, defaultValue = "0") int page) {
         model.addAttribute("TitlePage", "Каталог продукции");
         for (int i = 1; i <= 5; i++) {
             model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
         }
         //---------
+
+        // пагинация на уровле контроллера
+        int pageNumber = 0;
         int pageSize = 6;
 
-        Pageable pageable = PageRequest.of(page, pageSize);
-        Page<Product> productsPage = productRepository.findAll(pageable);
+        if (page != 0) {
+            pageNumber = page;
+        }
+        Slice<Product> productsPage = productService.getAllProducts(page, pageSize);
 
         model.addAttribute("products", productsPage.getContent());
-        model.addAttribute("pageNum", page);
+        model.addAttribute("currentPage", page);
 
 
         //---------

@@ -2,7 +2,9 @@ package com.m.roman.oreh.controller;
 
 
 import com.m.roman.oreh.entity.News;
+import com.m.roman.oreh.entity.Product;
 import com.m.roman.oreh.service.*;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,8 +44,10 @@ public class indexController {
             model.addAttribute("article" + i, articleService.getArticle(i));
         }
 
+        int pageSize = 7;
+        Slice<Product> productsPage = productService.getAllProducts(0, pageSize);
 
-        model.addAttribute("products", productService.getAllProducts());
+        model.addAttribute("products", productsPage.getContent());
 
 
         List<News> news = new ArrayList<>();
