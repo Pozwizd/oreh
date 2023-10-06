@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class galleryPageController {
@@ -16,10 +17,10 @@ public class galleryPageController {
     }
 
     @GetMapping("/gallery.html")
-    public String galleryPage(Model model) {
+    public ModelAndView galleryPage(Model model) {
         model.addAttribute("TitlePage", "Галлерея");
         model.addAttribute("contact", contactService.getContact(1));
-        return "gallery";
+        return new ModelAndView("gallery");
     }
 
 }

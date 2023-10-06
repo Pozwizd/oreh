@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class cartController {
@@ -15,10 +16,10 @@ public class cartController {
     }
 
     @GetMapping("/cart.html")
-    public String cartPage(Model model) {
+    public ModelAndView cartPage(Model model) {
         model.addAttribute("TitlePage", "Корзина");
         model.addAttribute("contact", contactService.getContact(1));
-        return "cart";
+        return new ModelAndView("cart");
     }
 
 }

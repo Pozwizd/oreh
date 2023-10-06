@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class aboutController {
@@ -21,11 +22,11 @@ public class aboutController {
     }
 
     @GetMapping("/about.html")
-    public String aboutMe(Model model) {
+    public ModelAndView aboutMe(Model model) {
         model.addAttribute("TitlePage", "О компании");
         model.addAttribute("specification", specificationService.getSpecification(1));
         model.addAttribute("contact", contactService.getContact(1));
-        return "about";
+        return new ModelAndView("about");
     }
 
 }

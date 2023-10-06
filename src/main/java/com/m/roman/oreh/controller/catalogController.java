@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class catalogController {
@@ -35,8 +36,8 @@ public class catalogController {
 
 
     @GetMapping("/catalog.html")
-    public String portfolio(Model model,
-                            @RequestParam(required = false, defaultValue = "0") int page) {
+    public ModelAndView portfolio(Model model,
+                                  @RequestParam(required = false, defaultValue = "0") int page) {
         model.addAttribute("TitlePage", "Каталог продукции");
         for (int i = 1; i <= 5; i++) {
             model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
@@ -66,7 +67,7 @@ public class catalogController {
         for (int i = 1; i <= 4; i++) {
             model.addAttribute("news" + i, newsService.getNews(i));
         }
-        return "catalog";
+        return new ModelAndView("catalog");
     }
 
 }

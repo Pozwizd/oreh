@@ -7,6 +7,7 @@ import com.m.roman.oreh.service.SpecificationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -25,14 +26,14 @@ public class deliveryController {
 
 
     @GetMapping("/delivery.html")
-    public String delivery(Model model) {
+    public ModelAndView delivery(Model model) {
         model.addAttribute("TitlePage", "Оплата и доставка");
         List<MenuDelivery> menuDeliveries = menuDeliveryService.getAllMenuDeliveries();
         model.addAttribute("menuDeliveries", menuDeliveries);
 
         model.addAttribute("specification", specificationService.getSpecification(1));
         model.addAttribute("contact", contactService.getContact(1));
-        return "delivery";
+        return new ModelAndView("delivery");
 
     }
 

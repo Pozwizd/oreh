@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
-@ServletComponentScan
+@ServletComponentScan(basePackages = "com.m.roman.oreh")
 public class OrehApplication {
 
     public static void main(String[] args) {

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class checkoutController {
@@ -16,11 +17,11 @@ public class checkoutController {
     }
 
     @GetMapping("/checkout.html")
-    public String checkoutPage(Model model) {
+    public ModelAndView checkoutPage(Model model) {
         model.addAttribute("TitlePage", "Оформление заказа");
         model.addAttribute("contact", contactService.getContact(1));
 
-        return "checkout";
+        return new ModelAndView("checkout");
     }
 
 }

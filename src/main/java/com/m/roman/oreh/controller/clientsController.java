@@ -5,6 +5,7 @@ import com.m.roman.oreh.service.SpecificationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class clientsController {
@@ -19,11 +20,11 @@ public class clientsController {
     }
 
     @GetMapping("/clients.html")
-    public String clients(Model model) {
+    public ModelAndView clients(Model model) {
         model.addAttribute("TitlePage", "Оптовым и корпоративным клиентам");
         model.addAttribute("specification", specificationService.getSpecification(1));
         model.addAttribute("contact", contactService.getContact(1));
-        return "clients";
+        return new ModelAndView("clients");
     }
 
 

@@ -48,33 +48,4 @@ public class Product {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.EAGER)
     private List<Media> mediaList;
 
-    public enum ProductType {
-        CLASSIC("Орех классический"),
-        SWEET("Орех сладкий"),
-        SALTY("Орех солёный");
-        private final String value;
-        ProductType(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-
-    }
-
-    public enum Weight {
-        VALUE1("40г"),
-        VALUE2("30г");
-        private final String value;
-        Weight(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-    }
-    public enum PackageType {
-        бумажная,
-        пластиковая;
-    }
 }

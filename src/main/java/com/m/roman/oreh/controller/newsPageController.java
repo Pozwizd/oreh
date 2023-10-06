@@ -4,6 +4,7 @@ import com.m.roman.oreh.service.ContactService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class newsPageController {
@@ -15,12 +16,12 @@ public class newsPageController {
     }
 
     @GetMapping("/news-page.html")
-    public String newsPage(Model model) {
+    public ModelAndView newsPage(Model model) {
         model.addAttribute("TitlePage", "Новость");
         model.addAttribute("contact", contactService.getContact(1));
 
 
-        return "news-page";
+        return new ModelAndView("news-page");
     }
 
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head th:replace="~{fragments :: head}"></head>
+
+<body>
+<header th:replace="~{fragments :: header}"></header>
+
+<main class="error404">
+        <div class="error404__wrapper">
+            <img class="error404__img" src="img/main/404.png" alt="">
+            <p class="error404__text">Страница не найдена</p>
+            <a href="index.html" class="error404__btn">
+                <svg class="error404__btnIcon" width="14" height="12" viewBox="0 0 14 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M5.83332 11.8333L6.65 11.0167L2.21665 6.58333H14V5.41668H2.21665L6.65 0.983329L5.83332 0.166681L0 6L5.83332 11.8333Z" />
+            </svg>
+                Вернуться на Главную страницу
+            </a>
+        </div>
+    </main>
+    <footer class="footer footer--dark">
+        <div th:replace="~{fragments.html :: footer-top}"></div>
+        <div th:replace="~{fragments.html :: footer-mid}"></div>
+        <div th:replace="~{fragments.html :: footer-bot}"></div>
+    </footer>
+</body>
+
+</html>

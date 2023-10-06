@@ -4,6 +4,7 @@ import com.m.roman.oreh.service.ContactService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class passwordRecoveryController {
@@ -15,11 +16,11 @@ public class passwordRecoveryController {
     }
 
     @GetMapping("/password-recovery.html")
-    public String  passwordRecoveryPage(Model model) {
+    public ModelAndView passwordRecoveryPage(Model model) {
         model.addAttribute("TitlePage", "Восстановление пароля");
         model.addAttribute("contact", contactService.getContact(1));
 
-        return "password-recovery";
+        return new ModelAndView("password-recovery");
     }
 
 }
