@@ -15,10 +15,11 @@ public class personalPageController {
         this.contactService = contactService;
     }
 
-    @GetMapping("/personal.html")
+    @GetMapping("/personal-page.html")
     public ModelAndView personalPage(Model model) {
         model.addAttribute("TitlePage", "Личный кабинет");
-        return new ModelAndView("personal");
+        model.addAttribute("contact", contactService.getContact(1));
+        return new ModelAndView("personal-page");
     }
 
 }

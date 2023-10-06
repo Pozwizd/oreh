@@ -35,6 +35,9 @@ public class catalogController {
     }
 
 
+    // TODO: Фильтрация
+    // TODO: Типы продукта
+
     @GetMapping("/catalog.html")
     public ModelAndView portfolio(Model model,
                                   @RequestParam(required = false, defaultValue = "0") int page) {

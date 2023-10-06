@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class newsController {
 
+    // TODO: Добавить статьи
+
     private final ContactService contactService;
 
     public newsController(ContactService contactService) {

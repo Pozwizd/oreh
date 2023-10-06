@@ -15,11 +15,11 @@ public class productPageController {
         this.contactService = contactService;
     }
 
-    @GetMapping("/product.html")
+    @GetMapping("/product-page.html")
     public ModelAndView productPage(Model model) {
         model.addAttribute("TitlePage", "Карточка товара");
         model.addAttribute("contact", contactService.getContact(1));
-        return new ModelAndView("product");
+        return new ModelAndView("product-page");
     }
 
 }

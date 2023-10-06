@@ -184,8 +184,8 @@
                 <h3 class="title-left" th:text="${titleText5.title}">Новости</h3>
                 <p class="title-left title-left--subtitle" th:text="${titleText5.text}">Свежие новости и полезная
                     информация</p>
-                <div class="swiper-wrapper news-block__slider-wrapper" th:each="novelty : ${news}">
-                    <div class="swiper-slide news-block__slider-item">
+                <div class="swiper-wrapper news-block__slider-wrapper">
+                    <div class="swiper-slide news-block__slider-item" th:each="novelty : ${news}">
                         <div class="news-block__item-wrapper">
                             <div class="news-block__item-upper">
                                 <img class="news-block__item-visual"
