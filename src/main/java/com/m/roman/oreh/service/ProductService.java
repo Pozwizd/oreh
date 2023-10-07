@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service;
 
-import com.m.roman.oreh.entity.Product;
+import com.m.roman.oreh.model.Product;
 import org.springframework.data.domain.Slice;
 
 import java.util.List;

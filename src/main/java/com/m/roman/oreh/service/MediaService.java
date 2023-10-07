@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service;
 
-import com.m.roman.oreh.entity.Media;
+import com.m.roman.oreh.model.Media;
 
 import java.util.List;
 

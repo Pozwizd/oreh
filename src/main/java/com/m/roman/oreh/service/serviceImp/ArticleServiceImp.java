@@ -1,7 +1,7 @@
 package com.m.roman.oreh.service.serviceImp;
 
 
-import com.m.roman.oreh.entity.Article;
+import com.m.roman.oreh.model.Article;
 import com.m.roman.oreh.repository.ArticleRepository;
 import com.m.roman.oreh.service.ArticleService;
 import org.springframework.stereotype.Service;

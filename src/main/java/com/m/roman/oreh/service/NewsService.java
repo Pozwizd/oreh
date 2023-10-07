@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service;
 
-import com.m.roman.oreh.entity.News;
+import com.m.roman.oreh.model.News;
 
 import java.util.List;
 

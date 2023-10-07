@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service;
 
-import com.m.roman.oreh.entity.Contact;
+import com.m.roman.oreh.model.Contact;
 
 import java.util.List;
 

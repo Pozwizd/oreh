@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service;
 
-import com.m.roman.oreh.entity.MenuDelivery;
+import com.m.roman.oreh.model.MenuDelivery;
 
 import java.util.List;
 

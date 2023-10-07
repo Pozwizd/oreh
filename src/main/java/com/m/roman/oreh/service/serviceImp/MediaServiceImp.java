@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service.serviceImp;
 
-import com.m.roman.oreh.entity.Media;
+import com.m.roman.oreh.model.Media;
 import com.m.roman.oreh.repository.MediaRepository;
 import com.m.roman.oreh.service.MediaService;
 import org.springframework.stereotype.Service;

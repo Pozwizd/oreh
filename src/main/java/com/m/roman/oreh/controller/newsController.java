@@ -1,6 +1,6 @@
 package com.m.roman.oreh.controller;
 
-import com.m.roman.oreh.entity.News;
+import com.m.roman.oreh.model.News;
 import com.m.roman.oreh.service.ContactService;
 import com.m.roman.oreh.service.NewsService;
 import com.m.roman.oreh.service.TitleTextService;

@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service;
 
-import com.m.roman.oreh.entity.TitleText;
+import com.m.roman.oreh.model.TitleText;
 
 import java.util.List;
 

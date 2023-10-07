@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service.serviceImp;
 
-import com.m.roman.oreh.entity.TitleText;
+import com.m.roman.oreh.model.TitleText;
 import com.m.roman.oreh.repository.TitleTextRepository;
 import com.m.roman.oreh.service.TitleTextService;
 import org.springframework.stereotype.Service;

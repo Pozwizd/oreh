@@ -351,7 +351,7 @@
                     <h5 class="product-card__title" th:text="${product.title}">Грецкий орех</h5>
                     <div class="product-card__text">
                         <p class="product-card__text-art" th:text="'Арт:' + ${product.articleNumber}">0091</p>
-                        <p class="product-card__text-desc" th:text="${product.productType}">Орех сладкий,
+                        <p class="product-card__text-desc" th:text="${product.productType.value}">Орех сладкий,
                             классический, очищенный</p>
                         <div class="product-card__info">
                             <div class="product-card__mass">

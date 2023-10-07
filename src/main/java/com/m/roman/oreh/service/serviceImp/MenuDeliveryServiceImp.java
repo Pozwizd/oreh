@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service.serviceImp;
 
-import com.m.roman.oreh.entity.MenuDelivery;
+import com.m.roman.oreh.model.MenuDelivery;
 import com.m.roman.oreh.repository.MenuDeliveryRepository;
 import com.m.roman.oreh.service.MenuDeliveryService;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.m.roman.oreh.entity;
+package com.m.roman.oreh.model;
 
 import lombok.Getter;
 

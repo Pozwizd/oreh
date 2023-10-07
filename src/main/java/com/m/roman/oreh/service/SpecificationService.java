@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service;
 
-import com.m.roman.oreh.entity.Specification;
+import com.m.roman.oreh.model.Specification;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service.serviceImp;
 
-import com.m.roman.oreh.entity.News;
+import com.m.roman.oreh.model.News;
 import com.m.roman.oreh.repository.NewsRepository;
 import com.m.roman.oreh.service.NewsService;
 import org.springframework.stereotype.Service;

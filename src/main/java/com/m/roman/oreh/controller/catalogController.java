@@ -1,7 +1,7 @@
 package com.m.roman.oreh.controller;
 
 
-import com.m.roman.oreh.entity.Product;
+import com.m.roman.oreh.model.Product;
 import com.m.roman.oreh.service.*;
 import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Controller;

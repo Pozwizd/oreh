@@ -1,10 +1,10 @@
-package com.m.roman.oreh.entity;
+package com.m.roman.oreh.model;
 
 import lombok.Getter;
 
 @Getter
 public enum ProductType {
-    CLASSIC("Классический"),
+    CLASSIC("Орех классический"),
     SWEET("Орех сладкий"),
     SALTY("Орех солёный");
 

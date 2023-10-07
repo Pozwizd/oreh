@@ -1,7 +1,7 @@
 package com.m.roman.oreh.service;
 
 
-import com.m.roman.oreh.entity.Article;
+import com.m.roman.oreh.model.Article;
 
 import java.util.List;
 

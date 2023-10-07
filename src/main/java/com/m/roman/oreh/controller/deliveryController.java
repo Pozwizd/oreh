@@ -1,6 +1,6 @@
 package com.m.roman.oreh.controller;
 
-import com.m.roman.oreh.entity.MenuDelivery;
+import com.m.roman.oreh.model.MenuDelivery;
 import com.m.roman.oreh.service.ContactService;
 import com.m.roman.oreh.service.MenuDeliveryService;
 import com.m.roman.oreh.service.SpecificationService;

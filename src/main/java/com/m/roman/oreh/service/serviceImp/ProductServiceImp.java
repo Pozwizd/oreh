@@ -1,6 +1,6 @@
 package com.m.roman.oreh.service.serviceImp;
 
-import com.m.roman.oreh.entity.Product;
+import com.m.roman.oreh.model.Product;
 import com.m.roman.oreh.repository.ProductRepository;
 import com.m.roman.oreh.service.ProductService;
 import org.springframework.data.domain.PageRequest;
