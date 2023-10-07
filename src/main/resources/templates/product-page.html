@@ -57,40 +57,43 @@
                 </div>
                 <div class="product-page__product-rightside">
                     <div class="product-page__name">
-                        <p class="product-page__name-text">Грецкий орех</p>
+                        <p class="product-page__name-text" th:text="${product.name}">Грецкий орех</p>
                         <p class="product-page__name-art">Арт: 0091</p>
                     </div>
-                    <h2 class="product-page__type">Орех соленый кондитерский <br> очищенный</h2>
+                    <h2 class="product-page__type" th:text="${product.productType}">Орех соленый кондитерский <br> очищенный</h2>
                     <div class="product-page__stats">
                         <p class="product-page__stats-itemLeft">Состав:</p>
-                        <p class="product-page__stats-itemRight">Ядро грецкого ореха, вымытого очищенного от кожуры,
+                        <p class="product-page__stats-itemRight" th:text="${product.composition}">Ядро грецкого ореха, вымытого очищенного от кожуры,
                             соль экстра (раствор 7%)</p>
 
                         <p class="product-page__stats-itemLeft">Масса нетто:</p>
-                        <p class="product-page__stats-itemRight">40г.</p>
+                        <p class="product-page__stats-itemRight" th:text="${product.weight}">40г.</p>
 
                         <p class="product-page__stats-itemLeft">Энергетическая ценность:</p>
-                        <p class="product-page__stats-itemRight">654 Ккал.</p>
+                        <p class="product-page__stats-itemRight" th:text="${product.energyValue}">654 Ккал.</p>
 
                         <p class="product-page__stats-itemLeft">Срок годности:</p>
-                        <p class="product-page__stats-itemRight">12 месяцев, с даты расфасовки (указана на упаковке)
+                        <p class="product-page__stats-itemRight" th:text="${product.shelfLife}">12 месяцев, с даты расфасовки (указана на упаковке)
                         </p>
                     </div>
                     <div class="product-page__warning">
                         <img class="product-page__warning-img" src="img/icons/warning-sigh.svg" alt="">
-                        <p class="product-page__warning-text">Хранить в помещениях, защищенных от попадания прямых,
+                        <p class="product-page__warning-text" th:text="${product.storageConditions}">Хранить в помещениях, защищенных от попадания прямых,
                             солнечных лучей, при температуре от +3 °C до +20 °C, и относительной
                             влажности воздуха не более 75 %</p>
                     </div>
                     <div class="product-page__product-bottom">
                         <div class="product-page__price">
                             <p class="product-page__price-text">Ваша цена:</p>
-                            <p class="product-page__price-text product-page__price-text--green">
-                                <span class="product-page__price-text product-page__price-text--green-big">19</span>
+                            <p class="product-card__price-text product-card__price-text--green">
+                                                <span class="product-card__price-text product-card__price-text--green-big"
+                                                      th:text="${product.price}">19</span>
                                 грн.
                             </p>
-                            <p class="product-page__price-text product-page__price-text--gray">
-                                <span class="product-page__price-text product-page__price-text--gray-big">21</span>
+                            <p class="product-card__price-text product-card__price-text--gray"
+                               th:if="${product.originalPrice != null}">
+                                                <span class="product-card__price-text product-card__price-text--gray-big"
+                                                      th:text="${product.originalPrice}">21</span>
                                 грн
                             </p>
                         </div>

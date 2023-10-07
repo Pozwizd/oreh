@@ -45,6 +45,21 @@ public class Product {
     @Column(name = "original_price", precision = 10)
     private BigDecimal originalPrice;
 
+    @Column(name = "full_image_url")
+    private String fullImageUrl;
+
+    @Column(name = "composition")
+    private String composition;
+
+    @Column(name = "energy_value")
+    private String energyValue;
+
+    @Column(name = "shelf_life")
+    private String shelfLife;
+
+    @Column(name = "storage_conditions")
+    private String storageConditions;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.EAGER)
     private List<Media> mediaList;
 

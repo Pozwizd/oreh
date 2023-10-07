@@ -24,22 +24,17 @@
                         <div class="news-block__item-wrapper news-block__item-wrapper--latest">
                             <div class="news-block__item-upper news-block__item-upper--latest">
                                 <img class="news-block__item-visual news-block__item-visual--latest"
-                                     src="img/main/tulba-news.png" alt="">
+                                     th:src="${newsTop.url != null ? newsTop.url : 'img/main/tulba-news.png'}"
+                                     alt="">
                             </div>
                             <div class="news-block__item-bottom news-block__item-bottom--latest">
-                                <p class="news-block__item-date news-block__item-date--latest">12.04.2019</p>
-                                <h4 class="news-block__item-title news-block__item-title--latest">Центр поддержки
+                                <p class="news-block__item-date news-block__item-date--latest" th:text="${newsTop.date}">12.04.2019</p>
+                                <h4 class="news-block__item-title news-block__item-title--latest" th:text="${newsTop.title}">Центр поддержки
                                     экспорта, в студии Павел Тулба</h4>
-                                <p class="news-block__item-text news-block__item-text--latest">
+                                <p class="news-block__item-text news-block__item-text--latest" th:text="${newsTop.text}">
                                     Сельскохозяйственный обслуживающий кооператив
                                     “Орех Причерноморья” предлагает своим клиентам
                                     выгодные условия сотрудничества.
-                                </p>
-                                <p class="news-block__item-text news-block__item-text--latest">
-                                    Ореховый бизнес – один из наиболее перспективных
-                                    в Украине. Ежегодная нехватка продукта в Европе составляет 100 000 тонн. У Вас есть
-                                    возможность зарабатывать десятки тысяч долларов в год всего
-                                    на нескольких гектарах земли.
                                 </p>
                                 <a href="news-page.html" class="news-block__item-link news-block__item-link--latest">Читать
                                     <svg class="news-block__item-arrow" width="18" height="10" viewBox="0 0 18 10"
@@ -54,79 +49,18 @@
                 </div>
                 <div class="latest-news__bottom">
                     <div class="latest-news__bottom-wrapper">
-                        <div class="news-block__slider-item news-block__slider-item--news">
+                        <div class="news-block__slider-item news-block__slider-item--news" th:each="novelty : ${news}">
                             <div class="news-block__item-wrapper news-block__item-wrapper--news">
                                 <div class="news-block__item-upper news-block__item-upper--news">
                                     <img class="news-block__item-visual news-block__item-visual--news"
-                                         src="img/main/pavel-news-block.png" alt="">
+                                         th:src="${novelty.url != null ? novelty.url : 'img/main/pavel-news-block.png'}"
+                                         alt="">
                                 </div>
                                 <div class="news-block__item-bottom news-block__item-bottom--news">
-                                    <p class="news-block__item-date news-block__item-date--news">12.04.2019</p>
-                                    <h4 class="news-block__item-title news-block__item-title--news">Центр поддержки
+                                    <p class="news-block__item-date news-block__item-date--news" th:text="${novelty.date}">12.04.2019</p>
+                                    <h4 class="news-block__item-title news-block__item-title--news" th:text="${novelty.title}">Центр поддержки
                                         экспорта, в студии Павел Тулба</h4>
-                                    <p class="news-block__item-text news-block__item-text--news">Как уже упоминал Павел
-                                        Тулба, шиповник цветёт. Эта
-                                        культура
-                                        очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
-                                        отличную...
-                                    </p>
-                                    <a href="news-page.html" class="news-block__item-link news-block__item-link--news">Читать
-                                        <svg class="news-block__item-arrow" width="18" height="10" viewBox="0 0 18 10"
-                                             fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                    d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news-block__slider-item news-block__slider-item--news">
-                            <div class="news-block__item-wrapper news-block__item-wrapper--news">
-                                <div class="news-block__item-upper news-block__item-upper--news">
-                                    <video class="news-block__video news-block__video--meeting news-block__video--news"
-                                           src="#"></video>
-                                    <div class="news-block__video-overlay news-block__video-overlay--news">
-                                        <img class="news-block__item-visual news-block__item-visual--news"
-                                             src="img/main/meeting-news-block.png" alt="">
-                                        <div class="play-btn news-block__play-btn">
-                                            <div class="play-btn__outer">
-                                                <div class="play-btn__inner">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="news-block__item-bottom news-block__item-bottom--news">
-                                    <p class="news-block__item-date news-block__item-date--news">12.04.2019</p>
-                                    <h4 class="news-block__item-title news-block__item-title--news">Центр поддержки
-                                        экспорта, в студии Павел Тулба</h4>
-                                    <p class="news-block__item-text news-block__item-text--news">Как уже упоминал Павел
-                                        Тулба, шиповник цветёт. Эта
-                                        культура
-                                        очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
-                                        отличную...
-                                    </p>
-                                    <a href="news-page.html" class="news-block__item-link news-block__item-link--news">Читать
-                                        <svg class="news-block__item-arrow" width="18" height="10" viewBox="0 0 18 10"
-                                             fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                    d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news-block__slider-item news-block__slider-item--news">
-                            <div class="news-block__item-wrapper news-block__item-wrapper--news">
-                                <div class="news-block__item-upper news-block__item-upper--news">
-                                    <img class="news-block__item-visual news-block__item-visual--news"
-                                         src="img/main/nut-crate-news-block.png" alt="">
-                                </div>
-                                <div class="news-block__item-bottom news-block__item-bottom--news">
-                                    <p class="news-block__item-date news-block__item-date--news">12.04.2019</p>
-                                    <h4 class="news-block__item-title news-block__item-title--news">Центр поддержки
-                                        экспорта, в студии Павел Тулба</h4>
-                                    <p class="news-block__item-text news-block__item-text--news">Как уже упоминал Павел
+                                    <p class="news-block__item-text news-block__item-text--news" th:text="${novelty.text}">Как уже упоминал Павел
                                         Тулба, шиповник цветёт. Эта
                                         культура
                                         очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
@@ -156,8 +90,8 @@
                             </div>
                         </div>
                     </div>
-                    <h2 class="video-wide__title video-wide__title--gallery">Проект UBHDP</h2>
-                    <p class="video-wide__text video-wide__text--gallery">Вчера к нам приезжал американский агроном Рон
+                    <h2 class="video-wide__title video-wide__title--gallery" th:text="${titleText.title}">Проект UBHDP</h2>
+                    <p class="video-wide__text video-wide__text--gallery" th:text="${titleText.text}">Вчера к нам приезжал американский агроном Рон
                         , спасибо Мельнику Евгению и
                         проекту<span class="video-wide__span"> UBHDP </span>за возможность получить консультацию
                         от мировых специалистов!
