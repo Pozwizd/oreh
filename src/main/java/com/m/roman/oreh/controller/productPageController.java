@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class productPageController {
 
-    // TODO: Добавить зависимую сущность
 
     private final ContactService contactService;
     private final ProductService productService;

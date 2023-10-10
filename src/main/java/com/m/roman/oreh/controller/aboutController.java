@@ -13,7 +13,7 @@ import java.util.List;
 @Controller
 public class aboutController {
 
-    // TODO: Добавить статьи
+
 
     private final TitleTextService titleTextService;
     private final ArticleService articleService;

@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class galleryPageController {
 
-    // TODO: Добавить статьи
+
 
     private final ContactService contactService;
     private final TitleTextService titleTextService;

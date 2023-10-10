@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class newsPageController {
 
-    // TODO: Добавить последние публикации
+
 
     private final ContactService contactService;
     private final NewsService newsService;

@@ -36,7 +36,6 @@ public class catalogController {
     }
 
 
-    // TODO: Фильтрация
 
     @GetMapping("/catalog.html")
     public ModelAndView portfolio(Model model,
