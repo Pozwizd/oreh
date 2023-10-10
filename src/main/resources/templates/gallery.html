@@ -22,10 +22,10 @@
             <div class="gallery-block__wrap">
                 <div class="gallery-block__upper">
                     <div class="gallery-block__item gallery-block__2-dudes">
-                        <img class="gallery-block__2-dudes-img" src="img/main/2-dudes.png" alt="">
+                        <img class="gallery-block__2-dudes-img" th:src="${article8.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article8.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article8.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -33,10 +33,10 @@
                         </div>
                     </div>
                     <div class="gallery-block__item gallery-block__hay">
-                        <img class="gallery-block__hay-img" src="img/main/hay.png" alt="">
+                        <img class="gallery-block__hay-img" th:src="${article9.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article9.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article9.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -54,8 +54,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <h2 class="video-wide__title video-wide__title--gallery">Проект UBHDP</h2>
-                            <p class="video-wide__text video-wide__text--gallery">Вчера к нам приезжал американский
+                            <h2 class="video-wide__title video-wide__title--gallery" th:text="${article10.title}">Проект UBHDP</h2>
+                            <p class="video-wide__text video-wide__text--gallery" th:utext="${article10.text}">Вчера к нам приезжал американский
                                 агроном Рон , спасибо Мельнику Евгению и
                                 проекту<span class="video-wide__span"> UBHDP </span>за возможность получить
                                 консультацию
@@ -66,10 +66,10 @@
                 </div>
                 <div class="gallery-block__bottom">
                     <div class="gallery-block__item gallery-block__tractor">
-                        <img class="gallery-block__tractor-img" src="img/main/tractor-field.png" alt="">
+                        <img class="gallery-block__tractor-img" th:src="${article11.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article11.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article11.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -78,10 +78,10 @@
                         </div>
                     </div>
                     <div class="gallery-block__item gallery-block__greens">
-                        <img class="gallery-block__greens-img" src="img/main/greens.png" alt="">
+                        <img class="gallery-block__greens-img" th:src="${article12.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article12.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article12.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -99,8 +99,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h2 class="gallery-block__tulba-title">Проект UBHDP</h2>
-                                <p class="gallery-block__tulba-text">Вчера к нам приезжал американский агроном Рон ,
+                                <h2 class="gallery-block__tulba-title" th:text="${article10.title}">Проект UBHDP</h2>
+                                <p class="gallery-block__tulba-text" th:utext="${article10.text}">Вчера к нам приезжал американский агроном Рон ,
                                     спасибо Мельнику Евгению и
                                     проекту<span class="gallery-block__tulba-span"> UBHDP </span>за возможность
                                     получить консультацию
@@ -116,10 +116,10 @@
             <div class="gallery-block__wrap">
                 <div class="gallery-block__upper">
                     <div class="gallery-block__item gallery-block__2-dudes">
-                        <img class="gallery-block__2-dudes-img" src="img/main/2-dudes.png" alt="">
+                        <img class="gallery-block__2-dudes-img" th:src="${article8.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article8.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article8.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -127,10 +127,10 @@
                         </div>
                     </div>
                     <div class="gallery-block__item gallery-block__hay">
-                        <img class="gallery-block__hay-img" src="img/main/hay.png" alt="">
+                        <img class="gallery-block__hay-img" th:src="${article9.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article9.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article9.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -148,8 +148,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <h2 class="video-wide__title video-wide__title--gallery">Проект UBHDP</h2>
-                            <p class="video-wide__text video-wide__text--gallery">Вчера к нам приезжал американский
+                            <h2 class="video-wide__title video-wide__title--gallery" th:text="${article10.title}">Проект UBHDP</h2>
+                            <p class="video-wide__text video-wide__text--gallery" th:utext="${article10.text}">Вчера к нам приезжал американский
                                 агроном Рон , спасибо Мельнику Евгению и
                                 проекту<span class="video-wide__span"> UBHDP </span>за возможность получить
                                 консультацию
@@ -160,10 +160,10 @@
                 </div>
                 <div class="gallery-block__bottom">
                     <div class="gallery-block__item gallery-block__tractor">
-                        <img class="gallery-block__tractor-img" src="img/main/tractor-field.png" alt="">
+                        <img class="gallery-block__tractor-img" th:src="${article11.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article11.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article11.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -172,10 +172,10 @@
                         </div>
                     </div>
                     <div class="gallery-block__item gallery-block__greens">
-                        <img class="gallery-block__greens-img" src="img/main/greens.png" alt="">
+                        <img class="gallery-block__greens-img" th:src="${article12.url}" alt="">
                         <div class="gallery-block__hover">
-                            <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                            <p class="gallery-block__hover-text">В этом Году при поддержке проекта International
+                            <h3 class="gallery-block__hover-title" th:text="${article12.title}">SIAL Paris 2018</h3>
+                            <p class="gallery-block__hover-text" th:utext="${article12.text}">В этом Году при поддержке проекта International
                                 Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                                 на крупнейшей продовольственной выставке Европы <span
                                         class="gallery-block__hover-span">SIAL Paris 2018</span></p>
@@ -193,8 +193,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h2 class="gallery-block__tulba-title">Проект UBHDP</h2>
-                                <p class="gallery-block__tulba-text">Вчера к нам приезжал американский агроном Рон ,
+                                <h2 class="gallery-block__tulba-title" th:text="${article10.title}">Проект UBHDP</h2>
+                                <p class="gallery-block__tulba-text" th:text="${article10.text}">Вчера к нам приезжал американский агроном Рон ,
                                     спасибо Мельнику Евгению и
                                     проекту<span class="gallery-block__tulba-span"> UBHDP </span>за возможность
                                     получить консультацию

@@ -62,11 +62,11 @@
                     <div class="news-page__sidebar-top">
                         <h3 class="news-page__sidebar-title">Последние публикации</h3>
                         <div class="news-page__sidebar-itemsWrapper">
-                            <div class="news-page__sidebar-items">
-                                <div class="news-page__sidebar-item">
-                                    <img class="news-page__sidebar-img" src="img/main/greens-small.png" alt="">
-                                    <p class="news-page__sidebar-date">12.04.2019</p>
-                                    <h4 class="news-page__sidebar-itemTitle">Центр поддержки экспорта, в студии Павел Тулба</h4>
+                            <div class="news-page__sidebar-items" >
+                                <div class="news-page__sidebar-item" th:each="news : ${news}">
+                                    <img class="news-page__sidebar-img" th:src="${news.urlSmallImg}" alt="">
+                                    <p class="news-page__sidebar-date" th:text="${news.date}" >12.04.2019</p>
+                                    <h4 class="news-page__sidebar-itemTitle" th:text="${news.title}">Центр поддержки экспорта, в студии Павел Тулба</h4>
                                     <a href="news-page.html" class="news-page__sidebar-link">Читать
                                         <svg class="news-page__sidebar-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -75,30 +75,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <div class="news-page__sidebar-item">
-                                    <img class="news-page__sidebar-img" src="img/main/nut-crate-news-page.png" alt="">
-                                    <p class="news-page__sidebar-date">12.04.2019</p>
-                                    <h4 class="news-page__sidebar-itemTitle">Центр поддержки экспорта, в студии Павел Тулба</h4>
-                                    <a href="news-page.html" class="news-page__sidebar-link">Читать
-                                        <svg class="news-page__sidebar-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="news-page__sidebar-item">
-                                    <img class="news-page__sidebar-img" src="img/main/tulba-news-page.png" alt="">
-                                    <p class="news-page__sidebar-date">12.04.2019</p>
-                                    <h4 class="news-page__sidebar-itemTitle">Центр поддержки экспорта, в студии Павел Тулба</h4>
-                                    <a href="news-page.html" class="news-page__sidebar-link">Читать
-                                        <svg class="news-page__sidebar-arrow" width="18" height="10" viewBox="0 0 18 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

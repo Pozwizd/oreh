@@ -63,4 +63,7 @@ public class Product {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.EAGER)
     private List<Media> mediaList;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.EAGER)
+    private List<MoreInfo> moreInfoList;
+
 }

@@ -13,7 +13,7 @@
                     <img class="intro-links__arrow" src="img/icons/arrow-right-white.svg" alt="">
                     <a class="intro-links__link" href="catalog.html">Магазин</a>
                 </div>
-                <h2 class="intro-card__title intro-card__title--catalog">Каталог продукции</h2>
+                <h2 class="intro-card__title intro-card__title--catalog" th:text="${titleText7.title}">Каталог продукции</h2>
             </div>
         </section>
         <section class="product-block">
@@ -83,34 +83,26 @@
         <section class="nuts-info">
             <div class="nuts-info__wrapper">
                 <div class="nuts-info__info">
-                    <h2 class="title-left title-left--nuts-info">Экологически чистый грецкий орех</h2>
-                    <h3 class="nuts-info__subtitle">Оптом, и в розницу</h3>
-                    <p class="nuts-info__text">
+                    <h2 class="title-left title-left--nuts-info" th:text="${article5.title}">Экологически чистый грецкий орех</h2>
+                    <h3 class="nuts-info__subtitle" th:text="${article5.subtitle}">Оптом, и в розницу</h3>
+                    <p class="nuts-info__text" th:text="${article5.text}">
                         Сельскохозяйственный обслуживающий кооператив
                         “Орех Причерноморья” выращивает смешанные сады
                         ореха грецкого с фундуком, а также ореха грецкого
                         с шиповником, на площади более 150 гектаров.
                     </p>
-                    <p class="nuts-info__text">
-                        Помимо этого кооператив занимается выращиванием
-                        посадочного материала, саженцов привитого и непривитого
-                        грецкого ореха, фундука и шиповника.
-                    </p>
-                    <p class="nuts-info__text">
-                        Орех Причерноморья – это первый и единственный в Украине
-                        сад по совместному выращиванию фундука и грецкого ореха
-                    </p>
+
                 </div>
                 <div class="swiper nuts-info__slider">
                     <div class="swiper-wrapper nuts-info__slider-wrapper">
                         <div class="nuts-info__slider-item-1 swiper-slide">
-                            <img class="nuts-info__item" src="img/main/nuts-in-hands.png" alt="">
+                            <img class="nuts-info__item" th:src="${article5.url}" alt="">
                         </div>
                         <div class="nuts-info__slider-item-2 swiper-slide">
-                            <img class="nuts-info__item" src="img/main/nuts-in-hands.png" alt="">
+                            <img class="nuts-info__item" th:src="${article5.url}" alt="">
                         </div>
                         <div class="nuts-info__slider-item-3 swiper-slide">
-                            <img class="nuts-info__item" src="img/main/nuts-in-hands.png" alt="">
+                            <img class="nuts-info__item" th:src="${article5.url}" alt="">
                         </div>
 
                     </div>

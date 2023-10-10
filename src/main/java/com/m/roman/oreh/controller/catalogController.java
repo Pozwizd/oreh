@@ -3,6 +3,7 @@ package com.m.roman.oreh.controller;
 
 import com.m.roman.oreh.model.Product;
 import com.m.roman.oreh.service.*;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,40 +37,31 @@ public class catalogController {
 
 
     // TODO: Фильтрация
-    // TODO: Типы продукта
 
     @GetMapping("/catalog.html")
     public ModelAndView portfolio(Model model,
                                   @RequestParam(required = false, defaultValue = "0") int page) {
         model.addAttribute("TitlePage", "Каталог продукции");
-        for (int i = 1; i <= 5; i++) {
-            model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
-        }
-        //---------
 
-        // пагинация на уровле контроллера
+        model.addAttribute("titleText7", titleTextService.getTitleText(7));
+        model.addAttribute("article5", articleService.getArticle(5));
+
+
         int pageNumber = 0;
         int pageSize = 6;
 
         if (page != 0) {
             pageNumber = page;
         }
-        Slice<Product> productsPage = productService.getAllProducts(page, pageSize);
+        Page<Product> productsPage = productService.getAllProducts(page, pageSize);
 
         model.addAttribute("products", productsPage.getContent());
         model.addAttribute("currentPage", page);
-
-
         //---------
+
         model.addAttribute("contact", contactService.getContact(1));
 
-        for (int i = 1; i <= 5; i++) {
-            model.addAttribute("article" + i, articleService.getArticle(i));
-        }
 
-        for (int i = 1; i <= 4; i++) {
-            model.addAttribute("news" + i, newsService.getNews(i));
-        }
         return new ModelAndView("catalog");
     }
 

@@ -15,8 +15,6 @@ import java.util.List;
 @Controller
 public class newsController {
 
-    // TODO: Добавить статьи
-
     private final ContactService contactService;
     private final NewsService newsService;
     private final TitleTextService titleTextService;

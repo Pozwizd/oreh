@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class clientsController {
 
+    // TODO: Добавить переделать сущности
 
     private final ContactService contactService;
     private final SpecificationService specificationService;

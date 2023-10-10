@@ -14,8 +14,8 @@
                     <img class="intro-links__arrow" src="img/icons/arrow-right-white.svg" alt="">
                     <a class="intro-links__link" href="about.html">О производстве</a>
                 </div>
-                <h2 class="video-wide__title">Орех Причерноморья</h2>
-                <p class="video-wide__text video-wide__text--about">Единственный в Украине сад совместного выращивание
+                <h2 class="video-wide__title" th:text="${titleText1.title}" >Орех Причерноморья</h2>
+                <p class="video-wide__text video-wide__text--about" th:text="${titleText1.text}" >Единственный в Украине сад совместного выращивание
                     фундука и грецкого ореха</p>
                 <div class="play-btn play-btn--about">
                     <div class="play-btn__outer">
@@ -28,17 +28,13 @@
         <section class="manufacturer">
             <div class="manufacturer__wrapper">
                 <div class="manufacturer__info">
-                    <h2 class="title-left">О производителе</h2>
-                    <p class="manufacturer__text">
+                    <h2 class="title-left" th:text="${article6.title}" >О производителе</h2>
+                    <p class="manufacturer__text" th:text="${article6.text}">
                         Сельскохозяйственный обслуживающий кооператив “Орех Причерноморья”
                         выращивает смешанные сады ореха грецкого с фундуком, а также ореха грецкого с шиповником, на
                         площади более 150 гектаров.
                     </p>
-                    <p class="manufacturer__text">Помимо этого кооператив занимается выращиванием посадочного материала,
-                        саженцов привитого и непривитого грецкого ореха, фундука и шиповника.</p>
-                    <p class="manufacturer__text">Предприятие укомплектовано всей необходимой техникой
-                        и оборудованием для выращивания интенсивного сада, воспроизводства саженцев в питомнике и
-                        выращивания трюфеля. </p>
+
                 </div>
                 <div class="swiper manufacturer__slider">
                     <div class="swiper-wrapper manufacturer__slider-wrapper">
@@ -102,12 +98,10 @@
                     </div>
                 </div>
                 <div class="tulba__rightside">
-                    <h3 class="tulba__rightside-title">История предприятия</h3>
-                    <p class="tulba__rightside-text">Наше предприятие основано в 2012 году 
+                    <h3 class="tulba__rightside-title" th:text="${article7.title}">История предприятия</h3>
+                    <p class="tulba__rightside-text" th:text="${article7.text}">Наше предприятие основано в 2012 году
                         для закладки смешанного сада грецкого ореха 
                         и фундука. </p>
-                    <p class="tulba__rightside-text">На сегодня мы уже заложили более 100 гектаров сада и продолжаем расширять свои насаждения. Кроме выращивания грецкого ореха и фундука, мы занимаемся выращиванием саженцев, разведением и выращиванием овец, а также являемся первой в Украине компанией, приступившей к промышленному выращиванию трюфелей на корнях фундука.</p>
-                    <p class="tulba__rightside-text">Земля, которой пользуется кооператив, является собственностью членов нашего кооператива.</p>
                     <img class="tulba__rightside-logo" src="img/icons/logo-hover.svg" alt="">
                 </div>
             </div>
@@ -117,26 +111,26 @@
 
         <section class="gallery__section">
             <div class="title-middle">
-                <h3 class="title-middle__title">Галерея</h3>
-                <p class="title-middle__subtitle">Кадры социальной активности компании</p>
+                <h3 class="title-middle__title" th:text="${titleText8.title}">Галерея</h3>
+                <p class="title-middle__subtitle" th:text="${titleText8.text}">Кадры социальной активности компании</p>
             </div>
             <div class="gallery-block">
                 <div class="gallery-block__wrap">
     <div class="gallery-block__upper">
         <div class="gallery-block__item gallery-block__2-dudes">
-            <img class="gallery-block__2-dudes-img" src="img/main/2-dudes.png" alt="">
+            <img class="gallery-block__2-dudes-img" th:src="${article8.url}" alt="">
             <div class="gallery-block__hover">
-                <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                <p class="gallery-block__hover-text">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали 
+                <h3 class="gallery-block__hover-title" th:text="${article8.title}">SIAL Paris 2018</h3>
+                <p class="gallery-block__hover-text" th:utext="${article8.text}">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                     на крупнейшей продовольственной выставке Европы <span class="gallery-block__hover-span">SIAL Paris 2018</span></p>
                 <img class="gallery-block__hover-logo" src="img/icons/logo-hover.svg" alt="">
             </div>
         </div>
         <div class="gallery-block__item gallery-block__hay">
-            <img class="gallery-block__hay-img" src="img/main/hay.png" alt="">
+            <img class="gallery-block__hay-img" th:src="${article9.url}" alt="">
             <div class="gallery-block__hover">
-                <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                <p class="gallery-block__hover-text">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали 
+                <h3 class="gallery-block__hover-title" th:text="${article9.title}">SIAL Paris 2018</h3>
+                <p class="gallery-block__hover-text" th:text="${article9.text}">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                     на крупнейшей продовольственной выставке Европы <span class="gallery-block__hover-span">SIAL Paris 2018</span></p>
                 <img class="gallery-block__hover-logo" src="img/icons/logo-hover.svg" alt="">
             </div>
@@ -152,8 +146,8 @@
                         </div>
                     </div>
                 </div>
-                <h2 class="video-wide__title video-wide__title--gallery">Проект UBHDP</h2>
-                <p class="video-wide__text video-wide__text--gallery">Вчера к нам приезжал американский агроном Рон , спасибо Мельнику Евгению и
+                <h2 class="video-wide__title video-wide__title--gallery" th:text="${article10.title}">Проект UBHDP</h2>
+                <p class="video-wide__text video-wide__text--gallery" th:utext="${article10.text}">Вчера к нам приезжал американский агроном Рон , спасибо Мельнику Евгению и
                     проекту<span class="video-wide__span"> UBHDP </span>за возможность получить консультацию
                     от мировых специалистов!
                 </p>
@@ -162,19 +156,19 @@
     </div>
     <div class="gallery-block__bottom">
         <div class="gallery-block__item gallery-block__tractor">
-            <img class="gallery-block__tractor-img" src="img/main/tractor-field.png" alt="">
+            <img class="gallery-block__tractor-img" th:src="${article11.url}" alt="">
             <div class="gallery-block__hover">
-                <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                <p class="gallery-block__hover-text">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали 
+                <h3 class="gallery-block__hover-title" th:text="${article11.title}">SIAL Paris 2018</h3>
+                <p class="gallery-block__hover-text" th:utext="${article11.title}">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                     на крупнейшей продовольственной выставке Европы <span class="gallery-block__hover-span">SIAL Paris 2018</span></p>
                 <img class="gallery-block__hover-logo gallery-block__hover-logo--small" src="img/icons/logo-hover.svg" alt="">
             </div>
         </div>
         <div class="gallery-block__item gallery-block__greens">
-            <img class="gallery-block__greens-img" src="img/main/greens.png" alt="">
+            <img class="gallery-block__greens-img" th:src="${article12.url}" alt="">
             <div class="gallery-block__hover">
-                <h3 class="gallery-block__hover-title">SIAL Paris 2018</h3>
-                <p class="gallery-block__hover-text">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали 
+                <h3 class="gallery-block__hover-title" th:text="${article12.title}">SIAL Paris 2018</h3>
+                <p class="gallery-block__hover-text" th:utext="${article12.text}">В этом Году при поддержке проекта International Trade Centre Ukraine, и финансировании правительства Швеции, мы побывали
                     на крупнейшей продовольственной выставке Европы <span class="gallery-block__hover-span">SIAL Paris 2018</span></p>
                 <img class="gallery-block__hover-logo gallery-block__hover-logo--small" src="img/icons/logo-hover.svg" alt="">
             </div>
@@ -189,8 +183,8 @@
                             </div>
                         </div>
                     </div>
-                    <h2 class="gallery-block__tulba-title">Проект UBHDP</h2>
-                    <p class="gallery-block__tulba-text">Вчера к нам приезжал американский агроном Рон , спасибо Мельнику Евгению и
+                    <h2 class="gallery-block__tulba-title" th:text="${article10.title}">Проект UBHDP</h2>
+                    <p class="gallery-block__tulba-text" th:utext="${article10.text}">Вчера к нам приезжал американский агроном Рон , спасибо Мельнику Евгению и
                         проекту<span class="gallery-block__tulba-span"> UBHDP </span>за возможность получить консультацию
                         от мировых специалистов!
                     </p>
@@ -205,8 +199,8 @@
         <section class="eco eco--about">
             <div class="eco__wrapper">
                 <img class="eco__icon" src="img/icons/eco.svg" alt="">
-                <h2 class="eco__title">Эко продукция</h2>
-                <p class="eco__text">Выращиваем каждое деревцо с любовью, на экологически чистой земле, без
+                <h2 class="eco__title" th:text="${titleText5.title}">Эко продукция</h2>
+                <p class="eco__text" th:text="${titleText5.text}">Выращиваем каждое деревцо с любовью, на экологически чистой земле, без
                     использования пестицидов и химии</p>
             </div>
         </section>
@@ -216,101 +210,20 @@
                     <h3 class="title-left">Новости</h3>
                     <p class="title-left title-left--subtitle">Свежие новости и полезная информация</p>
                     <div class="swiper-wrapper news-block__slider-wrapper">
-                        <div class="swiper-slide news-block__slider-item">
+                        <div class="swiper-slide news-block__slider-item" th:each="novelty : ${news}">
                             <div class="news-block__item-wrapper">
                                 <div class="news-block__item-upper">
-                                    <img class="news-block__item-visual" src="img/main/pavel-news-block.png" alt="">
+                                    <img class="news-block__item-visual"
+                                         th:src="${novelty.url != null ? novelty.url : 'img/main/pavel-news-block.png'}"
+                                         alt="">
                                 </div>
                                 <div class="news-block__item-bottom">
-                                    <p class="news-block__item-date">12.04.2019</p>
-                                    <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел
-                                        Тулба</h4>
-                                    <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
-                                        культура
-                                        очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
-                                        отличную...
-                                    </p>
-                                    <a href="news-page.html" class="news-block__item-link">Читать
-                                        <svg class="news-block__item-arrow" width="18" height="10" viewBox="0 0 18 10"
-                                             fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                    d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide news-block__slider-item">
-                            <div class="news-block__item-wrapper">
-                                <div class="news-block__item-upper">
-                                    <video class="news-block__video news-block__video--meeting" src="#"></video>
-                                    <div class="news-block__video-overlay">
-                                        <img class="news-block__item-visual" src="img/main/meeting-news-block.png"
-                                             alt="">
-                                        <div class="play-btn news-block__play-btn">
-                                            <div class="play-btn__outer">
-                                                <div class="play-btn__inner">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="news-block__item-bottom">
-                                    <p class="news-block__item-date">12.04.2019</p>
-                                    <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел
-                                        Тулба</h4>
-                                    <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
-                                        культура
-                                        очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
-                                        отличную...
-                                    </p>
-                                    <a href="news-page.html" class="news-block__item-link">Читать
-                                        <svg class="news-block__item-arrow" width="18" height="10" viewBox="0 0 18 10"
-                                             fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                    d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide news-block__slider-item">
-                            <div class="news-block__item-wrapper">
-                                <div class="news-block__item-upper">
-                                    <img class="news-block__item-visual" src="img/main/nut-crate-news-block.png" alt="">
-                                </div>
-                                <div class="news-block__item-bottom">
-                                    <p class="news-block__item-date">12.04.2019</p>
-                                    <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел
-                                        Тулба</h4>
-                                    <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
-                                        культура
-                                        очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
-                                        отличную...
-                                    </p>
-                                    <a href="news-page.html" class="news-block__item-link">Читать
-                                        <svg class="news-block__item-arrow" width="18" height="10" viewBox="0 0 18 10"
-                                             fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                    d="M17.7938 5.49771C17.7936 5.49792 17.7934 5.49816 17.7931 5.49838L14.1192 9.15463C13.8439 9.42853 13.3988 9.42751 13.1248 9.15224C12.8508 8.877 12.8519 8.43181 13.1271 8.15788L15.5938 5.70313H0.703125C0.314789 5.70313 0 5.38834 0 5C0 4.61166 0.314789 4.29688 0.703125 4.29688H15.5938L13.1272 1.84212C12.8519 1.56819 12.8509 1.123 13.1248 0.847764C13.3988 0.572455 13.844 0.571506 14.1192 0.845373L17.7932 4.50163C17.7934 4.50184 17.7936 4.50208 17.7938 4.50229C18.0692 4.77714 18.0683 5.22377 17.7938 5.49771Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide news-block__slider-item">
-                            <div class="news-block__item-wrapper">
-                                <div class="news-block__item-upper">
-                                    <img class="news-block__item-visual" src="img/main/pavel-news-block.png" alt="">
-                                </div>
-                                <div class="news-block__item-bottom">
-                                    <p class="news-block__item-date">12.04.2019</p>
-                                    <h4 class="news-block__item-title">Центр поддержки экспорта, в студии Павел
-                                        Тулба</h4>
-                                    <p class="news-block__item-text">Как уже упоминал Павел Тулба, шиповник цветёт. Эта
+                                    <p class="news-block__item-date" th:text="${novelty.date}">12.04.2019</p>
+                                    <h4 class="news-block__item-title" th:text="${novelty.title}">Центр поддержки экспорта,
+                                        в
+                                        студии Павел Тулба</h4>
+                                    <p class="news-block__item-text" th:utext="${novelty.text}">Как уже упоминал Павел Тулба,
+                                        шиповник цветёт. Эта
                                         культура
                                         очень недооценена среди наших садоводов, не смотря на большой спрос в Европе и
                                         отличную...

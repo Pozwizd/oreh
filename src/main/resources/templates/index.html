@@ -128,7 +128,7 @@
                 <div class="benefits__item benefits__item--walnut">
                     <div class="benefits__content">
                         <div class="benefits__content-upper">
-                            <img src="img/icons/walnut.svg" alt="">
+                            <img th:src="${article2.url}" alt="">
                             <p class="benefits__name" th:text="${article2.title}">Грецкий орех</p>
                         </div>
                         <div class="benefits__content-bottom">
@@ -142,7 +142,7 @@
                 <div class="benefits__item benefits__item--funduk">
                     <div class="benefits__content">
                         <div class="benefits__content-upper">
-                            <img src="img/icons/funduk.svg" alt="">
+                            <img th:src="${article3.url}" alt="">
                             <p class="benefits__name" th:text="${article3.title}">Фундук</p>
                         </div>
                         <div class="benefits__content-bottom">
@@ -156,7 +156,7 @@
                 <div class="benefits__item benefits__item--shipovnik">
                     <div class="benefits__content">
                         <div class="benefits__content-upper">
-                            <img src="img/icons/shipovnik.svg" alt="">
+                            <img th:src="${article4.url}" alt="">
                             <p class="benefits__name" th:text="${article4.title}">Шиповник</p>
                         </div>
                         <div class="benefits__content-bottom">
@@ -171,9 +171,9 @@
     </section>
     <div class="eco">
         <div class="eco__wrapper">
-            <img class="eco__icon" src="img/icons/eco.svg" alt="">
-            <h2 class="eco__title" th:text="${article5.title}">Эко продукция</h2>
-            <p class="eco__text" th:text="${article5.text}">Выращиваем каждое деревцо с любовью, на экологически чистой
+            <img class="eco__icon" th:src="${titleText5.url}" alt="">
+            <h2 class="eco__title" th:text="${titleText5.title}">Эко продукция</h2>
+            <p class="eco__text" th:text="${titleText5.title}">Выращиваем каждое деревцо с любовью, на экологически чистой
                 земле, без использования
                 пестицидов и химии</p>
         </div>
@@ -181,8 +181,8 @@
     <section class="news-block">
         <div class="news-block__wrapper">
             <div class="swiper news-block__slider">
-                <h3 class="title-left" th:text="${titleText5.title}">Новости</h3>
-                <p class="title-left title-left--subtitle" th:text="${titleText5.text}">Свежие новости и полезная
+                <h3 class="title-left" th:text="${titleText6.title}">Новости</h3>
+                <p class="title-left title-left--subtitle" th:text="${titleText6.text}">Свежие новости и полезная
                     информация</p>
                 <div class="swiper-wrapper news-block__slider-wrapper">
                     <div class="swiper-slide news-block__slider-item" th:each="novelty : ${news}">

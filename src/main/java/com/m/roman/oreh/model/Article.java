@@ -27,4 +27,7 @@ public class Article {
     @Column(name = "text")
     private String text;
 
+    @Column(name = "url")
+    private String url;
+
 }

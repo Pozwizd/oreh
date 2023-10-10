@@ -23,6 +23,9 @@ public class News {
     @Column(name = "url")
     private String url;
 
+    @Column(name = "url_small_img")
+    private String urlSmallImg;
+
     @Column(name = "date")
     private LocalDate date;
 

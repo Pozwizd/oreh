@@ -4,6 +4,7 @@ package com.m.roman.oreh.controller;
 import com.m.roman.oreh.model.News;
 import com.m.roman.oreh.model.Product;
 import com.m.roman.oreh.service.*;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: 03.10.2023 Сделать прогрузку продуктов с картинками
 
 @Controller
 public class indexController {
@@ -39,19 +39,21 @@ public class indexController {
     public ModelAndView index(Model model) {
         model.addAttribute("TitlePage", "Орех Причерноморья");
 
-        for (long i = 1; i <= 5; i++) {
+        for (long i = 1; i <= 6; i++) {
             model.addAttribute("titleText" + i, titleTextService.getTitleText(i));
-            model.addAttribute("article" + i, articleService.getArticle(i));
+
         }
 
-        int pageSize = 7;
-        Slice<Product> productsPage = productService.getAllProducts(0, pageSize);
+
+        int pageSize = 6;
+        Page<Product> productsPage = productService.getAllProducts(0, pageSize);
 
         model.addAttribute("products", productsPage.getContent());
 
 
         List<News> news = new ArrayList<>();
         for (int i = 1; i <= 4; i++) {
+            model.addAttribute("article" + i, articleService.getArticle(i));
             news.add(newsService.getNews(i));
         }
         model.addAttribute("news", news);

@@ -107,25 +107,25 @@
                 <div class="clients-menu__list-wrapper clients-menu__list-wrapper--product">
                     <ul class="clients-menu__list clients-menu__list--product">
                         <li class="clients-menu__list-item clients-menu__list-item--product clients-menu-active" data-value="desc">
-                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Описание</h3>
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product" th:text="${product.moreInfoList.get(0).title}">Описание</h3>
                         </li>
                         <li class="clients-menu__list-item clients-menu__list-item--product" data-value="packing">  
-                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Упаковка</h3>
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product" th:text="${product.moreInfoList.get(1).title}">Упаковка</h3>
                         </li>
                         <li class="clients-menu__list-item clients-menu__list-item--product" data-value="payment">
-                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Оплата</h3>
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product" th:text="${product.moreInfoList.get(2).title}">Оплата</h3>
                         </li>
                         <li class="clients-menu__list-item clients-menu__list-item--product" data-value="delivery">
-                            <h3 class="clients-menu__item-title clients-menu__item-title--product">Доставка</h3>
+                            <h3 class="clients-menu__item-title clients-menu__item-title--product" th:text="${product.moreInfoList.get(3).title}">Доставка</h3>
                         </li>
                     </ul>
                 </div>
                 <div class="clients-menu__info">
                     <div class="clients-menu__info-item clients-menu__info-item--product clients-menu__info-item--basis">
                         <div class="clients-menu__visual clients-menu__visual--product">
-                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${product.moreInfoList.get(0).urlImg}" alt="">
                         </div>
-                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product" th:utext="${product.moreInfoList.get(0).text}">
                             <p class="clients-menu__info-text clients-menu__info-text--product">
                                 Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
                                 детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
@@ -156,21 +156,21 @@
                     </div>
                     <div class="clients-menu__info-item clients-menu__info-item--product active" data-value="desc">
                         <div class="clients-menu__visual clients-menu__visual--product">
-                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${product.moreInfoList.get(0).urlImg}" alt="">
                         </div>
-                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product" th:utext="${product.moreInfoList.get(0).text}">
                             <p class="clients-menu__info-text clients-menu__info-text--product">
                                 Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
                                 детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
                                 грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
-                                употреблять перед едой.                                
+                                употреблять перед едой.
                             </p>
                             <p class="clients-menu__info-text clients-menu__info-text--product">
-                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям,
                                 в организме
-                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать,
                                 а всему организму –
-                                победить воспаления.                                                             
+                                победить воспаления.
                             </p>
                             <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
                             <ul class="clients-menu__info-list">
@@ -189,21 +189,21 @@
                     </div>
                     <div class="clients-menu__info-item clients-menu__info-item--product" data-value="packing">
                         <div class="clients-menu__visual clients-menu__visual--product">
-                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${product.moreInfoList.get(1).urlImg}" alt="">
                         </div>
-                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product" th:utext="${product.moreInfoList.get(1).text}">
                             <p class="clients-menu__info-text clients-menu__info-text--product">
                                 Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
                                 детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
                                 грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
-                                употреблять перед едой.                                
+                                употреблять перед едой.
                             </p>
                             <p class="clients-menu__info-text clients-menu__info-text--product">
-                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям,
                                 в организме
-                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать,
                                 а всему организму –
-                                победить воспаления.                                                             
+                                победить воспаления.
                             </p>
                             <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
                             <ul class="clients-menu__info-list">
@@ -222,21 +222,21 @@
                     </div>
                     <div class="clients-menu__info-item clients-menu__info-item--product" data-value="payment">
                         <div class="clients-menu__visual clients-menu__visual--product">
-                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${product.moreInfoList.get(2).urlImg}" alt="">
                         </div>
-                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product" th:utext="${product.moreInfoList.get(2).text}">
                             <p class="clients-menu__info-text clients-menu__info-text--product">
                                 Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
                                 детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
                                 грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
-                                употреблять перед едой.                                
+                                употреблять перед едой.
                             </p>
                             <p class="clients-menu__info-text clients-menu__info-text--product">
-                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям,
                                 в организме
-                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать,
                                 а всему организму –
-                                победить воспаления.                                                             
+                                победить воспаления.
                             </p>
                             <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
                             <ul class="clients-menu__info-list">
@@ -255,21 +255,21 @@
                     </div>
                     <div class="clients-menu__info-item clients-menu__info-item--product" data-value="delivery">
                         <div class="clients-menu__visual clients-menu__visual--product">
-                            <img class="clients-menu__visual-img" src="img/main/nuts-page.png" alt="">
+                            <img class="clients-menu__visual-img" th:src="${product.moreInfoList.get(3).urlImg}" alt="">
                         </div>
-                        <div class="clients-menu__info-desc clients-menu__info-desc--product">
+                        <div class="clients-menu__info-desc clients-menu__info-desc--product" th:utext="${product.moreInfoList.get(3).text}">
                             <p class="clients-menu__info-text clients-menu__info-text--product">
                                 Уже 4000 лет люди питаются ценными <span class="clients-menu__info-span">грецкими орехами.</span> Они особенно полезны послеоперационным больным,
                                 детям, кормящим, беременным женщинам. Чтобы вернуть силы, укрепить иммунитет, одолеть туберкулез, кашель;
                                 грецкий орех очищенный, отборный нужно истолочь, смешать с медом (2:1) и чайную ложку целебной смеси
-                                употреблять перед едой.                                
+                                употреблять перед едой.
                             </p>
                             <p class="clients-menu__info-text clients-menu__info-text--product">
-                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям, 
+                                В белке грецких орехов много (15 %) аргинина. Он особенно нужен детям, больным, пожилым людям,
                                 в организме
-                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать, 
+                                которых аминокислота плохо синтезируется. Аргинин помогает сосудам регенерировать,
                                 а всему организму –
-                                победить воспаления.                                                             
+                                победить воспаления.
                             </p>
                             <h3 class="clients-menu__info-title clients-menu__info-title--product">Другие полезные вещества грецких орехов:</h3>
                             <ul class="clients-menu__info-list">
